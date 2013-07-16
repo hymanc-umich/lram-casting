@@ -1,0 +1,24 @@
+/*
+ * led.h
+ *
+ *  Created on: May 1, 2013
+ *      Author: cody
+ */
+
+#ifndef STM32F1
+#define STM32F1
+#endif
+
+#ifndef LED_H_
+#define LED_H_
+
+#include <libopencm3/stm32/f1/gpio.h>
+
+#define LED_ON() gpio_clear(LED_PORT, LED_PIN);
+#define LED_OFF() gpio_set(LED_PORT, LED_PIN);
+#define LED_TOGGLE() gpio_toggle(LED_PORT, LED_PIN);
+
+void led_initialize();
+
+
+#endif /* LED_H_ */

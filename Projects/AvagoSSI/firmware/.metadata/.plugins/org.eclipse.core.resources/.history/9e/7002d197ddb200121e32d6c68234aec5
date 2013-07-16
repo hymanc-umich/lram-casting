@@ -1,0 +1,14 @@
+/*
+ * aeat9000.c
+ *
+ *  Created on: May 1, 2013
+ *      Author: cody
+ */
+
+
+#include "aeat9000.h"
+
+void aeat9k_initialize(void)
+{
+	ssi_initialize()
+}

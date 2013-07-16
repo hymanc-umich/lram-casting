@@ -1,0 +1,14 @@
+/*
+ * led.c
+ *
+ *  Created on: May 1, 2013
+ *      Author: cody
+ */
+
+#include "led.h"
+
+void led_initialize(void)
+{
+	gpio_set_mode(LED_PORT, GPIO_MODE_OUTPUT_2_MHZ,
+	                      GPIO_CNF_OUTPUT_PUSHPULL, LED_PIN);
+}

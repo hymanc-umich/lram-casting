@@ -1,0 +1,27 @@
+/*
+ * ssi.c
+ *
+ *  Created on: May 1, 2013
+ *      Author: cody
+ */
+
+
+#include "ssi.h"
+
+volatile u32 ssi_buffer;
+volatile u8 ssi_counter;
+void ssi_initialize(u16 clk_speed)
+{
+	// Initialize clock timer
+}
+
+void ssi_start_read(u8 nbits)
+{
+	ssi_counter = nbits;
+	// Start counter
+}
+
+void ssi_bit_handler(u8 bit)
+{
+
+}

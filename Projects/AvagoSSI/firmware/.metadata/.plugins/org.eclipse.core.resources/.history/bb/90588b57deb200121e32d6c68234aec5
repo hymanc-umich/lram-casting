@@ -1,0 +1,28 @@
+/*
+ * aeat9000.h
+ *
+ *  Created on: May 1, 2013
+ *      Author: cody
+ */
+
+#ifndef STM32F1
+#define STM32F1
+#endif
+
+#ifndef AEAT9000_H_
+#define AEAT9000_H_
+
+#include <libopencm3/stm32/f1/gpio.h>
+#include <libopencm3/stm32/f1/nvic.h>
+#include "ssi.h"
+
+void aeat9k_initialize(void);
+u32 aeat9k_read_blocking(void);
+void aeat9k_read_buffer(u32 * buf);
+void aeat9k_zero(void);
+void aeat9k_reset(void);
+void aeat9k_msb_inv(void);
+u8 aeat9k_error(void);
+u8 aeat9k_loctest(void);
+
+#endif /* AEAT9000_H_ */

@@ -1,0 +1,220 @@
+.HEADER
+BOARD_FILE    3.0    "PADS Layout 9.3"    2013/05/15.10:00:22    1
+"c:\users\cody\dropbox\hattonelectronics\projects\airssi\air_ssi_1101_00_release.emn"    THOU
+.END_HEADER
+.BOARD_OUTLINE    UNOWNED
+12.7
+0     0.0                           0.0                           0     
+0     1975.0                        0.0                           0     
+0     1975.0                        1000.0                        0     
+0     0.0                           1000.0                        0     
+0     0.0                           0.0                           0     
+.END_BOARD_OUTLINE
+.DRILLED_HOLES
+15.000000 255.000000 40.000210 PTH    BOARD    VIA    UNOWNED
+15.000000 320.000000 40.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 770.000000 40.000000 PTH    BOARD    VIA    UNOWNED
+32.283465 909.740157 78.000000 PTH    J1    PIN    UNOWNED
+32.283465 831.000000 78.000000 PTH    J1    PIN    UNOWNED
+32.283465 988.480315 78.000000 PTH    J1    PIN    UNOWNED
+15.000000 1080.000000 40.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 1150.000000 40.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 1470.000000 40.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 1550.000000 40.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 1630.000000 40.000000 PTH    BOARD    VIA    UNOWNED
+116.000000 125.000000 125.000000 PTH    X2    PIN    UNOWNED
+15.000000 270.000000 160.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 290.000000 110.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 320.000000 160.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 1110.000000 100.000000 PTH    BOARD    VIA    UNOWNED
+116.000000 1325.000000 125.000000 PTH    X3    PIN    UNOWNED
+15.000000 1510.000000 100.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 1710.000000 140.000000 PTH    BOARD    VIA    UNOWNED
+40.157480 1620.921260 145.944882 PTH    J3    PIN    UNOWNED
+15.000000 1920.000000 160.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 760.000000 260.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 981.000000 239.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 1100.000000 270.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 1400.000000 270.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 1510.000000 270.000000 PTH    BOARD    VIA    UNOWNED
+40.157480 1620.921260 264.055118 PTH    J3    PIN    UNOWNED
+118.110236 1791.000000 205.000000 PTH    J3    PIN    UNOWNED
+15.000000 1920.000000 240.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 690.000000 292.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 730.000000 288.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 1280.000000 320.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 1250.000000 350.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 1760.000000 330.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 1850.000000 330.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 1920.000000 320.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 332.000000 385.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 384.000000 450.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 421.000000 448.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 460.000000 405.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 702.000000 476.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 1760.000000 410.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 1850.000000 410.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 1920.000000 390.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 1920.000000 470.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 315.000000 575.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 503.000000 529.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 1164.000000 548.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 1530.000000 550.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 1760.000000 490.000000 PTH    BOARD    VIA    UNOWNED
+31.496063 1849.000000 508.000000 PTH    J2    PIN    UNOWNED
+15.000000 1920.000000 550.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 310.000000 650.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 332.000000 678.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 1160.000000 590.000000 PTH    BOARD    VIA    UNOWNED
+31.496063 1849.000000 586.740157 PTH    J2    PIN    UNOWNED
+31.496063 1849.000000 665.480315 PTH    J2    PIN    UNOWNED
+15.000000 1920.000000 630.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 315.000000 735.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 437.000000 719.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 1381.000000 711.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 1585.000000 721.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 1556.000000 693.000000 PTH    BOARD    VIA    UNOWNED
+31.496063 1849.000000 744.220472 PTH    J2    PIN    UNOWNED
+15.000000 1920.000000 710.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 400.000000 865.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 566.000000 797.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 1129.000000 870.000000 PTH    BOARD    VIA    UNOWNED
+116.000000 1325.000000 875.000000 PTH    X4    PIN    UNOWNED
+31.496063 1849.000000 822.960630 PTH    J2    PIN    UNOWNED
+15.000000 1920.000000 800.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 391.000000 921.000000 PTH    BOARD    VIA    UNOWNED
+32.283465 522.519685 930.000000 PTH    J4    PIN    UNOWNED
+32.283465 601.259843 930.000000 PTH    J4    PIN    UNOWNED
+32.283465 680.000000 930.000000 PTH    J4    PIN    UNOWNED
+15.000000 800.000000 960.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 880.000000 960.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 872.000000 915.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 950.000000 960.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 1110.000000 960.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 1090.000000 910.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 1030.000000 960.000000 PTH    BOARD    VIA    UNOWNED
+15.000000 1180.000000 960.000000 PTH    BOARD    VIA    UNOWNED
+31.496063 1849.000000 901.700787 PTH    J2    PIN    UNOWNED
+.END_DRILLED_HOLES
+.PLACE_KEEPOUT   UNOWNED
+BOTH    0.0
+0     125.0                         125.0                         0     
+0     250.0                         125.0                         360   
+.END_PLACE_KEEPOUT
+.PLACE_KEEPOUT   UNOWNED
+BOTH    0.0
+0     1325.0                        125.0                         0     
+0     1450.0                        125.0                         360   
+.END_PLACE_KEEPOUT
+.PLACE_KEEPOUT   UNOWNED
+BOTH    0.0
+0     1325.0                        875.0                         0     
+0     1450.0                        875.0                         360   
+.END_PLACE_KEEPOUT
+.ROUTE_KEEPOUT    UNOWNED
+ALL
+0     125.0                         125.0                         0     
+0     250.0                         125.0                         360   
+.END_ROUTE_KEEPOUT
+.ROUTE_KEEPOUT    UNOWNED
+ALL
+0     1325.0                        125.0                         0     
+0     1450.0                        125.0                         360   
+.END_ROUTE_KEEPOUT
+.ROUTE_KEEPOUT    UNOWNED
+ALL
+0     1325.0                        875.0                         0     
+0     1450.0                        875.0                         360   
+.END_ROUTE_KEEPOUT
+.PLACEMENT
+0603-R                                       CAP-0603                                     C1                                           
+298.0                         931.0                         0.0                           180.0     TOP       PLACED    
+0603-R                                       CAP-0603                                     C2                                           
+298.0                         891.0                         0.0                           180.0     TOP       PLACED    
+0603-R                                       CAP-0603                                     C3                                           
+473.0                         806.0                         0.0                           270.0     TOP       PLACED    
+0603-RA                                      CAP-0603                                     C4                                           
+300.0                         423.0                         0.0                           180.0     TOP       PLACED    
+0603-R                                       FB_0603                                      L1                                           
+523.0                         806.0                         0.0                           90.0      TOP       PLACED    
+TQFP44_0_8                                   ATXMEGA16D4                                  U2                                           
+850.0                         595.0                         0.0                           180.0     TOP       PLACED    
+0603-R                                       FB_0603                                      L2                                           
+1295.0                        522.0                         0.0                           270.0     TOP       PLACED    
+0603-R                                       CAP-0603                                     C5                                           
+802.0                         917.0                         0.0                           180.0     TOP       PLACED    
+0603-R                                       CAP-0603                                     C6                                           
+1173.0                        667.0                         0.0                           90.0      TOP       PLACED    
+0603-R                                       CAP-0603                                     C7                                           
+538.0                         514.0                         0.0                           270.0     TOP       PLACED    
+0805-R                                       CAP-0805                                     C8                                           
+1234.0                        558.0                         0.0                           90.0      TOP       PLACED    
+0603-R                                       CAP-0603                                     C9                                           
+834.0                         278.0                         0.0                           0.0       TOP       PLACED    
+0603-R                                       CAP-0603                                     C10                                          
+834.0                         235.0                         0.0                           0.0       TOP       PLACED    
+0603-RB                                      FB_0603                                      L3                                           
+925.0                         239.0                         0.0                           90.0      TOP       PLACED    
+HDR2MM_3P1R                                  HDR2MM_3P1R                                  J1                                           
+831.0                         78.0                          0.0                           0.0       TOP       PLACED    
+SOT-23A                                      PMV48XP                                      U3                                           
+1600.0                        823.0                         0.0                           0.0       BOTTOM    PLACED    
+0603-R                                       RES-0603                                     R1                                           
+1596.0                        768.0                         0.0                           0.0       BOTTOM    PLACED    
+PLATED_HOLE__4                               PHOLE-_4                                     X2                                           
+125.0                         125.0                         0.0                           0.0       TOP       PLACED    
+PLATED_HOLE__4                               PHOLE-_4                                     X3                                           
+1325.0                        125.0                         0.0                           0.0       TOP       PLACED    
+PLATED_HOLE__4                               PHOLE-_4                                     X4                                           
+1325.0                        875.0                         0.0                           0.0       TOP       PLACED    
+SRN3015                                      IND_SMT_SRN3015-2R2M                         L4                                           
+1296.0                        556.0                         0.0                           90.0      BOTTOM    PLACED    
+0603-R                                       RES-0603                                     R2                                           
+1283.0                        430.0                         0.0                           0.0       BOTTOM    PLACED    
+0603-R                                       RES-0603                                     R3                                           
+1380.0                        379.0                         0.0                           0.0       BOTTOM    PLACED    
+MSOP-8-PP                                    TPS62160DGK                                  U4                                           
+1508.0                        478.0                         0.0                           0.0       BOTTOM    PLACED    
+1206-RA                                      CAP-1206                                     C12                                          
+1579.0                        369.0                         0.0                           180.0     BOTTOM    PLACED    
+SOT89                                        AP1117Y33G-13                                U5                                           
+345.0                         213.0                         0.0                           0.0       TOP       PLACED    
+0603-R                                       CAP-0603                                     C13                                          
+274.0                         242.0                         0.0                           90.0      TOP       PLACED    
+0603-R                                       CAP-0603                                     C14                                          
+404.0                         152.0                         0.0                           0.0       TOP       PLACED    
+0603-R                                       FB_0603                                      L5                                           
+404.0                         52.0                          0.0                           0.0       TOP       PLACED    
+0603-R                                       RES-0603                                     R4                                           
+404.0                         102.0                         0.0                           180.0     TOP       PLACED    
+HDR_SHERLOCK_6P_V                            HDR_SHERLOCK_6P_V                            J2                                           
+1849.0                        508.0                         0.0                           90.0      TOP       PLACED    
+SOIC14                                       ISL83491IBZ                                  U6                                           
+1577.0                        637.0                         0.0                           0.0       TOP       PLACED    
+0603-R                                       CAP-0603                                     C15                                          
+1584.0                        844.0                         0.0                           180.0     TOP       PLACED    
+0603-R                                       RES-0603                                     R5                                           
+1743.0                        812.0                         0.0                           180.0     BOTTOM    PLACED    
+0603-R                                       CAP-0603                                     C16                                          
+1743.0                        761.0                         0.0                           0.0       BOTTOM    PLACED    
+SOT-23                                       NX3008NBK                                    U7                                           
+1700.0                        625.0                         0.0                           0.0       BOTTOM    PLACED    
+0603-R                                       RES-0603                                     R7                                           
+1695.0                        567.0                         0.0                           180.0     BOTTOM    PLACED    
+HDR_MML-RA-1R2PA                             HDR_MML_1R2P-RA                              J3                                           
+1791.0                        205.0                         0.0                           90.0      TOP       PLACED    
+0603-R                                       RES-0603                                     R8                                           
+1012.0                        274.0                         0.0                           0.0       TOP       PLACED    
+0603-R                                       RES-0603                                     R9                                           
+949.0                         281.0                         0.0                           180.0     BOTTOM    PLACED    
+HDR2MM_3P1R                                  HDR2MM_3P1R                                  J4                                           
+680.0                         930.0                         0.0                           180.0     TOP       PLACED    
+A1101R09A00GM_OVERHANGA                      A1101R09A00GM_OVER                           U1                                           
+46.0                          656.0                         0.0                           90.0      TOP       PLACED    
+0603-R                                       RES-0603                                     R10                                          
+693.0                         364.0                         0.0                           180.0     BOTTOM    PLACED    
+1210-R                                       CAP-1210                                     C11                                          
+1475.0                        619.0                         0.0                           0.0       BOTTOM    PLACED    
+0603-R                                       RES-0603                                     R6                                           
+648.0                         846.0                         0.0                           0.0       BOTTOM    PLACED    
+.END_PLACEMENT

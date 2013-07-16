@@ -1,0 +1,14 @@
+/*
+ * ssi.h
+ *
+ *  Created on: May 1, 2013
+ *      Author: cody
+ */
+
+#ifndef SSI_H_
+#define SSI_H_
+
+#include <libopencm3/stm32/f1/gpio.h>
+#include <libopencm3/stm32/timer.h>
+
+#endif /* SSI_H_ */

@@ -1,0 +1,62 @@
+/*
+ * aeat9000.c
+ *
+ *  Created on: May 1, 2013
+ *      Author: cody
+ */
+
+
+#include "aeat9000.h"
+
+void aeat9k_initialize(void)
+{
+	ssi_initialize(0);
+}
+
+u32 aeat9k_read_blocking(void)
+{
+	ssi_start_read(17); // Read 17 bits for AEAT-9000
+	while(!ssi_data_ready())
+	{
+		__asm__("NOP");
+	}
+	return ssi_read_data_buffer();
+
+}
+
+void aeat9k_read_buffer(u32 * buf)
+{
+
+}
+
+void aeat9k_zero(void)
+{
+	// Pulse zero
+}
+
+void aeat9k_reset(void)
+{
+	// Pulse Reset
+}
+
+void aeat9k_msb_inv(u8 inv_state)
+{
+
+}
+
+u8 aeat9k_error(void)
+{
+	if(GPIO_IDR(ENCERR_PORT) & ENCERR_PIN)
+		return 1;
+	else
+		return 0;
+}
+
+u8 aeat9k_loctest(void)
+{
+	if(GPIO_IDR(LOCTEST_PORT) & LOCTEST_PIN)
+		return 1;
+	else
+		return 0;
+}
+

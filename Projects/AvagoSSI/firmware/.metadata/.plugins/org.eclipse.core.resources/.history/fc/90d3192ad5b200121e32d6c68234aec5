@@ -1,0 +1,31 @@
+/*
+ * serial_link.h
+ *
+ *  Created on: May 1, 2013
+ *      Author: cody
+ */
+
+#ifndef STM32F1
+#define STM32F1
+#endif
+
+#ifndef SERIAL_LINK_H_
+#define SERIAL_LINK_H_
+
+#define USART USART2
+#define SER_IOPORT GPIOA
+#define TXE_PIN GPIO0
+#define RXE_PIN GPIO1
+#define TXD_PIN GPIO2
+#define RXD_PIN GPIO3
+
+struct packet
+{
+	u8 * data;
+
+};
+typedef struct packet packet;
+
+void send_pkt (packet * pkt)
+void send_byte(u8 byte);
+#endif /* SERIAL_LINK_H_ */

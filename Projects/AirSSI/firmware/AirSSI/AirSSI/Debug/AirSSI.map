@@ -1,0 +1,604 @@
+Archive member included because of file (symbol)
+
+c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a(_exit.o)
+                              c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avrxmega2/crtx16d4.o (exit)
+c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a(_copy_data.o)
+                              ADC/adc_battery.o (__do_copy_data)
+c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a(_clear_bss.o)
+                              ADC/adc_battery.o (__do_clear_bss)
+
+Allocating common symbols
+Common symbol       size              file
+
+encoder_power_state
+                    0x1               Encoder/rm_encoder.o
+last_position_buffer
+                    0x2               Encoder/SSI/ssi_rls.o
+encoder_value       0x2               Encoder/rm_encoder.o
+ssi_word_state      0x1               Encoder/SSI/ssi_rls.o
+cc1101_status       0x1               Radio/cc1101/cc1101.o
+enc_value_handler_ptr
+                    0x2               Encoder/SSI/ssi_rls.o
+position_latch      0x2               Encoder/SSI/ssi_rls.o
+encoder_value_valid_flag
+                    0x1               Encoder/rm_encoder.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00100000         xr
+data             0x00802000         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avrxmega2/crtx16d4.o
+LOAD ADC/adc_battery.o
+LOAD AirSSI.o
+LOAD DebugSerial/debug_serial.o
+LOAD Encoder/rm_encoder.o
+LOAD Encoder/SSI/ssi_rls.o
+LOAD Radio/cc1101/cc1101.o
+LOAD Radio/cc1101/SPI/spi_master.o
+LOAD Util/clock_setup.o
+START GROUP
+LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avrxmega2\libm.a
+END GROUP
+LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a
+LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avrxmega2\libc.a
+LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000      0x904
+ *(.vectors)
+ .vectors       0x00000000      0x16c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avrxmega2/crtx16d4.o
+                0x00000000                __vector_default
+                0x00000000                __vectors
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.progmem*)
+                0x0000016c                . = ALIGN (0x2)
+                0x0000016c                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x0000016c        0x0 linker stubs
+ *(.trampolines*)
+                0x0000016c                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x0000016c                __ctors_start = .
+ *(.ctors)
+                0x0000016c                __ctors_end = .
+                0x0000016c                __dtors_start = .
+ *(.dtors)
+                0x0000016c                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x0000016c        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avrxmega2/crtx16d4.o
+                0x0000016c                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x0000016c        0xc c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avrxmega2/crtx16d4.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x00000178       0x16 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a(_copy_data.o)
+                0x00000178                __do_copy_data
+ .init4         0x0000018e       0x10 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a(_clear_bss.o)
+                0x0000018e                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x0000019e        0x8 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avrxmega2/crtx16d4.o
+ *(.init9)
+ *(.text)
+ .text          0x000001a6        0x4 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avrxmega2/crtx16d4.o
+                0x000001a6                __vector_38
+                0x000001a6                __vector_22
+                0x000001a6                __vector_63
+                0x000001a6                __vector_28
+                0x000001a6                __vector_67
+                0x000001a6                __vector_1
+                0x000001a6                __vector_32
+                0x000001a6                __vector_75
+                0x000001a6                __vector_71
+                0x000001a6                __vector_34
+                0x000001a6                __vector_62
+                0x000001a6                __vector_77
+                0x000001a6                __vector_24
+                0x000001a6                __vector_12
+                0x000001a6                __vector_55
+                0x000001a6                __vector_69
+                0x000001a6                __vector_81
+                0x000001a6                __vector_90
+                0x000001a6                __vector_46
+                0x000001a6                __bad_interrupt
+                0x000001a6                __vector_72
+                0x000001a6                __vector_6
+                0x000001a6                __vector_31
+                0x000001a6                __vector_35
+                0x000001a6                __vector_78
+                0x000001a6                __vector_74
+                0x000001a6                __vector_39
+                0x000001a6                __vector_3
+                0x000001a6                __vector_23
+                0x000001a6                __vector_68
+                0x000001a6                __vector_30
+                0x000001a6                __vector_73
+                0x000001a6                __vector_45
+                0x000001a6                __vector_25
+                0x000001a6                __vector_61
+                0x000001a6                __vector_11
+                0x000001a6                __vector_54
+                0x000001a6                __vector_13
+                0x000001a6                __vector_17
+                0x000001a6                __vector_19
+                0x000001a6                __vector_56
+                0x000001a6                __vector_7
+                0x000001a6                __vector_49
+                0x000001a6                __vector_41
+                0x000001a6                __vector_86
+                0x000001a6                __vector_64
+                0x000001a6                __vector_88
+                0x000001a6                __vector_43
+                0x000001a6                __vector_27
+                0x000001a6                __vector_5
+                0x000001a6                __vector_33
+                0x000001a6                __vector_76
+                0x000001a6                __vector_47
+                0x000001a6                __vector_52
+                0x000001a6                __vector_37
+                0x000001a6                __vector_89
+                0x000001a6                __vector_4
+                0x000001a6                __vector_44
+                0x000001a6                __vector_82
+                0x000001a6                __vector_51
+                0x000001a6                __vector_9
+                0x000001a6                __vector_2
+                0x000001a6                __vector_21
+                0x000001a6                __vector_15
+                0x000001a6                __vector_66
+                0x000001a6                __vector_36
+                0x000001a6                __vector_79
+                0x000001a6                __vector_58
+                0x000001a6                __vector_70
+                0x000001a6                __vector_83
+                0x000001a6                __vector_29
+                0x000001a6                __vector_60
+                0x000001a6                __vector_40
+                0x000001a6                __vector_85
+                0x000001a6                __vector_8
+                0x000001a6                __vector_26
+                0x000001a6                __vector_48
+                0x000001a6                __vector_80
+                0x000001a6                __vector_84
+                0x000001a6                __vector_57
+                0x000001a6                __vector_53
+                0x000001a6                __vector_10
+                0x000001a6                __vector_50
+                0x000001a6                __vector_59
+                0x000001a6                __vector_18
+                0x000001a6                __vector_20
+                0x000001a6                __vector_42
+                0x000001a6                __vector_87
+                0x000001a6                __vector_65
+ .text          0x000001aa       0x78 ADC/adc_battery.o
+                0x000001aa                adc_initialize
+                0x000001c6                adc_start_read
+                0x000001da                adc_has_data
+                0x000001e8                adc_get_data
+                0x000001f2                adc_read_cal_signature
+                0x00000204                adc_calibrate
+ .text          0x00000222       0x12 AirSSI.o
+                0x00000222                main
+ .text          0x00000234       0x54 DebugSerial/debug_serial.o
+                0x00000234                debug_serial_initialize
+                0x00000252                debug_serial_send_byte
+                0x0000026a                debug_serial_has_data
+                0x00000274                debug_serial_read_byte
+ .text          0x00000288       0x9a Encoder/rm_encoder.o
+                0x00000288                rm_encoder_hanlder
+                0x00000298                rm_encoder_initialize
+                0x000002b8                rm_encoder_read_blocking
+                0x000002e8                rm_encoder_power_on
+                0x000002f8                rm_encoder_power_off
+                0x00000306                rm_encoder_reset
+                0x0000031c                rm_encoder_get_power_state
+ .text          0x00000322      0x19e Encoder/SSI/ssi_rls.o
+                0x00000322                ssi_set_enc_handler
+                0x0000032c                ssi_start_read
+                0x0000036a                ssi_read_in_progress
+                0x00000376                ssi_set_rx_active
+                0x00000392                ssi_set_tx_active
+                0x000003ac                ssi_initialize
+                0x000003ec                __vector_14
+                0x00000474                __vector_16
+ .text          0x000004c0      0x3cc Radio/cc1101/cc1101.o
+                0x000004c0                cc1101_command_strobe
+                0x000004e2                cc1101_read_register
+                0x00000518                cc1101_get_channel
+                0x00000538                cc1101_get_address
+                0x00000558                cc1101_read_register_burst
+                0x000005ae                cc1101_write_register
+                0x000005dc                cc1101_set_channel
+                0x000005e6                cc1101_set_address
+                0x000005f0                cc1101_write_register_burst
+                0x00000644                cc1101_transmit_burst
+                0x0000065c                c1101_transmit_byte
+                0x0000068e                c1101_receive_byte
+                0x000006c0                cc1101_receive_burst
+                0x000006da                cc1101_get_status
+                0x000006f2                cc1101_calibrate
+                0x00000720                cc1101_initialize
+ .text          0x0000088c       0x4c Radio/cc1101/SPI/spi_master.o
+                0x0000088c                spi_master_initialize
+                0x000008a4                spi_master_transact
+                0x000008c0                spi_master_set_ncs
+ .text          0x000008d8       0x28 Util/clock_setup.o
+                0x000008d8                clock_initialize
+ .text          0x00000900        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a(_exit.o)
+ .text          0x00000900        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a(_copy_data.o)
+ .text          0x00000900        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a(_clear_bss.o)
+                0x00000900                . = ALIGN (0x2)
+ *(.text.*)
+ .text.libgcc   0x00000900        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a(_exit.o)
+ .text.libgcc   0x00000900        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000900        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a(_clear_bss.o)
+                0x00000900                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x00000900        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a(_exit.o)
+                0x00000900                _exit
+                0x00000900                exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x00000900        0x4 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a(_exit.o)
+ *(.fini0)
+                0x00000904                _etext = .
+
+.data           0x00802000        0x0 load address 0x00000904
+                0x00802000                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00802000        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avrxmega2/crtx16d4.o
+ .data          0x00802000        0x0 ADC/adc_battery.o
+ .data          0x00802000        0x0 AirSSI.o
+ .data          0x00802000        0x0 DebugSerial/debug_serial.o
+ .data          0x00802000        0x0 Encoder/rm_encoder.o
+ .data          0x00802000        0x0 Encoder/SSI/ssi_rls.o
+ .data          0x00802000        0x0 Radio/cc1101/cc1101.o
+ .data          0x00802000        0x0 Radio/cc1101/SPI/spi_master.o
+ .data          0x00802000        0x0 Util/clock_setup.o
+ .data          0x00802000        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a(_exit.o)
+ .data          0x00802000        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a(_copy_data.o)
+ .data          0x00802000        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a(_clear_bss.o)
+ *(.data*)
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x00802000                . = ALIGN (0x2)
+                0x00802000                _edata = .
+                0x00802000                PROVIDE (__data_end, .)
+
+.bss            0x00802000        0xc
+                0x00802000                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x00802000        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avrxmega2/crtx16d4.o
+ .bss           0x00802000        0x0 ADC/adc_battery.o
+ .bss           0x00802000        0x0 AirSSI.o
+ .bss           0x00802000        0x0 DebugSerial/debug_serial.o
+ .bss           0x00802000        0x0 Encoder/rm_encoder.o
+ .bss           0x00802000        0x0 Encoder/SSI/ssi_rls.o
+ .bss           0x00802000        0x0 Radio/cc1101/cc1101.o
+ .bss           0x00802000        0x0 Radio/cc1101/SPI/spi_master.o
+ .bss           0x00802000        0x0 Util/clock_setup.o
+ .bss           0x00802000        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a(_exit.o)
+ .bss           0x00802000        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a(_copy_data.o)
+ .bss           0x00802000        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a(_clear_bss.o)
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x00802000        0x4 Encoder/rm_encoder.o
+                0x00802000                encoder_power_state
+                0x00802001                encoder_value
+                0x00802003                encoder_value_valid_flag
+ COMMON         0x00802004        0x7 Encoder/SSI/ssi_rls.o
+                0x00802004                last_position_buffer
+                0x00802006                ssi_word_state
+                0x00802007                enc_value_handler_ptr
+                0x00802009                position_latch
+ COMMON         0x0080200b        0x1 Radio/cc1101/cc1101.o
+                0x0080200b                cc1101_status
+                0x0080200c                PROVIDE (__bss_end, .)
+                0x00000904                __data_load_start = LOADADDR (.data)
+                0x00000904                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x0080200c        0x0
+                0x0080200c                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x0080200c                PROVIDE (__noinit_end, .)
+                0x0080200c                _end = .
+                0x0080200c                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.stab           0x00000000      0x6cc
+ *(.stab)
+ .stab          0x00000000      0x6cc c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avrxmega2/crtx16d4.o
+
+.stabstr        0x00000000       0x85
+ *(.stabstr)
+ .stabstr       0x00000000       0x85 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avrxmega2/crtx16d4.o
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x160
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 ADC/adc_battery.o
+ .debug_aranges
+                0x00000020       0x20 AirSSI.o
+ .debug_aranges
+                0x00000040       0x20 DebugSerial/debug_serial.o
+ .debug_aranges
+                0x00000060       0x20 Encoder/rm_encoder.o
+ .debug_aranges
+                0x00000080       0x20 Encoder/SSI/ssi_rls.o
+ .debug_aranges
+                0x000000a0       0x20 Radio/cc1101/cc1101.o
+ .debug_aranges
+                0x000000c0       0x20 Radio/cc1101/SPI/spi_master.o
+ .debug_aranges
+                0x000000e0       0x20 Util/clock_setup.o
+ .debug_aranges
+                0x00000100       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a(_exit.o)
+ .debug_aranges
+                0x00000120       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a(_copy_data.o)
+ .debug_aranges
+                0x00000140       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a(_clear_bss.o)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x00000000     0x254b
+ *(.debug_info)
+ .debug_info    0x00000000      0x5e6 ADC/adc_battery.o
+ .debug_info    0x000005e6      0x119 AirSSI.o
+ .debug_info    0x000006ff      0x363 DebugSerial/debug_serial.o
+ .debug_info    0x00000a62      0x3b4 Encoder/rm_encoder.o
+ .debug_info    0x00000e16      0xa21 Encoder/SSI/ssi_rls.o
+ .debug_info    0x00001837      0x5d1 Radio/cc1101/cc1101.o
+ .debug_info    0x00001e08      0x2df Radio/cc1101/SPI/spi_master.o
+ .debug_info    0x000020e7      0x1be Util/clock_setup.o
+ .debug_info    0x000022a5       0xe2 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a(_exit.o)
+ .debug_info    0x00002387       0xe2 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a(_copy_data.o)
+ .debug_info    0x00002469       0xe2 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a(_clear_bss.o)
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x00000000      0xa13
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x17c ADC/adc_battery.o
+ .debug_abbrev  0x0000017c       0xcb AirSSI.o
+ .debug_abbrev  0x00000247      0x113 DebugSerial/debug_serial.o
+ .debug_abbrev  0x0000035a      0x182 Encoder/rm_encoder.o
+ .debug_abbrev  0x000004dc      0x172 Encoder/SSI/ssi_rls.o
+ .debug_abbrev  0x0000064e      0x1d5 Radio/cc1101/cc1101.o
+ .debug_abbrev  0x00000823       0xf1 Radio/cc1101/SPI/spi_master.o
+ .debug_abbrev  0x00000914       0xc3 Util/clock_setup.o
+ .debug_abbrev  0x000009d7       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a(_exit.o)
+ .debug_abbrev  0x000009eb       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a(_copy_data.o)
+ .debug_abbrev  0x000009ff       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a(_clear_bss.o)
+
+.debug_line     0x00000000      0xfcc
+ *(.debug_line)
+ .debug_line    0x00000000      0x192 ADC/adc_battery.o
+ .debug_line    0x00000192      0x17b AirSSI.o
+ .debug_line    0x0000030d      0x195 DebugSerial/debug_serial.o
+ .debug_line    0x000004a2      0x253 Encoder/rm_encoder.o
+ .debug_line    0x000006f5      0x1cf Encoder/SSI/ssi_rls.o
+ .debug_line    0x000008c4      0x24c Radio/cc1101/cc1101.o
+ .debug_line    0x00000b10      0x194 Radio/cc1101/SPI/spi_master.o
+ .debug_line    0x00000ca4      0x181 Util/clock_setup.o
+ .debug_line    0x00000e25       0x88 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a(_exit.o)
+ .debug_line    0x00000ead       0x91 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a(_copy_data.o)
+ .debug_line    0x00000f3e       0x8e c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avrxmega2\libgcc.a(_clear_bss.o)
+
+.debug_frame    0x00000000      0x494
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x80 ADC/adc_battery.o
+ .debug_frame   0x00000080       0x24 AirSSI.o
+ .debug_frame   0x000000a4       0x54 DebugSerial/debug_serial.o
+ .debug_frame   0x000000f8       0x84 Encoder/rm_encoder.o
+ .debug_frame   0x0000017c      0x104 Encoder/SSI/ssi_rls.o
+ .debug_frame   0x00000280      0x1ac Radio/cc1101/cc1101.o
+ .debug_frame   0x0000042c       0x44 Radio/cc1101/SPI/spi_master.o
+ .debug_frame   0x00000470       0x24 Util/clock_setup.o
+
+.debug_str      0x00000000     0x13af
+ *(.debug_str)
+ .debug_str     0x00000000      0x74a ADC/adc_battery.o
+                                0x799 (size before relaxing)
+ .debug_str     0x0000074a       0x66 AirSSI.o
+                                0x137 (size before relaxing)
+ .debug_str     0x000007b0      0x1ef DebugSerial/debug_serial.o
+                                0x316 (size before relaxing)
+ .debug_str     0x0000099f       0xf8 Encoder/rm_encoder.o
+                                0x2f6 (size before relaxing)
+ .debug_str     0x00000a97      0x4dd Encoder/SSI/ssi_rls.o
+                                0x750 (size before relaxing)
+ .debug_str     0x00000f74      0x1e0 Radio/cc1101/cc1101.o
+                                0x352 (size before relaxing)
+ .debug_str     0x00001154       0xf1 Radio/cc1101/SPI/spi_master.o
+                                0x2ae (size before relaxing)
+ .debug_str     0x00001245      0x16a Util/clock_setup.o
+                                0x246 (size before relaxing)
+
+.debug_loc      0x00000000      0x85b
+ *(.debug_loc)
+ .debug_loc     0x00000000       0x7f ADC/adc_battery.o
+ .debug_loc     0x0000007f       0x23 DebugSerial/debug_serial.o
+ .debug_loc     0x000000a2      0x181 Encoder/SSI/ssi_rls.o
+ .debug_loc     0x00000223      0x5fb Radio/cc1101/cc1101.o
+ .debug_loc     0x0000081e       0x3d Radio/cc1101/SPI/spi_master.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+OUTPUT(AirSSI.elf elf32-avr)
+LOAD linker stubs

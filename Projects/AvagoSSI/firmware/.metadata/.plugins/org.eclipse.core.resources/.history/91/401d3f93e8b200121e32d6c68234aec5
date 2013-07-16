@@ -1,0 +1,54 @@
+/*
+ * serial_link.h
+ *
+ *  Created on: May 1, 2013
+ *      Author: cody
+ */
+
+#ifndef STM32F1
+#define STM32F1
+#endif
+
+#ifndef SERIAL_LINK_H_
+#define SERIAL_LINK_H_
+
+#include <libopencm3/stm32/f1/gpio.h>
+#include <libopencm3/stm32/f1/rcc.h>
+#include <string.h>
+
+#define USART USART2
+#define SER_IOPORT GPIOA
+#define TXE_PIN GPIO0
+#define RXE_PIN GPIO1
+#define TXD_PIN GPIO2
+#define RXD_PIN GPIO3
+
+// ASCII Serial Commands
+#define CMD_REQ_POSITION "P"
+#define CMD_REQ_VELOCITY "V"
+#define CMD_REQ_STATUS "STATUS"
+#define CMD_ZERO "ZERO"
+#define CMD_RESET "RESET"
+#define CMD_LED_TOGGLE "L"
+
+// Response Length Table
+#define RESPONSE_LENGTH_P 3
+#define RESPONSE_LENGTH_V 3
+#define RESPONSE_LENGTH_STATUS 1
+#define RESPONSE_LENGTH_ZERO 1
+#define RESPONSE_LENGTH_RESET 1
+#define RESPONSE_LENGTH_LED_TOGGLE 1
+
+struct packet
+{
+	u8 * data;
+	u8 length;
+};
+
+typedef struct packet packet;
+
+void serial_initialize(u16 baud);
+void send_string (char * string);
+void send_byte(u8 byte);
+
+#endif /* SERIAL_LINK_H_ */

@@ -1,0 +1,88 @@
+/*
+ * ssi.c
+ *
+ *  Created on: May 1, 2013
+ *      Author: cody
+ */
+
+
+#include "ssi.h"
+
+volatile u32 ssi_buffer;
+volatile u8 ssi_counter;
+volatile u8 ssi_state;
+
+void ssi_initialize(u16 clk_speed)
+{
+	// Initialize I/O Pins
+	rcc_peripheral_enable_clock(&RCC_APB2ENR, RCC_APB2ENR_IOPAEN);
+	gpio_set_mode(SSI_GPIO, GPIO_MODE_OUTPUT_10_MHZ, GPIO_CNF_OUTPUT_PUSHPULL, SSI_CLK_PIN);
+	gpio_set_mode(SSI_GPIO, GPIO_MODE_INPUT, GPIO_CNF_INPUT_PULL_UPDOWN, SSI_DATA_PIN);
+	gpio_set_mode(SSI_GPIO, GPIO_MODE_OUTPUT_10_MHZ, GPIO_CNF_OUTPUT_PUSHPULL, SSI_NCS_PIN);
+	// Initialize clock timer on TIM1
+	TIM__DIER(SSI_TIMER) = TIM_DIER_UIE;
+	TIM_PSC(SSI_TIMER) = 1; // 24MHz Clock
+	TIM_ARR(SSI_TIMER) = TIMER_MAX; // Update at 500kHz
+	// Initialize NVIC
+	nvic_enable_irq(NVIC_TIM2_IRQ);
+	nvic_set_priority(NVIC_TIM2_IRQ, 1);
+	ssi_state = SSI_IDLE;
+}
+
+void ssi_start_read(u8 nbits)
+{
+	ssi_counter = nbits;
+	ssi_state = SSI_START;
+	TIM_CR1(SSI_TIMER) |= TIM_CR1_CEN;// Start counter
+}
+
+void tim2_isr(void)
+{
+	switch(ssi_state)
+	{
+	case(SSI_START):
+	{
+		gpio_clear(SSI_GPIO, SSI_CLK_PIN)// Set the clock low
+		ssi_state = SSI_CLK_LOW; // Change SSI state
+		break;
+	}
+	case(SSI_CLK_HIGH):
+	{
+		gpio_clear(SSI_GPIO, SSI_CLK_PIN);// Set clock low
+		u8 input_bit = GPIO_IDR(SSI_GPIO) & SSI_DATA_PIN;// Read bit on pin 10
+		ssi_bit_handler(input_bit); // Call bit handler
+		ssi_state = SSI_CLK_LOW;
+		break;
+	}
+	case(SSI_CLK_LOW):
+	{
+		// Set clock high
+		gpio_set(SSI_GPIO, SSI_CLK_PIN);
+		if(ssi_counter == 0)
+		{
+			ssi_state = SSI_IDLE;
+			TIM_CR1(SSI_TIMER) &= ~TIM_CR1_CEN; // Turn off timer
+		}
+		else
+			ssi_state = SSI_CLK_HIGH;
+		break;
+	}
+	case(SSI_IDLE);
+	default:
+		break;
+	}
+}
+
+void ssi_bit_handler(u8 bit)
+{
+	ssi_counter--; // Decrement bit Counter
+	ssi_buffer = ssi_buffer << 1; // Shift
+	if(bit == 1)
+	{
+		ssi_buffer |= 1; // Add 1 to LSB
+	}
+	// Set Timer
+	TIM_CNT(SSI_TIMER) = 0;
+	TIM_CR1(SSI_TIMER) |= TIM_CR1_CEN;
+}
+

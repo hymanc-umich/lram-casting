@@ -1,0 +1,18 @@
+!SESSION 2013-05-01 18:33:14.094 -----------------------------------------------
+eclipse.buildId=I20110613-1736
+java.version=1.6.0_24
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -data /home/cody/Dropbox/HattonElectronics/Projects/AvagoSSI/firmware -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-05-01 18:36:22.478
+!MESSAGE Indexed 'AvagoSSI' (0 sources, 21 headers) in 0.65 sec: 138 declarations; 309 references; 3 unresolved inclusions; 0 syntax errors; 1 unresolved names (0.22%)
+!SESSION 2013-05-01 19:13:51.310 -----------------------------------------------
+eclipse.buildId=I20110613-1736
+java.version=1.6.0_24
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2013-05-01 19:45:26.749
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.

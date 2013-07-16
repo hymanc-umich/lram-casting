@@ -1,0 +1,19 @@
+/*
+ * aeat9000.h
+ *
+ *  Created on: May 1, 2013
+ *      Author: cody
+ */
+
+#ifndef STM32F1
+#define STM32F1
+#endif
+
+#ifndef AEAT9000_H_
+#define AEAT9000_H_
+
+#include <libopencm3/stm32/f1/gpio.h>
+#include <libopencm3/stm32/f1/nvic.h>
+
+
+#endif /* AEAT9000_H_ */

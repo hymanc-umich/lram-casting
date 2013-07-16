@@ -1,0 +1,17 @@
+/*
+ * avagossi.h
+ *
+ *  Created on: May 1, 2013
+ *      Author: cody
+ */
+
+#ifndef STM32F1
+#define STM32F1
+#endif
+
+#ifndef AVAGOSSI_H_
+#define AVAGOSSI_H_
+
+
+
+#endif /* AVAGOSSI_H_ */

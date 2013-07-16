@@ -1,0 +1,12 @@
+
+**** Build of configuration Debug for project AvagoSSI ****
+
+make all 
+Invoking: ARM Summon Linux GNU Print Size
+arm-none-eabi-size  --format=berkeley AvagoSSI.elf
+   text	   data	    bss	    dec	    hex	filename
+   5064	      8	     16	   5088	   13e0	AvagoSSI.elf
+Finished building: AvagoSSI.siz
+ 
+
+**** Build Finished ****

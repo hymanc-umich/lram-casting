@@ -1,0 +1,76 @@
+/*
+ * aeat9000.c
+ *
+ *  Created on: May 1, 2013
+ *      Author: cody
+ */
+
+
+#include "aeat9000.h"
+
+volatile bool msb_inv_flag;
+
+void aeat9k_initialize(void)
+{
+	msb_inv_flag = false;
+	gpio_clear(MSBINV_PORT, MSBINV_PIN);
+	ssi_initialize(0);
+}
+
+u32 aeat9k_read_blocking(void)
+{
+	ssi_start_read(17); // Read 17 bits for AEAT-9000
+	while(!ssi_data_ready())
+	{
+		__asm__("NOP");
+	}
+	return ssi_read_data_buffer();
+
+}
+
+void aeat9k_read_buffer(encoder_value_t * buf)
+{
+	ssi_start_read(17);
+	ssi_set_ext_buffer(buf);
+}
+
+void aeat9k_zero(void)
+{
+	// Pulse zero
+}
+
+void aeat9k_reset(void)
+{
+	// Pulse Reset
+}
+
+bool aeat9k_get_msb_inv()
+{
+	return msb_inv_flag;
+}
+void aeat9k_set_msb_inv(bool inv_state)
+{
+	msb_inv_flag = inv_state;
+	if(inv_state)
+		gpio_set(MSBINV_PORT, MSBINV_PIN);
+	else
+		gpio_clear(MSBINV_PORT, MSBINV_PIN);
+
+}
+
+u8 aeat9k_error(void)
+{
+	if(GPIO_IDR(ENCERR_PORT) & ENCERR_PIN)
+		return 1;
+	else
+		return 0;
+}
+
+u8 aeat9k_loctest(void)
+{
+	if(GPIO_IDR(LOCTEST_PORT) & LOCTEST_PIN)
+		return 1;
+	else
+		return 0;
+}
+

@@ -1,0 +1,1734 @@
+
+AirSSI.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000904  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .bss          0000000c  00802000  00802000  00000978  2**0
+                  ALLOC
+  2 .stab         000006cc  00000000  00000000  00000978  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      00000085  00000000  00000000  00001044  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_aranges 00000160  00000000  00000000  000010d0  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   0000254b  00000000  00000000  00001230  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000a13  00000000  00000000  0000377b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000fcc  00000000  00000000  0000418e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000494  00000000  00000000  0000515c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000013af  00000000  00000000  000055f0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    0000085b  00000000  00000000  0000699f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 b6 00 	jmp	0x16c	; 0x16c <__ctors_end>
+   4:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+   8:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+   c:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  10:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  14:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  18:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  1c:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  20:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  24:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  28:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  2c:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  30:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  34:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  38:	0c 94 f6 01 	jmp	0x3ec	; 0x3ec <__vector_14>
+  3c:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  40:	0c 94 3a 02 	jmp	0x474	; 0x474 <__vector_16>
+  44:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  48:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  4c:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  50:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  54:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  58:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  5c:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  60:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  64:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  68:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  6c:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  70:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  74:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  78:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  7c:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  80:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  84:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  88:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  8c:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  90:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  94:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  98:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  9c:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  a0:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  a4:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  a8:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  ac:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  b0:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  b4:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  b8:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  bc:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  c0:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  c4:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  c8:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  cc:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  d0:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  d4:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  d8:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  dc:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  e0:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  e4:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  e8:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  ec:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  f0:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  f4:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  f8:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+  fc:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+ 100:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+ 104:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+ 108:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+ 10c:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+ 110:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+ 114:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+ 118:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+ 11c:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+ 120:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+ 124:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+ 128:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+ 12c:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+ 130:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+ 134:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+ 138:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+ 13c:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+ 140:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+ 144:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+ 148:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+ 14c:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+ 150:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+ 154:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+ 158:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+ 15c:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+ 160:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+ 164:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+ 168:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__bad_interrupt>
+
+0000016c <__ctors_end>:
+ 16c:	11 24       	eor	r1, r1
+ 16e:	1f be       	out	0x3f, r1	; 63
+ 170:	cf ef       	ldi	r28, 0xFF	; 255
+ 172:	d7 e2       	ldi	r29, 0x27	; 39
+ 174:	de bf       	out	0x3e, r29	; 62
+ 176:	cd bf       	out	0x3d, r28	; 61
+
+00000178 <__do_copy_data>:
+ 178:	10 e2       	ldi	r17, 0x20	; 32
+ 17a:	a0 e0       	ldi	r26, 0x00	; 0
+ 17c:	b0 e2       	ldi	r27, 0x20	; 32
+ 17e:	e4 e0       	ldi	r30, 0x04	; 4
+ 180:	f9 e0       	ldi	r31, 0x09	; 9
+ 182:	02 c0       	rjmp	.+4      	; 0x188 <__do_copy_data+0x10>
+ 184:	05 90       	lpm	r0, Z+
+ 186:	0d 92       	st	X+, r0
+ 188:	a0 30       	cpi	r26, 0x00	; 0
+ 18a:	b1 07       	cpc	r27, r17
+ 18c:	d9 f7       	brne	.-10     	; 0x184 <__do_copy_data+0xc>
+
+0000018e <__do_clear_bss>:
+ 18e:	10 e2       	ldi	r17, 0x20	; 32
+ 190:	a0 e0       	ldi	r26, 0x00	; 0
+ 192:	b0 e2       	ldi	r27, 0x20	; 32
+ 194:	01 c0       	rjmp	.+2      	; 0x198 <.do_clear_bss_start>
+
+00000196 <.do_clear_bss_loop>:
+ 196:	1d 92       	st	X+, r1
+
+00000198 <.do_clear_bss_start>:
+ 198:	ac 30       	cpi	r26, 0x0C	; 12
+ 19a:	b1 07       	cpc	r27, r17
+ 19c:	e1 f7       	brne	.-8      	; 0x196 <.do_clear_bss_loop>
+ 19e:	0e 94 11 01 	call	0x222	; 0x222 <main>
+ 1a2:	0c 94 80 04 	jmp	0x900	; 0x900 <_exit>
+
+000001a6 <__bad_interrupt>:
+ 1a6:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000001aa <adc_initialize>:
+ *
+ *
+ */
+void adc_initialize(void)
+{ 
+	BATTERY_ADC.REFCTRL = ADC_REFSEL_VCC_gc;
+ 1aa:	e0 e0       	ldi	r30, 0x00	; 0
+ 1ac:	f2 e0       	ldi	r31, 0x02	; 2
+ 1ae:	80 e1       	ldi	r24, 0x10	; 16
+ 1b0:	82 83       	std	Z+2, r24	; 0x02
+	BATTERY_ADC.PRESCALER = ADC_PRESCALER_DIV8_gc;
+ 1b2:	81 e0       	ldi	r24, 0x01	; 1
+ 1b4:	84 83       	std	Z+4, r24	; 0x04
+	//BATTERY_ADC.SAMPCTRL = 7;
+	BATTERY_ADC.CAL = 0; // GET SIG BYTE
+ 1b6:	14 86       	std	Z+12, r1	; 0x0c
+ 1b8:	15 86       	std	Z+13, r1	; 0x0d
+	BATTERY_ADC.CTRLA |= ADC_ENABLE_bm;
+ 1ba:	80 81       	ld	r24, Z
+ 1bc:	81 60       	ori	r24, 0x01	; 1
+ 1be:	80 83       	st	Z, r24
+	adc_calibrate();
+ 1c0:	0e 94 02 01 	call	0x204	; 0x204 <adc_calibrate>
+}
+ 1c4:	08 95       	ret
+
+000001c6 <adc_start_read>:
+ *
+ *
+ */
+void adc_start_read(uint8_t adc_addr)
+{
+	BATTERY_ADC.CH0.MUXCTRL = adc_addr << 3;
+ 1c6:	88 0f       	add	r24, r24
+ 1c8:	88 0f       	add	r24, r24
+ 1ca:	88 0f       	add	r24, r24
+ 1cc:	e0 e0       	ldi	r30, 0x00	; 0
+ 1ce:	f2 e0       	ldi	r31, 0x02	; 2
+ 1d0:	81 a3       	lds	r24, 0x51
+	BATTERY_ADC.CH0.CTRL |= ADC_CH0START_bm;
+ 1d2:	80 a1       	lds	r24, 0x40
+ 1d4:	84 60       	ori	r24, 0x04	; 4
+ 1d6:	80 a3       	lds	r24, 0x50
+}
+ 1d8:	08 95       	ret
+
+000001da <adc_has_data>:
+ *
+ *
+ */
+uint8_t adc_has_data(void)
+{
+	if(BATTERY_ADC.CH0.INTFLAGS & ADC_CH0IF_bm)
+ 1da:	e0 e0       	ldi	r30, 0x00	; 0
+ 1dc:	f2 e0       	ldi	r31, 0x02	; 2
+ 1de:	93 a1       	lds	r25, 0x43
+	{
+		return 1;
+ 1e0:	81 e0       	ldi	r24, 0x01	; 1
+ 1e2:	90 ff       	sbrs	r25, 0
+ 1e4:	80 e0       	ldi	r24, 0x00	; 0
+	}
+	return 0;
+}
+ 1e6:	08 95       	ret
+
+000001e8 <adc_get_data>:
+ */
+uint16_t adc_get_data(void)
+{
+	if(adc_has_data)
+	{
+		return BATTERY_ADC.CH0RES;
+ 1e8:	e0 e0       	ldi	r30, 0x00	; 0
+ 1ea:	f2 e0       	ldi	r31, 0x02	; 2
+ 1ec:	80 89       	ldd	r24, Z+16	; 0x10
+ 1ee:	91 89       	ldd	r25, Z+17	; 0x11
+	}
+	else return 0xFFFF; // Error value
+}
+ 1f0:	08 95       	ret
+
+000001f2 <adc_read_cal_signature>:
+ *
+ */
+uint8_t adc_read_cal_signature(uint8_t index)
+{
+	uint8_t ret_val;
+	NVM_CMD = NVM_CMD_READ_CALIB_ROW_gc;
+ 1f2:	aa ec       	ldi	r26, 0xCA	; 202
+ 1f4:	b1 e0       	ldi	r27, 0x01	; 1
+ 1f6:	92 e0       	ldi	r25, 0x02	; 2
+ 1f8:	9c 93       	st	X, r25
+	ret_val = pgm_read_byte(index);
+ 1fa:	e8 2f       	mov	r30, r24
+ 1fc:	f0 e0       	ldi	r31, 0x00	; 0
+ 1fe:	84 91       	lpm	r24, Z
+	NVM_CMD = NVM_CMD_NO_OPERATION_gc;
+ 200:	1c 92       	st	X, r1
+	return ret_val;
+}
+ 202:	08 95       	ret
+
+00000204 <adc_calibrate>:
+/*
+ *
+ *
+ */
+void adc_calibrate(void)
+{
+ 204:	cf 93       	push	r28
+ 206:	df 93       	push	r29
+	BATTERY_ADC.CALL = adc_read_cal_signature( offsetof(NVM_PROD_SIGNATURES_t, ADCACAL0));
+ 208:	80 e2       	ldi	r24, 0x20	; 32
+ 20a:	0e 94 f9 00 	call	0x1f2	; 0x1f2 <adc_read_cal_signature>
+ 20e:	c0 e0       	ldi	r28, 0x00	; 0
+ 210:	d2 e0       	ldi	r29, 0x02	; 2
+ 212:	8c 87       	std	Y+12, r24	; 0x0c
+	BATTERY_ADC.CALH = adc_read_cal_signature( offsetof(NVM_PROD_SIGNATURES_t, ADCACAL1));
+ 214:	81 e2       	ldi	r24, 0x21	; 33
+ 216:	0e 94 f9 00 	call	0x1f2	; 0x1f2 <adc_read_cal_signature>
+ 21a:	8d 87       	std	Y+13, r24	; 0x0d
+ 21c:	df 91       	pop	r29
+ 21e:	cf 91       	pop	r28
+ 220:	08 95       	ret
+
+00000222 <main>:
+
+int main(void)
+{
+    //clock_initialize();
+	//rm_encoder_initialize();
+	cc1101_initialize();
+ 222:	0e 94 90 03 	call	0x720	; 0x720 <cc1101_initialize>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 226:	8f e0       	ldi	r24, 0x0F	; 15
+ 228:	97 e2       	ldi	r25, 0x27	; 39
+ 22a:	01 97       	sbiw	r24, 0x01	; 1
+ 22c:	f1 f7       	brne	.-4      	; 0x22a <main+0x8>
+ 22e:	00 c0       	rjmp	.+0      	; 0x230 <main+0xe>
+ 230:	00 00       	nop
+ 232:	f9 cf       	rjmp	.-14     	; 0x226 <main+0x4>
+
+00000234 <debug_serial_initialize>:
+
+#include "debug_serial.h"
+
+void debug_serial_initialize(void)
+{
+	PORTD.DIRSET = (1<<3);
+ 234:	88 e0       	ldi	r24, 0x08	; 8
+ 236:	e0 e6       	ldi	r30, 0x60	; 96
+ 238:	f6 e0       	ldi	r31, 0x06	; 6
+ 23a:	81 83       	std	Z+1, r24	; 0x01
+	//115200 baud BSEL = -7, BSCALE = 0x1001
+	uint16_t bsel = 0x1001;
+	int8_t bscale = ((~7)+1) & 0x0F; // Two's compliment
+	USARTD0.BAUDCTRLA = (uint8_t) (bsel & 0xFF);
+ 23c:	e0 ea       	ldi	r30, 0xA0	; 160
+ 23e:	f9 e0       	ldi	r31, 0x09	; 9
+ 240:	81 e0       	ldi	r24, 0x01	; 1
+ 242:	86 83       	std	Z+6, r24	; 0x06
+	USARTD0.BAUDCTRLB = (uint8_t) ((bscale << 4) | ((bsel & 0x0F00) >> 8));
+ 244:	80 e9       	ldi	r24, 0x90	; 144
+ 246:	87 83       	std	Z+7, r24	; 0x07
+	USARTD0.CTRLB = USART_RXEN_bm | USART_TXEN_bm;
+ 248:	88 e1       	ldi	r24, 0x18	; 24
+ 24a:	84 83       	std	Z+4, r24	; 0x04
+	USARTD0.CTRLC = USART_CHSIZE_8BIT_gc;
+ 24c:	83 e0       	ldi	r24, 0x03	; 3
+ 24e:	85 83       	std	Z+5, r24	; 0x05
+}
+ 250:	08 95       	ret
+
+00000252 <debug_serial_send_byte>:
+
+void debug_serial_send_byte(uint8_t byte)
+{
+	while(!(USARTD0.STATUS & USART_TXCIF_bm))
+ 252:	e0 ea       	ldi	r30, 0xA0	; 160
+ 254:	f9 e0       	ldi	r31, 0x09	; 9
+ 256:	91 81       	ldd	r25, Z+1	; 0x01
+ 258:	96 fd       	sbrc	r25, 6
+ 25a:	04 c0       	rjmp	.+8      	; 0x264 <debug_serial_send_byte+0x12>
+	{
+		__asm__("NOP");
+ 25c:	00 00       	nop
+	USARTD0.CTRLC = USART_CHSIZE_8BIT_gc;
+}
+
+void debug_serial_send_byte(uint8_t byte)
+{
+	while(!(USARTD0.STATUS & USART_TXCIF_bm))
+ 25e:	91 81       	ldd	r25, Z+1	; 0x01
+ 260:	96 ff       	sbrs	r25, 6
+ 262:	fc cf       	rjmp	.-8      	; 0x25c <debug_serial_send_byte+0xa>
+	{
+		__asm__("NOP");
+	}
+	USARTD0.DATA = byte;
+ 264:	80 93 a0 09 	sts	0x09A0, r24
+}
+ 268:	08 95       	ret
+
+0000026a <debug_serial_has_data>:
+
+uint8_t debug_serial_has_data(void)
+{
+	uint8_t has_data = USARTD0.STATUS & USART_RXCIF_bm;
+ 26a:	e0 ea       	ldi	r30, 0xA0	; 160
+ 26c:	f9 e0       	ldi	r31, 0x09	; 9
+ 26e:	81 81       	ldd	r24, Z+1	; 0x01
+	return has_data;
+}
+ 270:	80 78       	andi	r24, 0x80	; 128
+ 272:	08 95       	ret
+
+00000274 <debug_serial_read_byte>:
+
+uint8_t debug_serial_read_byte(void)
+{
+	if(!(USARTD0.STATUS & USART_RXCIF_bm))
+ 274:	e0 ea       	ldi	r30, 0xA0	; 160
+ 276:	f9 e0       	ldi	r31, 0x09	; 9
+ 278:	81 81       	ldd	r24, Z+1	; 0x01
+ 27a:	88 23       	and	r24, r24
+ 27c:	1c f4       	brge	.+6      	; 0x284 <debug_serial_read_byte+0x10>
+	{
+		return 0xFF;
+	}
+	else
+		return USARTD0.DATA;
+ 27e:	80 91 a0 09 	lds	r24, 0x09A0
+ 282:	08 95       	ret
+
+uint8_t debug_serial_read_byte(void)
+{
+	if(!(USARTD0.STATUS & USART_RXCIF_bm))
+	{
+		return 0xFF;
+ 284:	8f ef       	ldi	r24, 0xFF	; 255
+	}
+	else
+		return USARTD0.DATA;
+ 286:	08 95       	ret
+
+00000288 <rm_encoder_hanlder>:
+/* 
+ * @brief Asynchronous high-level handler for SSI encoder data storage
+ */
+uint16_t rm_encoder_hanlder(uint16_t readout_value)
+{
+	encoder_value = readout_value;
+ 288:	80 93 01 20 	sts	0x2001, r24
+ 28c:	90 93 02 20 	sts	0x2002, r25
+	encoder_value_valid_flag = TRUE;
+ 290:	21 e0       	ldi	r18, 0x01	; 1
+ 292:	20 93 03 20 	sts	0x2003, r18
+	return readout_value;
+ 296:	08 95       	ret
+
+00000298 <rm_encoder_initialize>:
+ * @brief Initializes the encoder SSI and powers it off
+ */
+void rm_encoder_initialize(void)
+{
+	// Initialize Encoder Power Switch to Off (0 out)
+	ENC_EN_PORT.OUTCLR = ENC_EN_bm;
+ 298:	e0 e4       	ldi	r30, 0x40	; 64
+ 29a:	f6 e0       	ldi	r31, 0x06	; 6
+ 29c:	80 e2       	ldi	r24, 0x20	; 32
+ 29e:	86 83       	std	Z+6, r24	; 0x06
+	ENC_EN_PORT.DIRSET = ENC_EN_bm;
+ 2a0:	81 83       	std	Z+1, r24	; 0x01
+	encoder_power_state = ENCODER_OFF;
+ 2a2:	10 92 00 20 	sts	0x2000, r1
+	
+	encoder_value_valid_flag = FALSE;	// Set default encoder value valid flag to false
+ 2a6:	10 92 03 20 	sts	0x2003, r1
+	
+	// Initialize SSI Driver
+	ssi_initialize();
+ 2aa:	0e 94 d6 01 	call	0x3ac	; 0x3ac <ssi_initialize>
+	ssi_set_enc_handler(&rm_encoder_hanlder);
+ 2ae:	84 e4       	ldi	r24, 0x44	; 68
+ 2b0:	91 e0       	ldi	r25, 0x01	; 1
+ 2b2:	0e 94 91 01 	call	0x322	; 0x322 <ssi_set_enc_handler>
+}
+ 2b6:	08 95       	ret
+
+000002b8 <rm_encoder_read_blocking>:
+/* 
+ * @brief Requests and returns the encoder position in a blocking fashion 
+ */
+uint16_t rm_encoder_read_blocking(void)
+{
+	if(encoder_power_state == ENCODER_ON)
+ 2b8:	80 91 00 20 	lds	r24, 0x2000
+ 2bc:	81 30       	cpi	r24, 0x01	; 1
+ 2be:	89 f4       	brne	.+34     	; 0x2e2 <rm_encoder_read_blocking+0x2a>
+ 2c0:	01 c0       	rjmp	.+2      	; 0x2c4 <rm_encoder_read_blocking+0xc>
+	{
+		// Wait for previous read to finish
+		while(ssi_read_in_progress())
+		{
+			__asm__("NOP"); // NOP to prevent optimization
+ 2c2:	00 00       	nop
+uint16_t rm_encoder_read_blocking(void)
+{
+	if(encoder_power_state == ENCODER_ON)
+	{
+		// Wait for previous read to finish
+		while(ssi_read_in_progress())
+ 2c4:	0e 94 b5 01 	call	0x36a	; 0x36a <ssi_read_in_progress>
+ 2c8:	88 23       	and	r24, r24
+ 2ca:	d9 f7       	brne	.-10     	; 0x2c2 <rm_encoder_read_blocking+0xa>
+		{
+			__asm__("NOP"); // NOP to prevent optimization
+		}
+		if(ssi_start_read()) // Check for successful read start
+ 2cc:	0e 94 96 01 	call	0x32c	; 0x32c <ssi_start_read>
+ 2d0:	88 23       	and	r24, r24
+ 2d2:	11 f4       	brne	.+4      	; 0x2d8 <rm_encoder_read_blocking+0x20>
+ 2d4:	06 c0       	rjmp	.+12     	; 0x2e2 <rm_encoder_read_blocking+0x2a>
+		{
+			while(ssi_read_in_progress())
+			{
+				__asm__("NOP");
+ 2d6:	00 00       	nop
+		{
+			__asm__("NOP"); // NOP to prevent optimization
+		}
+		if(ssi_start_read()) // Check for successful read start
+		{
+			while(ssi_read_in_progress())
+ 2d8:	0e 94 b5 01 	call	0x36a	; 0x36a <ssi_read_in_progress>
+ 2dc:	88 23       	and	r24, r24
+ 2de:	d9 f7       	brne	.-10     	; 0x2d6 <rm_encoder_read_blocking+0x1e>
+ 2e0:	08 95       	ret
+		else
+			return 0xFFFF;
+	}
+	else
+		return 0xFFFF; // Return ERROR
+}
+ 2e2:	8f ef       	ldi	r24, 0xFF	; 255
+ 2e4:	9f ef       	ldi	r25, 0xFF	; 255
+ 2e6:	08 95       	ret
+
+000002e8 <rm_encoder_power_on>:
+/* 
+ * @brief Turns on the encoder power 
+ */
+void rm_encoder_power_on(void)
+{
+	ENC_EN_PORT.OUTSET = ENC_EN_bm;
+ 2e8:	80 e2       	ldi	r24, 0x20	; 32
+ 2ea:	e0 e4       	ldi	r30, 0x40	; 64
+ 2ec:	f6 e0       	ldi	r31, 0x06	; 6
+ 2ee:	85 83       	std	Z+5, r24	; 0x05
+	encoder_power_state = ENCODER_ON;
+ 2f0:	81 e0       	ldi	r24, 0x01	; 1
+ 2f2:	80 93 00 20 	sts	0x2000, r24
+}
+ 2f6:	08 95       	ret
+
+000002f8 <rm_encoder_power_off>:
+/* 
+ * @brief Turns off the encoder power 
+ */
+void rm_encoder_power_off(void)
+{
+	ENC_EN_PORT.OUTCLR = ENC_EN_bm;
+ 2f8:	80 e2       	ldi	r24, 0x20	; 32
+ 2fa:	e0 e4       	ldi	r30, 0x40	; 64
+ 2fc:	f6 e0       	ldi	r31, 0x06	; 6
+ 2fe:	86 83       	std	Z+6, r24	; 0x06
+	encoder_power_state = ENCODER_OFF;
+ 300:	10 92 00 20 	sts	0x2000, r1
+}
+ 304:	08 95       	ret
+
+00000306 <rm_encoder_reset>:
+/* 
+ * @brief Resets the encoder via a power cycle with a ~100ms delay
+ */
+void rm_encoder_reset(void)
+{
+	rm_encoder_power_off();
+ 306:	0e 94 7c 01 	call	0x2f8	; 0x2f8 <rm_encoder_power_off>
+ 30a:	87 ea       	ldi	r24, 0xA7	; 167
+ 30c:	91 e6       	ldi	r25, 0x61	; 97
+ 30e:	01 97       	sbiw	r24, 0x01	; 1
+ 310:	f1 f7       	brne	.-4      	; 0x30e <rm_encoder_reset+0x8>
+ 312:	00 c0       	rjmp	.+0      	; 0x314 <rm_encoder_reset+0xe>
+ 314:	00 00       	nop
+	_delay_ms(ENCODER_RESET_DELAY);
+	rm_encoder_power_on();
+ 316:	0e 94 74 01 	call	0x2e8	; 0x2e8 <rm_encoder_power_on>
+}
+ 31a:	08 95       	ret
+
+0000031c <rm_encoder_get_power_state>:
+/* 
+ * @brief Returns the power state (on/off) of the encoder 
+ */
+uint8_t rm_encoder_get_power_state(void)
+{
+	return encoder_power_state;
+ 31c:	80 91 00 20 	lds	r24, 0x2000
+}
+ 320:	08 95       	ret
+
+00000322 <ssi_set_enc_handler>:
+}
+
+/* @brief Connects a callback function to the SSI module */
+void ssi_set_enc_handler(uint16_t (*enc_value_handler)(uint16_t enc_val))
+{
+	enc_value_handler_ptr = enc_value_handler;
+ 322:	80 93 07 20 	sts	0x2007, r24
+ 326:	90 93 08 20 	sts	0x2008, r25
+}
+ 32a:	08 95       	ret
+
+0000032c <ssi_start_read>:
+
+/* @brief Starts an SSI read*/
+bool ssi_start_read(void)
+{
+	// Check for data low to indicate unfinished read
+	if(ssi_word_state == 0 && (SSI_PORT.IN & SSI_DATA_PIN_bm))
+ 32c:	80 91 06 20 	lds	r24, 0x2006
+ 330:	88 23       	and	r24, r24
+ 332:	b9 f4       	brne	.+46     	; 0x362 <ssi_start_read+0x36>
+ 334:	e0 e4       	ldi	r30, 0x40	; 64
+ 336:	f6 e0       	ldi	r31, 0x06	; 6
+ 338:	80 85       	ldd	r24, Z+8	; 0x08
+ 33a:	82 ff       	sbrs	r24, 2
+ 33c:	14 c0       	rjmp	.+40     	; 0x366 <ssi_start_read+0x3a>
+	{
+		// Reset timer business
+		SSI_TIMER.INTCTRLA = TC_OVFINTLVL_HI_gc;
+ 33e:	e0 e0       	ldi	r30, 0x00	; 0
+ 340:	f8 e0       	ldi	r31, 0x08	; 8
+ 342:	83 e0       	ldi	r24, 0x03	; 3
+ 344:	86 83       	std	Z+6, r24	; 0x06
+		SSI_TIMER.INTCTRLB = TC_CCAINTLVL_HI_gc;
+ 346:	87 83       	std	Z+7, r24	; 0x07
+		// Force timer reset
+		SSI_PORT.OUTCLR = SSI_CLK_PIN_bm; // Set clock low
+ 348:	82 e0       	ldi	r24, 0x02	; 2
+ 34a:	a0 e4       	ldi	r26, 0x40	; 64
+ 34c:	b6 e0       	ldi	r27, 0x06	; 6
+ 34e:	16 96       	adiw	r26, 0x06	; 6
+ 350:	8c 93       	st	X, r24
+ 352:	16 97       	sbiw	r26, 0x06	; 6
+		SSI_TIMER.CTRLA |= TC_CLKSEL_DIV1_gc; // Start timer
+ 354:	80 81       	ld	r24, Z
+ 356:	81 60       	ori	r24, 0x01	; 1
+ 358:	80 83       	st	Z, r24
+		ssi_word_state = 1;
+ 35a:	81 e0       	ldi	r24, 0x01	; 1
+ 35c:	80 93 06 20 	sts	0x2006, r24
+		// Return a positive start
+		return TRUE;
+ 360:	08 95       	ret
+	}
+	return FALSE; // Return a false start
+ 362:	80 e0       	ldi	r24, 0x00	; 0
+ 364:	08 95       	ret
+ 366:	80 e0       	ldi	r24, 0x00	; 0
+}
+ 368:	08 95       	ret
+
+0000036a <ssi_read_in_progress>:
+
+/* @brief Returns true if an SSI read is currently in progress */
+bool ssi_read_in_progress(void)
+{
+	if(ssi_word_state == 0)
+ 36a:	90 91 06 20 	lds	r25, 0x2006
+		return TRUE;
+ 36e:	81 e0       	ldi	r24, 0x01	; 1
+ 370:	91 11       	cpse	r25, r1
+ 372:	80 e0       	ldi	r24, 0x00	; 0
+	return FALSE;
+}
+ 374:	08 95       	ret
+
+00000376 <ssi_set_rx_active>:
+
+/* @brief Swtiches the differential receiver on and off */
+void ssi_set_rx_active(uint8_t ssi_rx_state)
+{
+	if(ssi_rx_state == SSI_RX_ACTIVE)
+ 376:	81 30       	cpi	r24, 0x01	; 1
+ 378:	29 f4       	brne	.+10     	; 0x384 <ssi_set_rx_active+0xe>
+		SSI_NRXEN_PORT.OUTCLR = SSI_NRXEN_PIN_bm;
+ 37a:	80 e1       	ldi	r24, 0x10	; 16
+ 37c:	e0 e4       	ldi	r30, 0x40	; 64
+ 37e:	f6 e0       	ldi	r31, 0x06	; 6
+ 380:	86 83       	std	Z+6, r24	; 0x06
+ 382:	08 95       	ret
+	else if(ssi_rx_state == SSI_RX_INACTIVE)
+ 384:	88 23       	and	r24, r24
+ 386:	21 f4       	brne	.+8      	; 0x390 <ssi_set_rx_active+0x1a>
+		SSI_NRXEN_PORT.OUTSET = SSI_NRXEN_PIN_bm;
+ 388:	80 e1       	ldi	r24, 0x10	; 16
+ 38a:	e0 e4       	ldi	r30, 0x40	; 64
+ 38c:	f6 e0       	ldi	r31, 0x06	; 6
+ 38e:	85 83       	std	Z+5, r24	; 0x05
+ 390:	08 95       	ret
+
+00000392 <ssi_set_tx_active>:
+}
+
+/* @brief Switches the differential transmitter between push-pull/high-Z states */
+void ssi_set_tx_active(uint8_t ssi_tx_state)
+{
+	if(ssi_tx_state == SSI_TX_ACTIVE)
+ 392:	81 30       	cpi	r24, 0x01	; 1
+ 394:	21 f4       	brne	.+8      	; 0x39e <ssi_set_tx_active+0xc>
+		SSI_TXEN_PORT.OUTSET = SSI_TXEN_PIN_bm;
+ 396:	e0 e4       	ldi	r30, 0x40	; 64
+ 398:	f6 e0       	ldi	r31, 0x06	; 6
+ 39a:	85 83       	std	Z+5, r24	; 0x05
+ 39c:	08 95       	ret
+	else if(ssi_tx_state == SSI_TX_INACTIVE)
+ 39e:	88 23       	and	r24, r24
+ 3a0:	21 f4       	brne	.+8      	; 0x3aa <ssi_set_tx_active+0x18>
+		SSI_TXEN_PORT.OUTCLR = SSI_TXEN_PIN_bm;
+ 3a2:	81 e0       	ldi	r24, 0x01	; 1
+ 3a4:	e0 e4       	ldi	r30, 0x40	; 64
+ 3a6:	f6 e0       	ldi	r31, 0x06	; 6
+ 3a8:	86 83       	std	Z+6, r24	; 0x06
+ 3aa:	08 95       	ret
+
+000003ac <ssi_initialize>:
+volatile uint16_t position_latch; // Position latch (previous buffer)
+volatile uint16_t (*enc_value_handler_ptr)(uint16_t enc_val); // Handler callback
+
+/* */
+void ssi_initialize()
+{
+ 3ac:	cf 93       	push	r28
+	cli();
+ 3ae:	f8 94       	cli
+	// Initialize I/O Directions
+	SSI_PORT.OUTSET = SSI_CLK_PIN_bm;
+ 3b0:	e0 e4       	ldi	r30, 0x40	; 64
+ 3b2:	f6 e0       	ldi	r31, 0x06	; 6
+ 3b4:	82 e0       	ldi	r24, 0x02	; 2
+ 3b6:	85 83       	std	Z+5, r24	; 0x05
+	SSI_PORT.DIRSET = SSI_CLK_PIN_bm;
+ 3b8:	81 83       	std	Z+1, r24	; 0x01
+	SSI_TXEN_PORT.DIRSET = SSI_TXEN_PIN_bm;
+ 3ba:	81 e0       	ldi	r24, 0x01	; 1
+ 3bc:	81 83       	std	Z+1, r24	; 0x01
+	SSI_NRXEN_PORT.DIRSET = SSI_NRXEN_PIN_bm;
+ 3be:	c0 e1       	ldi	r28, 0x10	; 16
+ 3c0:	c1 83       	std	Z+1, r28	; 0x01
+	//SSI_ENC_PWR_EN_PORT.DIRSET = SSI_ENC_PWR_EN_PIN_bm;
+	
+	// Turn on Encoder and Enable Transceiver
+	ssi_set_tx_active(SSI_TX_ACTIVE);
+ 3c2:	0e 94 c9 01 	call	0x392	; 0x392 <ssi_set_tx_active>
+	ssi_set_rx_active(SSI_RX_ACTIVE);
+ 3c6:	81 e0       	ldi	r24, 0x01	; 1
+ 3c8:	0e 94 bb 01 	call	0x376	; 0x376 <ssi_set_rx_active>
+	
+	// Clock Idle High
+	// Data on rising edge of clock
+	
+	ssi_word_state = 0;
+ 3cc:	10 92 06 20 	sts	0x2006, r1
+	// Set up Bit-bang control timer
+	SSI_TIMER.CTRLB = 1<<4; // CCAEN
+ 3d0:	e0 e0       	ldi	r30, 0x00	; 0
+ 3d2:	f8 e0       	ldi	r31, 0x08	; 8
+ 3d4:	c1 83       	std	Z+1, r28	; 0x01
+	SSI_TIMER.PER = SSI_PERIOD; // Set to 1280 for 250kbps timing
+ 3d6:	80 e0       	ldi	r24, 0x00	; 0
+ 3d8:	95 e0       	ldi	r25, 0x05	; 5
+ 3da:	86 a3       	lds	r24, 0x56
+ 3dc:	97 a3       	lds	r25, 0x57
+	SSI_TIMER.CCA = SSI_PERIOD / 2;
+ 3de:	80 e8       	ldi	r24, 0x80	; 128
+ 3e0:	92 e0       	ldi	r25, 0x02	; 2
+ 3e2:	80 a7       	lds	r24, 0x70
+ 3e4:	91 a7       	lds	r25, 0x71
+	sei();
+ 3e6:	78 94       	sei
+}
+ 3e8:	cf 91       	pop	r28
+ 3ea:	08 95       	ret
+
+000003ec <__vector_14>:
+		SSI_TXEN_PORT.OUTCLR = SSI_TXEN_PIN_bm;
+}
+
+/* @brief Timer/Counter Overflow Vector for SSI falling edge */
+ISR(TCC0_OVF_vect)
+{
+ 3ec:	1f 92       	push	r1
+ 3ee:	0f 92       	push	r0
+ 3f0:	0f b6       	in	r0, 0x3f	; 63
+ 3f2:	0f 92       	push	r0
+ 3f4:	11 24       	eor	r1, r1
+ 3f6:	2f 93       	push	r18
+ 3f8:	3f 93       	push	r19
+ 3fa:	4f 93       	push	r20
+ 3fc:	5f 93       	push	r21
+ 3fe:	6f 93       	push	r22
+ 400:	7f 93       	push	r23
+ 402:	8f 93       	push	r24
+ 404:	9f 93       	push	r25
+ 406:	af 93       	push	r26
+ 408:	bf 93       	push	r27
+ 40a:	ef 93       	push	r30
+ 40c:	ff 93       	push	r31
+	ssi_word_state++;
+ 40e:	80 91 06 20 	lds	r24, 0x2006
+ 412:	8f 5f       	subi	r24, 0xFF	; 255
+ 414:	80 93 06 20 	sts	0x2006, r24
+	if(ssi_word_state == 14)
+ 418:	80 91 06 20 	lds	r24, 0x2006
+ 41c:	8e 30       	cpi	r24, 0x0E	; 14
+ 41e:	a9 f4       	brne	.+42     	; 0x44a <__vector_14+0x5e>
+	{
+		// Stop conditions
+		// Clear timer interrupts
+		TCC0.INTCTRLA &= ~(TC_OVFINTLVL_HI_gc);
+ 420:	e0 e0       	ldi	r30, 0x00	; 0
+ 422:	f8 e0       	ldi	r31, 0x08	; 8
+ 424:	86 81       	ldd	r24, Z+6	; 0x06
+ 426:	8c 7f       	andi	r24, 0xFC	; 252
+ 428:	86 83       	std	Z+6, r24	; 0x06
+		TCC0.INTCTRLB &= ~(TC_CCAINTLVL_HI_gc);
+ 42a:	87 81       	ldd	r24, Z+7	; 0x07
+ 42c:	8c 7f       	andi	r24, 0xFC	; 252
+ 42e:	87 83       	std	Z+7, r24	; 0x07
+		TCC0.CTRLA = 0; // Disable clock
+ 430:	10 82       	st	Z, r1
+		ssi_word_state = 0;
+ 432:	10 92 06 20 	sts	0x2006, r1
+		enc_value_handler_ptr(last_position_buffer);// Run Handler
+ 436:	80 91 04 20 	lds	r24, 0x2004
+ 43a:	90 91 05 20 	lds	r25, 0x2005
+ 43e:	e0 91 07 20 	lds	r30, 0x2007
+ 442:	f0 91 08 20 	lds	r31, 0x2008
+ 446:	09 95       	icall
+ 448:	04 c0       	rjmp	.+8      	; 0x452 <__vector_14+0x66>
+	}
+	else
+		SSI_PORT.OUTCLR = SSI_CLK_PIN_bm;
+ 44a:	82 e0       	ldi	r24, 0x02	; 2
+ 44c:	e0 e4       	ldi	r30, 0x40	; 64
+ 44e:	f6 e0       	ldi	r31, 0x06	; 6
+ 450:	86 83       	std	Z+6, r24	; 0x06
+}
+ 452:	ff 91       	pop	r31
+ 454:	ef 91       	pop	r30
+ 456:	bf 91       	pop	r27
+ 458:	af 91       	pop	r26
+ 45a:	9f 91       	pop	r25
+ 45c:	8f 91       	pop	r24
+ 45e:	7f 91       	pop	r23
+ 460:	6f 91       	pop	r22
+ 462:	5f 91       	pop	r21
+ 464:	4f 91       	pop	r20
+ 466:	3f 91       	pop	r19
+ 468:	2f 91       	pop	r18
+ 46a:	0f 90       	pop	r0
+ 46c:	0f be       	out	0x3f, r0	; 63
+ 46e:	0f 90       	pop	r0
+ 470:	1f 90       	pop	r1
+ 472:	18 95       	reti
+
+00000474 <__vector_16>:
+
+/* @brief Timer/Counter CCA Vector for Rising Edge Interrupt*/
+ISR(TCC0_CCA_vect)
+{
+ 474:	1f 92       	push	r1
+ 476:	0f 92       	push	r0
+ 478:	0f b6       	in	r0, 0x3f	; 63
+ 47a:	0f 92       	push	r0
+ 47c:	11 24       	eor	r1, r1
+ 47e:	8f 93       	push	r24
+ 480:	9f 93       	push	r25
+ 482:	ef 93       	push	r30
+ 484:	ff 93       	push	r31
+	SSI_PORT.OUTSET = SSI_CLK_PIN_bm; // Raise clock edge
+ 486:	82 e0       	ldi	r24, 0x02	; 2
+ 488:	e0 e4       	ldi	r30, 0x40	; 64
+ 48a:	f6 e0       	ldi	r31, 0x06	; 6
+ 48c:	85 83       	std	Z+5, r24	; 0x05
+	//uint8_t new_data = (SSI_PORT.IN & SSI_DATA_PIN_BM) >> 2;// Get SSI Data pin
+	if(ssi_word_state < 14)
+ 48e:	80 91 06 20 	lds	r24, 0x2006
+ 492:	8e 30       	cpi	r24, 0x0E	; 14
+ 494:	60 f4       	brcc	.+24     	; 0x4ae <__vector_16+0x3a>
+	{
+		if(!(SSI_PORT.IN & SSI_DATA_PIN_bm))
+ 496:	80 85       	ldd	r24, Z+8	; 0x08
+ 498:	82 fd       	sbrc	r24, 2
+ 49a:	05 c0       	rjmp	.+10     	; 0x4a6 <__vector_16+0x32>
+		{
+			(last_position_buffer << 1) & 1;
+ 49c:	80 91 04 20 	lds	r24, 0x2004
+ 4a0:	90 91 05 20 	lds	r25, 0x2005
+ 4a4:	04 c0       	rjmp	.+8      	; 0x4ae <__vector_16+0x3a>
+		}
+		else
+		{
+			last_position_buffer << 1;
+ 4a6:	80 91 04 20 	lds	r24, 0x2004
+ 4aa:	90 91 05 20 	lds	r25, 0x2005
+		}
+	}		
+ 4ae:	ff 91       	pop	r31
+ 4b0:	ef 91       	pop	r30
+ 4b2:	9f 91       	pop	r25
+ 4b4:	8f 91       	pop	r24
+ 4b6:	0f 90       	pop	r0
+ 4b8:	0f be       	out	0x3f, r0	; 63
+ 4ba:	0f 90       	pop	r0
+ 4bc:	1f 90       	pop	r1
+ 4be:	18 95       	reti
+
+000004c0 <cc1101_command_strobe>:
+/*
+ * @brief Sends the specified strobe
+ * @return Status byte
+ */
+uint8_t cc1101_command_strobe(uint8_t strobe)
+{
+ 4c0:	cf 93       	push	r28
+ 4c2:	c8 2f       	mov	r28, r24
+	spi_master_set_ncs(0);							// Enable slave SPI
+ 4c4:	80 e0       	ldi	r24, 0x00	; 0
+ 4c6:	0e 94 60 04 	call	0x8c0	; 0x8c0 <spi_master_set_ncs>
+	uint8_t status = spi_master_transact(strobe);	// Write strobe/read status
+ 4ca:	8c 2f       	mov	r24, r28
+ 4cc:	0e 94 52 04 	call	0x8a4	; 0x8a4 <spi_master_transact>
+ 4d0:	c8 2f       	mov	r28, r24
+	spi_master_set_ncs(1);							// Disable slave SPI
+ 4d2:	81 e0       	ldi	r24, 0x01	; 1
+ 4d4:	0e 94 60 04 	call	0x8c0	; 0x8c0 <spi_master_set_ncs>
+	cc1101_status = status;
+ 4d8:	c0 93 0b 20 	sts	0x200B, r28
+	return status;
+}
+ 4dc:	8c 2f       	mov	r24, r28
+ 4de:	cf 91       	pop	r28
+ 4e0:	08 95       	ret
+
+000004e2 <cc1101_read_register>:
+ * @param uint8_t register_addr The address of the register to read
+ * @param uint8_t * read_value A pointer to the buffer for the register contents
+ * @return uint8_t The CC1101 status byte
+ */
+uint8_t cc1101_read_register(uint8_t register_addr, uint8_t * read_value)
+{
+ 4e2:	1f 93       	push	r17
+ 4e4:	cf 93       	push	r28
+ 4e6:	df 93       	push	r29
+ 4e8:	18 2f       	mov	r17, r24
+ 4ea:	eb 01       	movw	r28, r22
+	spi_master_set_ncs(0);									// Enable chip select
+ 4ec:	80 e0       	ldi	r24, 0x00	; 0
+ 4ee:	0e 94 60 04 	call	0x8c0	; 0x8c0 <spi_master_set_ncs>
+	uint8_t header_byte = CC1101_READ_bm | register_addr; 	// Bit 7 set to 1 read, Burst set to 0
+	uint8_t status = spi_master_transact(header_byte); 	// Write header and get status
+ 4f2:	81 2f       	mov	r24, r17
+ 4f4:	80 68       	ori	r24, 0x80	; 128
+ 4f6:	0e 94 52 04 	call	0x8a4	; 0x8a4 <spi_master_transact>
+ 4fa:	18 2f       	mov	r17, r24
+	uint8_t out_value = spi_master_transact(0x00); 			// Write 00s and read register data
+ 4fc:	80 e0       	ldi	r24, 0x00	; 0
+ 4fe:	0e 94 52 04 	call	0x8a4	; 0x8a4 <spi_master_transact>
+	*read_value = out_value;								// Store out value to defined space
+ 502:	88 83       	st	Y, r24
+	spi_master_set_ncs(1);									// Release chip select
+ 504:	81 e0       	ldi	r24, 0x01	; 1
+ 506:	0e 94 60 04 	call	0x8c0	; 0x8c0 <spi_master_set_ncs>
+	cc1101_status = status;
+ 50a:	10 93 0b 20 	sts	0x200B, r17
+	return status;
+}
+ 50e:	81 2f       	mov	r24, r17
+ 510:	df 91       	pop	r29
+ 512:	cf 91       	pop	r28
+ 514:	1f 91       	pop	r17
+ 516:	08 95       	ret
+
+00000518 <cc1101_get_channel>:
+/*
+ * @brief Returns the currently set channel
+ * @return Current CC1101 channel
+ */
+uint8_t cc1101_get_channel(void)
+{
+ 518:	cf 93       	push	r28
+ 51a:	df 93       	push	r29
+ 51c:	0f 92       	push	r0
+ 51e:	cd b7       	in	r28, 0x3d	; 61
+ 520:	de b7       	in	r29, 0x3e	; 62
+	uint8_t ret_val;
+	cc1101_read_register(CHANNR, &ret_val);
+ 522:	8a e0       	ldi	r24, 0x0A	; 10
+ 524:	be 01       	movw	r22, r28
+ 526:	6f 5f       	subi	r22, 0xFF	; 255
+ 528:	7f 4f       	sbci	r23, 0xFF	; 255
+ 52a:	0e 94 71 02 	call	0x4e2	; 0x4e2 <cc1101_read_register>
+	return ret_val;
+}
+ 52e:	89 81       	ldd	r24, Y+1	; 0x01
+ 530:	0f 90       	pop	r0
+ 532:	df 91       	pop	r29
+ 534:	cf 91       	pop	r28
+ 536:	08 95       	ret
+
+00000538 <cc1101_get_address>:
+	cc1101_write_register(ADDR, address);
+}
+
+
+uint8_t cc1101_get_address(void)
+{
+ 538:	cf 93       	push	r28
+ 53a:	df 93       	push	r29
+ 53c:	0f 92       	push	r0
+ 53e:	cd b7       	in	r28, 0x3d	; 61
+ 540:	de b7       	in	r29, 0x3e	; 62
+	uint8_t ret_val;
+	cc1101_read_register(ADDR, &ret_val);
+ 542:	89 e0       	ldi	r24, 0x09	; 9
+ 544:	be 01       	movw	r22, r28
+ 546:	6f 5f       	subi	r22, 0xFF	; 255
+ 548:	7f 4f       	sbci	r23, 0xFF	; 255
+ 54a:	0e 94 71 02 	call	0x4e2	; 0x4e2 <cc1101_read_register>
+	return ret_val;
+}
+ 54e:	89 81       	ldd	r24, Y+1	; 0x01
+ 550:	0f 90       	pop	r0
+ 552:	df 91       	pop	r29
+ 554:	cf 91       	pop	r28
+ 556:	08 95       	ret
+
+00000558 <cc1101_read_register_burst>:
+ * @param uint8_t register_addr The address of the register to read
+ * @param uint8_t * read_value A pointer to the buffer for the first register's constants
+ * @return uint8_t The CC1101 status byte
+ */
+uint8_t cc1101_read_register_burst(uint8_t register_addr, uint8_t * burst_buffer, uint8_t burst_length)
+{
+ 558:	ef 92       	push	r14
+ 55a:	ff 92       	push	r15
+ 55c:	0f 93       	push	r16
+ 55e:	1f 93       	push	r17
+ 560:	cf 93       	push	r28
+ 562:	df 93       	push	r29
+ 564:	c8 2f       	mov	r28, r24
+ 566:	16 2f       	mov	r17, r22
+ 568:	e7 2e       	mov	r14, r23
+ 56a:	04 2f       	mov	r16, r20
+	spi_master_set_ncs(0);					// Enable slave SPI		
+ 56c:	80 e0       	ldi	r24, 0x00	; 0
+ 56e:	0e 94 60 04 	call	0x8c0	; 0x8c0 <spi_master_set_ncs>
+	// Format header for read and burst
+	uint8_t header_byte = CC1101_READ_bm | CC1101_BURST_bm | register_addr;
+	uint8_t status = spi_master_transact(header_byte); // Write header and get status
+ 572:	8c 2f       	mov	r24, r28
+ 574:	80 6c       	ori	r24, 0xC0	; 192
+ 576:	0e 94 52 04 	call	0x8a4	; 0x8a4 <spi_master_transact>
+ 57a:	f8 2e       	mov	r15, r24
+	// Read Data consecutively for burst length
+	uint8_t i;
+	for(i = 0; i < burst_length; i++)
+ 57c:	00 23       	and	r16, r16
+ 57e:	51 f0       	breq	.+20     	; 0x594 <cc1101_read_register_burst+0x3c>
+ 580:	c1 2f       	mov	r28, r17
+ 582:	de 2d       	mov	r29, r14
+ 584:	10 e0       	ldi	r17, 0x00	; 0
+	{
+		burst_buffer[i] = spi_master_transact(0x00); // Read data into burst buffer
+ 586:	80 e0       	ldi	r24, 0x00	; 0
+ 588:	0e 94 52 04 	call	0x8a4	; 0x8a4 <spi_master_transact>
+ 58c:	89 93       	st	Y+, r24
+	// Format header for read and burst
+	uint8_t header_byte = CC1101_READ_bm | CC1101_BURST_bm | register_addr;
+	uint8_t status = spi_master_transact(header_byte); // Write header and get status
+	// Read Data consecutively for burst length
+	uint8_t i;
+	for(i = 0; i < burst_length; i++)
+ 58e:	1f 5f       	subi	r17, 0xFF	; 255
+ 590:	10 17       	cp	r17, r16
+ 592:	c9 f7       	brne	.-14     	; 0x586 <cc1101_read_register_burst+0x2e>
+	{
+		burst_buffer[i] = spi_master_transact(0x00); // Read data into burst buffer
+	}
+	spi_master_set_ncs(1);					// Disable slave SPI
+ 594:	81 e0       	ldi	r24, 0x01	; 1
+ 596:	0e 94 60 04 	call	0x8c0	; 0x8c0 <spi_master_set_ncs>
+	cc1101_status = status;
+ 59a:	f0 92 0b 20 	sts	0x200B, r15
+	return status;
+}
+ 59e:	8f 2d       	mov	r24, r15
+ 5a0:	df 91       	pop	r29
+ 5a2:	cf 91       	pop	r28
+ 5a4:	1f 91       	pop	r17
+ 5a6:	0f 91       	pop	r16
+ 5a8:	ff 90       	pop	r15
+ 5aa:	ef 90       	pop	r14
+ 5ac:	08 95       	ret
+
+000005ae <cc1101_write_register>:
+ * @param uint8_t register_addr The address of the register to write
+ * @param uint8_t value The value to write in the specified register
+ * @return uint8_t The CC1101 status byte
+ */
+uint8_t cc1101_write_register(uint8_t register_addr, uint8_t value)
+{
+ 5ae:	cf 93       	push	r28
+ 5b0:	df 93       	push	r29
+ 5b2:	c8 2f       	mov	r28, r24
+ 5b4:	d6 2f       	mov	r29, r22
+	spi_master_set_ncs(0);
+ 5b6:	80 e0       	ldi	r24, 0x00	; 0
+ 5b8:	0e 94 60 04 	call	0x8c0	; 0x8c0 <spi_master_set_ncs>
+	uint8_t header_byte = register_addr;
+	uint8_t status;
+	status = spi_master_transact(header_byte);
+ 5bc:	8c 2f       	mov	r24, r28
+ 5be:	0e 94 52 04 	call	0x8a4	; 0x8a4 <spi_master_transact>
+ 5c2:	c8 2f       	mov	r28, r24
+	spi_master_transact(value);
+ 5c4:	8d 2f       	mov	r24, r29
+ 5c6:	0e 94 52 04 	call	0x8a4	; 0x8a4 <spi_master_transact>
+	spi_master_set_ncs(1);
+ 5ca:	81 e0       	ldi	r24, 0x01	; 1
+ 5cc:	0e 94 60 04 	call	0x8c0	; 0x8c0 <spi_master_set_ncs>
+	cc1101_status = status;
+ 5d0:	c0 93 0b 20 	sts	0x200B, r28
+	return status;
+}
+ 5d4:	8c 2f       	mov	r24, r28
+ 5d6:	df 91       	pop	r29
+ 5d8:	cf 91       	pop	r28
+ 5da:	08 95       	ret
+
+000005dc <cc1101_set_channel>:
+/*
+ * @brief Sets the currently used channel
+ * @param channel The channel to set the 
+ */
+void cc1101_set_channel(uint8_t channel)
+{
+ 5dc:	68 2f       	mov	r22, r24
+	cc1101_write_register(CHANNR, channel);
+ 5de:	8a e0       	ldi	r24, 0x0A	; 10
+ 5e0:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+}
+ 5e4:	08 95       	ret
+
+000005e6 <cc1101_set_address>:
+	return TRUE;
+}
+
+
+void cc1101_set_address(uint8_t address)
+{
+ 5e6:	68 2f       	mov	r22, r24
+	cc1101_write_register(ADDR, address);
+ 5e8:	89 e0       	ldi	r24, 0x09	; 9
+ 5ea:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+}
+ 5ee:	08 95       	ret
+
+000005f0 <cc1101_write_register_burst>:
+ * @param uint8_t register_addr The address of the register to write
+ * @param uint8_t value The value to write in the specified register
+ * @return uint8_t The CC1101 status byte
+ */
+uint8_t cc1101_write_register_burst(uint8_t register_addr, uint8_t * burst_values, uint8_t burst_length)
+{
+ 5f0:	ef 92       	push	r14
+ 5f2:	ff 92       	push	r15
+ 5f4:	0f 93       	push	r16
+ 5f6:	1f 93       	push	r17
+ 5f8:	cf 93       	push	r28
+ 5fa:	df 93       	push	r29
+ 5fc:	c8 2f       	mov	r28, r24
+ 5fe:	16 2f       	mov	r17, r22
+ 600:	e7 2e       	mov	r14, r23
+ 602:	04 2f       	mov	r16, r20
+	spi_master_set_ncs(0);			// Enable slave SPI
+ 604:	80 e0       	ldi	r24, 0x00	; 0
+ 606:	0e 94 60 04 	call	0x8c0	; 0x8c0 <spi_master_set_ncs>
+	uint8_t header_byte = CC1101_BURST_bm | register_addr;	// Format header for burst write
+	uint8_t status = spi_master_transact(header_byte);		// Send header
+ 60a:	8c 2f       	mov	r24, r28
+ 60c:	80 64       	ori	r24, 0x40	; 64
+ 60e:	0e 94 52 04 	call	0x8a4	; 0x8a4 <spi_master_transact>
+ 612:	f8 2e       	mov	r15, r24
+	// Write consecutive bytes from the burst buffer for burst length
+	uint8_t i;
+	for(i = 0; i < burst_length; i++)
+ 614:	00 23       	and	r16, r16
+ 616:	49 f0       	breq	.+18     	; 0x62a <cc1101_write_register_burst+0x3a>
+ 618:	c1 2f       	mov	r28, r17
+ 61a:	de 2d       	mov	r29, r14
+ 61c:	10 e0       	ldi	r17, 0x00	; 0
+	{
+		spi_master_transact(burst_values[i]); // Write burst values
+ 61e:	89 91       	ld	r24, Y+
+ 620:	0e 94 52 04 	call	0x8a4	; 0x8a4 <spi_master_transact>
+	spi_master_set_ncs(0);			// Enable slave SPI
+	uint8_t header_byte = CC1101_BURST_bm | register_addr;	// Format header for burst write
+	uint8_t status = spi_master_transact(header_byte);		// Send header
+	// Write consecutive bytes from the burst buffer for burst length
+	uint8_t i;
+	for(i = 0; i < burst_length; i++)
+ 624:	1f 5f       	subi	r17, 0xFF	; 255
+ 626:	10 17       	cp	r17, r16
+ 628:	d1 f7       	brne	.-12     	; 0x61e <cc1101_write_register_burst+0x2e>
+	{
+		spi_master_transact(burst_values[i]); // Write burst values
+	}
+	spi_master_set_ncs(1);			// Disable slave SPI
+ 62a:	81 e0       	ldi	r24, 0x01	; 1
+ 62c:	0e 94 60 04 	call	0x8c0	; 0x8c0 <spi_master_set_ncs>
+	cc1101_status = status;
+ 630:	f0 92 0b 20 	sts	0x200B, r15
+	return status;
+}
+ 634:	8f 2d       	mov	r24, r15
+ 636:	df 91       	pop	r29
+ 638:	cf 91       	pop	r28
+ 63a:	1f 91       	pop	r17
+ 63c:	0f 91       	pop	r16
+ 63e:	ff 90       	pop	r15
+ 640:	ef 90       	pop	r14
+ 642:	08 95       	ret
+
+00000644 <cc1101_transmit_burst>:
+ *
+ */
+bool cc1101_transmit_burst(uint8_t * burst, uint8_t burst_length)
+{
+	uint8_t status;
+	cc1101_command_strobe(STX);
+ 644:	85 e3       	ldi	r24, 0x35	; 53
+ 646:	0e 94 60 02 	call	0x4c0	; 0x4c0 <cc1101_command_strobe>
+	spi_master_set_ncs(0);
+ 64a:	80 e0       	ldi	r24, 0x00	; 0
+ 64c:	0e 94 60 04 	call	0x8c0	; 0x8c0 <spi_master_set_ncs>
+	
+	spi_master_set_ncs(1);
+ 650:	81 e0       	ldi	r24, 0x01	; 1
+ 652:	0e 94 60 04 	call	0x8c0	; 0x8c0 <spi_master_set_ncs>
+	cc1101_status = status;
+ 656:	10 92 0b 20 	sts	0x200B, r1
+}
+ 65a:	08 95       	ret
+
+0000065c <c1101_transmit_byte>:
+/*
+ *
+ *
+ */
+bool c1101_transmit_byte(uint8_t byte)
+{
+ 65c:	cf 93       	push	r28
+ 65e:	c8 2f       	mov	r28, r24
+	uint8_t status;
+	status = cc1101_command_strobe(STX);
+ 660:	85 e3       	ldi	r24, 0x35	; 53
+ 662:	0e 94 60 02 	call	0x4c0	; 0x4c0 <cc1101_command_strobe>
+	// Check for transmit mode
+	spi_master_set_ncs(0);
+ 666:	80 e0       	ldi	r24, 0x00	; 0
+ 668:	0e 94 60 04 	call	0x8c0	; 0x8c0 <spi_master_set_ncs>
+	spi_master_transact(FIFO);
+ 66c:	8f e3       	ldi	r24, 0x3F	; 63
+ 66e:	0e 94 52 04 	call	0x8a4	; 0x8a4 <spi_master_transact>
+	spi_master_transact(byte);
+ 672:	8c 2f       	mov	r24, r28
+ 674:	0e 94 52 04 	call	0x8a4	; 0x8a4 <spi_master_transact>
+	spi_master_set_ncs(1);
+ 678:	81 e0       	ldi	r24, 0x01	; 1
+ 67a:	0e 94 60 04 	call	0x8c0	; 0x8c0 <spi_master_set_ncs>
+	// Wait for transmit to complete
+	status = cc1101_command_strobe(SRX); // Return to Rx
+ 67e:	84 e3       	ldi	r24, 0x34	; 52
+ 680:	0e 94 60 02 	call	0x4c0	; 0x4c0 <cc1101_command_strobe>
+	cc1101_status = status;
+ 684:	80 93 0b 20 	sts	0x200B, r24
+	return TRUE;
+}
+ 688:	81 e0       	ldi	r24, 0x01	; 1
+ 68a:	cf 91       	pop	r28
+ 68c:	08 95       	ret
+
+0000068e <c1101_receive_byte>:
+/*
+ *
+ *
+ */
+bool c1101_receive_byte(uint8_t * rx_buffer)
+{
+ 68e:	cf 93       	push	r28
+ 690:	df 93       	push	r29
+ 692:	ec 01       	movw	r28, r24
+	uint8_t status;
+	cc1101_command_strobe(SRX);
+ 694:	84 e3       	ldi	r24, 0x34	; 52
+ 696:	0e 94 60 02 	call	0x4c0	; 0x4c0 <cc1101_command_strobe>
+	spi_master_set_ncs(0);
+ 69a:	80 e0       	ldi	r24, 0x00	; 0
+ 69c:	0e 94 60 04 	call	0x8c0	; 0x8c0 <spi_master_set_ncs>
+	spi_master_transact(FIFO | CC1101_READ_bm);
+ 6a0:	8f eb       	ldi	r24, 0xBF	; 191
+ 6a2:	0e 94 52 04 	call	0x8a4	; 0x8a4 <spi_master_transact>
+	*rx_buffer = spi_master_transact(0x00);
+ 6a6:	80 e0       	ldi	r24, 0x00	; 0
+ 6a8:	0e 94 52 04 	call	0x8a4	; 0x8a4 <spi_master_transact>
+ 6ac:	88 83       	st	Y, r24
+	spi_master_set_ncs(1);
+ 6ae:	81 e0       	ldi	r24, 0x01	; 1
+ 6b0:	0e 94 60 04 	call	0x8c0	; 0x8c0 <spi_master_set_ncs>
+	cc1101_status = status;
+ 6b4:	10 92 0b 20 	sts	0x200B, r1
+	return TRUE;
+}
+ 6b8:	81 e0       	ldi	r24, 0x01	; 1
+ 6ba:	df 91       	pop	r29
+ 6bc:	cf 91       	pop	r28
+ 6be:	08 95       	ret
+
+000006c0 <cc1101_receive_burst>:
+ *
+ */
+bool cc1101_receive_burst(uint8_t * rx_buffer, uint8_t burst_length)
+{
+	uint8_t status;
+	cc1101_command_strobe(SRX);
+ 6c0:	84 e3       	ldi	r24, 0x34	; 52
+ 6c2:	0e 94 60 02 	call	0x4c0	; 0x4c0 <cc1101_command_strobe>
+	spi_master_set_ncs(0);
+ 6c6:	80 e0       	ldi	r24, 0x00	; 0
+ 6c8:	0e 94 60 04 	call	0x8c0	; 0x8c0 <spi_master_set_ncs>
+	
+	spi_master_set_ncs(1);
+ 6cc:	81 e0       	ldi	r24, 0x01	; 1
+ 6ce:	0e 94 60 04 	call	0x8c0	; 0x8c0 <spi_master_set_ncs>
+	cc1101_status = status;
+ 6d2:	10 92 0b 20 	sts	0x200B, r1
+	return TRUE;
+}	
+ 6d6:	81 e0       	ldi	r24, 0x01	; 1
+ 6d8:	08 95       	ret
+
+000006da <cc1101_get_status>:
+ * @return uint8_t CC1101 status byte
+ */ 
+uint8_t cc1101_get_status(void)
+{
+	uint8_t status;
+	spi_master_set_ncs(0);
+ 6da:	80 e0       	ldi	r24, 0x00	; 0
+ 6dc:	0e 94 60 04 	call	0x8c0	; 0x8c0 <spi_master_set_ncs>
+	cc1101_command_strobe(SNOP);
+ 6e0:	8d e3       	ldi	r24, 0x3D	; 61
+ 6e2:	0e 94 60 02 	call	0x4c0	; 0x4c0 <cc1101_command_strobe>
+	spi_master_set_ncs(1);
+ 6e6:	81 e0       	ldi	r24, 0x01	; 1
+ 6e8:	0e 94 60 04 	call	0x8c0	; 0x8c0 <spi_master_set_ncs>
+	return cc1101_status;
+ 6ec:	80 91 0b 20 	lds	r24, 0x200B
+}
+ 6f0:	08 95       	ret
+
+000006f2 <cc1101_calibrate>:
+
+void cc1101_calibrate(void)
+{
+	uint8_t cal_flag = 1;
+	spi_master_set_ncs(0);
+ 6f2:	80 e0       	ldi	r24, 0x00	; 0
+ 6f4:	0e 94 60 04 	call	0x8c0	; 0x8c0 <spi_master_set_ncs>
+	cc1101_command_strobe(SCAL);
+ 6f8:	83 e3       	ldi	r24, 0x33	; 51
+ 6fa:	0e 94 60 02 	call	0x4c0	; 0x4c0 <cc1101_command_strobe>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 6fe:	89 ef       	ldi	r24, 0xF9	; 249
+ 700:	90 e0       	ldi	r25, 0x00	; 0
+ 702:	01 97       	sbiw	r24, 0x01	; 1
+ 704:	f1 f7       	brne	.-4      	; 0x702 <cc1101_calibrate+0x10>
+ 706:	00 c0       	rjmp	.+0      	; 0x708 <cc1101_calibrate+0x16>
+ 708:	00 00       	nop
+	_delay_us(250);
+	while(cal_flag != 0)
+	{
+		cc1101_command_strobe(SNOP);
+ 70a:	8d e3       	ldi	r24, 0x3D	; 61
+ 70c:	0e 94 60 02 	call	0x4c0	; 0x4c0 <cc1101_command_strobe>
+		if((cc1101_status & STATE_bm) == STATE_IDLE)
+ 710:	80 91 0b 20 	lds	r24, 0x200B
+ 714:	80 7c       	andi	r24, 0xC0	; 192
+ 716:	c9 f7       	brne	.-14     	; 0x70a <cc1101_calibrate+0x18>
+		{
+			cal_flag = 0;
+		}
+	}
+	spi_master_set_ncs(1);
+ 718:	81 e0       	ldi	r24, 0x01	; 1
+ 71a:	0e 94 60 04 	call	0x8c0	; 0x8c0 <spi_master_set_ncs>
+ 71e:	08 95       	ret
+
+00000720 <cc1101_initialize>:
+ * @brief Initializes the CC1101 for the A1101R09 to operate at 500kbps
+ */
+bool cc1101_initialize()
+{
+	// Initialize SPI (Sample on rising, clk idle low)
+	spi_master_initialize();
+ 720:	0e 94 46 04 	call	0x88c	; 0x88c <spi_master_initialize>
+	
+	// Reset CC1101
+	cc1101_command_strobe(SRES);
+ 724:	80 e3       	ldi	r24, 0x30	; 48
+ 726:	0e 94 60 02 	call	0x4c0	; 0x4c0 <cc1101_command_strobe>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 72a:	8f e0       	ldi	r24, 0x0F	; 15
+ 72c:	97 e2       	ldi	r25, 0x27	; 39
+ 72e:	01 97       	sbiw	r24, 0x01	; 1
+ 730:	f1 f7       	brne	.-4      	; 0x72e <cc1101_initialize+0xe>
+ 732:	00 c0       	rjmp	.+0      	; 0x734 <cc1101_initialize+0x14>
+ 734:	00 00       	nop
+	_delay_ms(10);	// Wait for reset
+	
+	// CC1101 Configuration Register Spree
+	cc1101_write_register(IOCFG0, IOCFG0_DEFAULT);
+ 736:	82 e0       	ldi	r24, 0x02	; 2
+ 738:	66 e0       	ldi	r22, 0x06	; 6
+ 73a:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(IOCFG1, IOCFG1_DEFAULT);
+ 73e:	81 e0       	ldi	r24, 0x01	; 1
+ 740:	6e e2       	ldi	r22, 0x2E	; 46
+ 742:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(IOCFG2, IOCFG2_DEFAULT);
+ 746:	80 e0       	ldi	r24, 0x00	; 0
+ 748:	69 e2       	ldi	r22, 0x29	; 41
+ 74a:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(FIFOTHR, FIFOTHR_DEFAULT);
+ 74e:	83 e0       	ldi	r24, 0x03	; 3
+ 750:	67 e8       	ldi	r22, 0x87	; 135
+ 752:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(SYNC0, SYNC1_DEFAULT);
+ 756:	85 e0       	ldi	r24, 0x05	; 5
+ 758:	63 ed       	ldi	r22, 0xD3	; 211
+ 75a:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(SYNC1, SYNC2_DEFAULT);
+ 75e:	84 e0       	ldi	r24, 0x04	; 4
+ 760:	61 e9       	ldi	r22, 0x91	; 145
+ 762:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(PKTLEN, PKTLEN_DEFAULT);
+ 766:	86 e0       	ldi	r24, 0x06	; 6
+ 768:	6d e3       	ldi	r22, 0x3D	; 61
+ 76a:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(PKTCTRL0, PKTCTRL0_DEFAULT);
+ 76e:	88 e0       	ldi	r24, 0x08	; 8
+ 770:	65 e0       	ldi	r22, 0x05	; 5
+ 772:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(PKTCTRL1, PKTCTRL1_DEFAULT);
+ 776:	87 e0       	ldi	r24, 0x07	; 7
+ 778:	64 e0       	ldi	r22, 0x04	; 4
+ 77a:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(ADDR, ADDR_DEFAULT);
+ 77e:	89 e0       	ldi	r24, 0x09	; 9
+ 780:	60 e0       	ldi	r22, 0x00	; 0
+ 782:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(CHANNR, CHANNR_DEFAULT);
+ 786:	8a e0       	ldi	r24, 0x0A	; 10
+ 788:	60 e0       	ldi	r22, 0x00	; 0
+ 78a:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(FSCTRL0, FSCTRL0_DEFAULT);
+ 78e:	8c e0       	ldi	r24, 0x0C	; 12
+ 790:	60 e0       	ldi	r22, 0x00	; 0
+ 792:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(FSCTRL1, FSCTRL1_DEFAULT);
+ 796:	8b e0       	ldi	r24, 0x0B	; 11
+ 798:	6e e0       	ldi	r22, 0x0E	; 14
+ 79a:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(FREQ0, FREQ0_DEFAULT);
+ 79e:	8f e0       	ldi	r24, 0x0F	; 15
+ 7a0:	63 e3       	ldi	r22, 0x33	; 51
+ 7a2:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(FREQ1, FREQ1_DEFAULT);
+ 7a6:	8e e0       	ldi	r24, 0x0E	; 14
+ 7a8:	69 eb       	ldi	r22, 0xB9	; 185
+ 7aa:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(FREQ2, FREQ2_DEFAULT);
+ 7ae:	8d e0       	ldi	r24, 0x0D	; 13
+ 7b0:	62 e2       	ldi	r22, 0x22	; 34
+ 7b2:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(MDMCFG0, MDMCFG0_DEFAULT);
+ 7b6:	84 e1       	ldi	r24, 0x14	; 20
+ 7b8:	62 ee       	ldi	r22, 0xE2	; 226
+ 7ba:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(MDMCFG1, MDMCFG1_DEFAULT);
+ 7be:	83 e1       	ldi	r24, 0x13	; 19
+ 7c0:	61 e4       	ldi	r22, 0x41	; 65
+ 7c2:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(MDMCFG2, MDMCFG2_DEFAULT);
+ 7c6:	82 e1       	ldi	r24, 0x12	; 18
+ 7c8:	63 e7       	ldi	r22, 0x73	; 115
+ 7ca:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(MDMCFG3, MDMCFG3_DEFAULT);
+ 7ce:	81 e1       	ldi	r24, 0x11	; 17
+ 7d0:	6b e3       	ldi	r22, 0x3B	; 59
+ 7d2:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(MDMCFG4, MDMCFG4_DEFAULT);
+ 7d6:	80 e1       	ldi	r24, 0x10	; 16
+ 7d8:	6e e1       	ldi	r22, 0x1E	; 30
+ 7da:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(DEVIATN, DEVIATN_DEFAULT);
+ 7de:	85 e1       	ldi	r24, 0x15	; 21
+ 7e0:	60 e0       	ldi	r22, 0x00	; 0
+ 7e2:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(MCSM0, MCSM0_DEFAULT);
+ 7e6:	88 e1       	ldi	r24, 0x18	; 24
+ 7e8:	68 e1       	ldi	r22, 0x18	; 24
+ 7ea:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(MCSM1, MCSM1_DEFAULT);
+ 7ee:	87 e1       	ldi	r24, 0x17	; 23
+ 7f0:	60 e3       	ldi	r22, 0x30	; 48
+ 7f2:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(MCSM2, MCSM2_DEFAULT);
+ 7f6:	86 e1       	ldi	r24, 0x16	; 22
+ 7f8:	67 e0       	ldi	r22, 0x07	; 7
+ 7fa:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(FOCCFG, FOCCFG_DEFAULT);		// Anaren 500k spec
+ 7fe:	89 e1       	ldi	r24, 0x19	; 25
+ 800:	6d e1       	ldi	r22, 0x1D	; 29
+ 802:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(BSCFG, BSCFG_DEFAULT);		// Anaren 500k spec
+ 806:	8a e1       	ldi	r24, 0x1A	; 26
+ 808:	6c e1       	ldi	r22, 0x1C	; 28
+ 80a:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(AGCCTRL0, AGCCTRL0_DEFAULT);	// Anaren 500k spec
+ 80e:	8d e1       	ldi	r24, 0x1D	; 29
+ 810:	60 eb       	ldi	r22, 0xB0	; 176
+ 812:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(AGCCTRL1, AGCCTRL1_DEFAULT);	// Anaren 500k spec
+ 816:	8c e1       	ldi	r24, 0x1C	; 28
+ 818:	60 e0       	ldi	r22, 0x00	; 0
+ 81a:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(AGCCTRL2, AGCCTRL2_DEFAULT);	// Anaren 500k spec
+ 81e:	8b e1       	ldi	r24, 0x1B	; 27
+ 820:	68 e0       	ldi	r22, 0x08	; 8
+ 822:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(WOREVT0, WOREVT0_DEFAULT);	// Anaren 500k spec
+ 826:	8f e1       	ldi	r24, 0x1F	; 31
+ 828:	6b e6       	ldi	r22, 0x6B	; 107
+ 82a:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(WOREVT1, WOREVT1_DEFAULT);	// Anaren 500k spec
+ 82e:	8e e1       	ldi	r24, 0x1E	; 30
+ 830:	67 e8       	ldi	r22, 0x87	; 135
+ 832:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(WORCTRL, WORCTRL_DEFAULT);	// Anaren 500k spec
+ 836:	80 e2       	ldi	r24, 0x20	; 32
+ 838:	68 ef       	ldi	r22, 0xF8	; 248
+ 83a:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(FREND0, FREND0_DEFAULT);		// Anaren 500k spec
+ 83e:	82 e2       	ldi	r24, 0x22	; 34
+ 840:	60 e1       	ldi	r22, 0x10	; 16
+ 842:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(FREND1, FREND1_DEFAULT);		// Anaren 500k spec
+ 846:	81 e2       	ldi	r24, 0x21	; 33
+ 848:	67 eb       	ldi	r22, 0xB7	; 183
+ 84a:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(FSCAL0, FSCAL0_DEFAULT);		// Anaren 500k spec
+ 84e:	86 e2       	ldi	r24, 0x26	; 38
+ 850:	6f e1       	ldi	r22, 0x1F	; 31
+ 852:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(FSCAL1, FSCAL1_DEFAULT);		// Anaren 500k spec
+ 856:	85 e2       	ldi	r24, 0x25	; 37
+ 858:	60 e0       	ldi	r22, 0x00	; 0
+ 85a:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(FSCAL2, FSCAL2_DEFAULT);		// Anaren 500k spec
+ 85e:	84 e2       	ldi	r24, 0x24	; 36
+ 860:	6a e2       	ldi	r22, 0x2A	; 42
+ 862:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(FSCAL3, FSCAL3_DEFAULT);		// Anaren 500k spec
+ 866:	83 e2       	ldi	r24, 0x23	; 35
+ 868:	6a ee       	ldi	r22, 0xEA	; 234
+ 86a:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(RCCTRL0, RCCTRL0_DEFAULT);	// Anaren 500k spec
+ 86e:	88 e2       	ldi	r24, 0x28	; 40
+ 870:	60 e0       	ldi	r22, 0x00	; 0
+ 872:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	cc1101_write_register(RCCTRL1, RCCTRL1_DEFAULT);	// Anaren 500k spec
+ 876:	87 e2       	ldi	r24, 0x27	; 39
+ 878:	61 e4       	ldi	r22, 0x41	; 65
+ 87a:	0e 94 d7 02 	call	0x5ae	; 0x5ae <cc1101_write_register>
+	
+	// Calibrate 
+	cc1101_calibrate();
+ 87e:	0e 94 79 03 	call	0x6f2	; 0x6f2 <cc1101_calibrate>
+	cc1101_command_strobe(SRX);
+ 882:	84 e3       	ldi	r24, 0x34	; 52
+ 884:	0e 94 60 02 	call	0x4c0	; 0x4c0 <cc1101_command_strobe>
+	// CC1101 command strobe to turn on
+	
+	return TRUE;
+}
+ 888:	81 e0       	ldi	r24, 0x01	; 1
+ 88a:	08 95       	ret
+
+0000088c <spi_master_initialize>:
+ *
+ */
+void spi_master_initialize(void)
+{
+	// Set up SPI for sample on rising edge, clock idle low
+	SPI_PORT.DIRSET = SPI_MOSI_PIN_bm | SPI_SCK_PIN_bm | SPI_NCS_PIN_bm;
+ 88c:	e0 e6       	ldi	r30, 0x60	; 96
+ 88e:	f6 e0       	ldi	r31, 0x06	; 6
+ 890:	80 eb       	ldi	r24, 0xB0	; 176
+ 892:	81 83       	std	Z+1, r24	; 0x01
+	SPI_PORT.OUTSET = SPI_NCS_PIN_bm;
+ 894:	80 e1       	ldi	r24, 0x10	; 16
+ 896:	85 83       	std	Z+5, r24	; 0x05
+	SPI.CTRL = SPI_MASTER_bm | SPI_ENABLE_bm | SPI_PRESCALER_DIV4_gc | SPI_CLK2X_bm;
+ 898:	e0 ec       	ldi	r30, 0xC0	; 192
+ 89a:	f9 e0       	ldi	r31, 0x09	; 9
+ 89c:	80 ed       	ldi	r24, 0xD0	; 208
+ 89e:	80 83       	st	Z, r24
+	SPI.DATA = 0x00;
+ 8a0:	13 82       	std	Z+3, r1	; 0x03
+}
+ 8a2:	08 95       	ret
+
+000008a4 <spi_master_transact>:
+ * @return uint8_t Read master in value
+ */
+uint8_t spi_master_transact(uint8_t send_byte)
+{
+	// Check for unfinished write and 
+	SPI.DATA = send_byte; // Start write
+ 8a4:	e0 ec       	ldi	r30, 0xC0	; 192
+ 8a6:	f9 e0       	ldi	r31, 0x09	; 9
+ 8a8:	83 83       	std	Z+3, r24	; 0x03
+	while(!(SPI.STATUS & SPI_IF_bm))
+ 8aa:	82 81       	ldd	r24, Z+2	; 0x02
+ 8ac:	88 23       	and	r24, r24
+ 8ae:	24 f0       	brlt	.+8      	; 0x8b8 <spi_master_transact+0x14>
+	{__asm__("NOP");}
+ 8b0:	00 00       	nop
+ */
+uint8_t spi_master_transact(uint8_t send_byte)
+{
+	// Check for unfinished write and 
+	SPI.DATA = send_byte; // Start write
+	while(!(SPI.STATUS & SPI_IF_bm))
+ 8b2:	82 81       	ldd	r24, Z+2	; 0x02
+ 8b4:	88 23       	and	r24, r24
+ 8b6:	e4 f7       	brge	.-8      	; 0x8b0 <spi_master_transact+0xc>
+	{__asm__("NOP");}
+	uint8_t out_data = SPI.DATA;
+ 8b8:	e0 ec       	ldi	r30, 0xC0	; 192
+ 8ba:	f9 e0       	ldi	r31, 0x09	; 9
+ 8bc:	83 81       	ldd	r24, Z+3	; 0x03
+	return out_data;; // Return read value
+}
+ 8be:	08 95       	ret
+
+000008c0 <spi_master_set_ncs>:
+ * @param uint8_t ncs_state The state of the chip select pin to set
+ */
+void spi_master_set_ncs(uint8_t ncs_state)
+{
+
+	if(ncs_state == 1)
+ 8c0:	81 30       	cpi	r24, 0x01	; 1
+ 8c2:	29 f4       	brne	.+10     	; 0x8ce <spi_master_set_ncs+0xe>
+	{
+		PORTD.OUTSET = SPI_NCS_PIN_bm;
+ 8c4:	80 e1       	ldi	r24, 0x10	; 16
+ 8c6:	e0 e6       	ldi	r30, 0x60	; 96
+ 8c8:	f6 e0       	ldi	r31, 0x06	; 6
+ 8ca:	85 83       	std	Z+5, r24	; 0x05
+ 8cc:	08 95       	ret
+	}
+	else
+	{
+		PORTD.OUTCLR = SPI_NCS_PIN_bm;
+ 8ce:	80 e1       	ldi	r24, 0x10	; 16
+ 8d0:	e0 e6       	ldi	r30, 0x60	; 96
+ 8d2:	f6 e0       	ldi	r31, 0x06	; 6
+ 8d4:	86 83       	std	Z+6, r24	; 0x06
+ 8d6:	08 95       	ret
+
+000008d8 <clock_initialize>:
+ * @brief Initializes the main clock for 4MHz operation based on a
+ * 2x PLL multiplication of the 2MHz RC Oscillator
+ */
+void clock_initialize(void)
+{
+	OSC.PLLCTRL = OSC_PLLSRC_RC2M_gc | OSC_PLLFAC2_bm; // Set PLL x2 for 4MHz
+ 8d8:	e0 e5       	ldi	r30, 0x50	; 80
+ 8da:	f0 e0       	ldi	r31, 0x00	; 0
+ 8dc:	84 e0       	ldi	r24, 0x04	; 4
+ 8de:	85 83       	std	Z+5, r24	; 0x05
+	OSC.CTRL |= OSC_PLLEN_bm;
+ 8e0:	80 81       	ld	r24, Z
+ 8e2:	80 61       	ori	r24, 0x10	; 16
+ 8e4:	80 83       	st	Z, r24
+	while(!(OSC.STATUS & OSC_PLLRDY_bm))
+ 8e6:	81 81       	ldd	r24, Z+1	; 0x01
+ 8e8:	84 fd       	sbrc	r24, 4
+ 8ea:	04 c0       	rjmp	.+8      	; 0x8f4 <clock_initialize+0x1c>
+	{
+		__asm__("NOP"); // Wait for PLL to be ready
+ 8ec:	00 00       	nop
+ */
+void clock_initialize(void)
+{
+	OSC.PLLCTRL = OSC_PLLSRC_RC2M_gc | OSC_PLLFAC2_bm; // Set PLL x2 for 4MHz
+	OSC.CTRL |= OSC_PLLEN_bm;
+	while(!(OSC.STATUS & OSC_PLLRDY_bm))
+ 8ee:	81 81       	ldd	r24, Z+1	; 0x01
+ 8f0:	84 ff       	sbrs	r24, 4
+ 8f2:	fc cf       	rjmp	.-8      	; 0x8ec <clock_initialize+0x14>
+	{
+		__asm__("NOP"); // Wait for PLL to be ready
+	}
+	CCP = CCP_IOREG_gc; // Enable CCP write
+ 8f4:	88 ed       	ldi	r24, 0xD8	; 216
+ 8f6:	84 bf       	out	0x34, r24	; 52
+	CLK.CTRL = CLK_SCLKSEL_PLL_gc; // Select PLL clock in CCP write
+ 8f8:	84 e0       	ldi	r24, 0x04	; 4
+ 8fa:	80 93 40 00 	sts	0x0040, r24
+ 8fe:	08 95       	ret
+
+00000900 <_exit>:
+ 900:	f8 94       	cli
+
+00000902 <__stop_program>:
+ 902:	ff cf       	rjmp	.-2      	; 0x902 <__stop_program>

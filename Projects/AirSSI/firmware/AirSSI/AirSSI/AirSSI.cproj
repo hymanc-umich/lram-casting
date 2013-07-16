@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>6.0</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8</ToolchainName>
+    <ProjectGuid>{d2c54535-9d0c-4d3f-8435-f950a35c8872}</ProjectGuid>
+    <avrdevice>ATxmega16D4</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>AirSSI</AssemblyName>
+    <Name>AirSSI</Name>
+    <RootNamespace>AirSSI</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <OverrideVtorValue />
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <AsfVersion>3.1.3</AsfVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>m</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+      </AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>m</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+        <avrgcc.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcc.assembler.debugging.DebugLevel>
+      </AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="ADC\adc_battery.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ADC\adc_battery.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="AirSSI.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DebugSerial\debug_serial.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DebugSerial\debug_serial.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Encoder\rm_encoder.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Encoder\rm_encoder.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Encoder\SSI\ssi_rls.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Encoder\SSI\ssi_rls.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Radio\cc1101\a1101R09_setup.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Radio\cc1101\cc1101.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Radio\cc1101\cc1101.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Radio\cc1101\cc1101_regs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Radio\cc1101\SPI\spi_master.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Radio\cc1101\SPI\spi_master.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Radio\radio.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Util\clock_setup.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Util\clock_setup.h">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ADC" />
+    <Folder Include="Encoder" />
+    <Folder Include="Encoder\SSI\" />
+    <Folder Include="DebugSerial" />
+    <Folder Include="Util" />
+    <Folder Include="Radio" />
+    <Folder Include="Radio\cc1101\" />
+    <Folder Include="Radio\cc1101\SPI\" />
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>

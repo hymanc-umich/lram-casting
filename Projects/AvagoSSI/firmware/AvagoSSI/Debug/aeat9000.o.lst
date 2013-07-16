@@ -1,0 +1,554 @@
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 18, 4
+  12              		.thumb
+  13              		.file	"aeat9000.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.comm	msb_inv_flag,1,1
+  18              		.align	2
+  19              		.global	aeat9k_initialize
+  20              		.thumb
+  21              		.thumb_func
+  23              	aeat9k_initialize:
+  24              	.LFB0:
+  25              		.file 1 "../aeat9000.c"
+   1:../aeat9000.c **** /*
+   2:../aeat9000.c ****  * aeat9000.c
+   3:../aeat9000.c ****  *
+   4:../aeat9000.c ****  *  Created on: May 1, 2013
+   5:../aeat9000.c ****  *      Author: cody
+   6:../aeat9000.c ****  */
+   7:../aeat9000.c **** 
+   8:../aeat9000.c **** 
+   9:../aeat9000.c **** #include "aeat9000.h"
+  10:../aeat9000.c **** 
+  11:../aeat9000.c **** volatile bool msb_inv_flag;
+  12:../aeat9000.c **** //volatile encoder_value_t aeat_buffer;
+  13:../aeat9000.c **** 
+  14:../aeat9000.c **** /**
+  15:../aeat9000.c ****  *
+  16:../aeat9000.c ****  */
+  17:../aeat9000.c **** void aeat9k_initialize(void)
+  18:../aeat9000.c **** {
+  26              		.loc 1 18 0
+  27              		.cfi_startproc
+  28              		@ args = 0, pretend = 0, frame = 0
+  29              		@ frame_needed = 1, uses_anonymous_args = 0
+  30 0000 80B5     		push	{r7, lr}
+  31              	.LCFI0:
+  32              		.cfi_def_cfa_offset 8
+  33              		.cfi_offset 14, -4
+  34              		.cfi_offset 7, -8
+  35 0002 00AF     		add	r7, sp, #0
+  36              	.LCFI1:
+  37              		.cfi_def_cfa_register 7
+  19:../aeat9000.c **** 	msb_inv_flag = false;
+  38              		.loc 1 19 0
+  39 0004 40F20003 		movw	r3, #:lower16:msb_inv_flag
+  40 0008 C0F20003 		movt	r3, #:upper16:msb_inv_flag
+  41 000c 4FF00002 		mov	r2, #0
+  42 0010 1A70     		strb	r2, [r3, #0]
+  20:../aeat9000.c **** 	// GPIO Initialization
+  21:../aeat9000.c **** 	gpio_set_mode(ZERORST_PORT, GPIO_MODE_OUTPUT_10_MHZ, GPIO_CNF_OUTPUT_PUSHPULL, ZERORST_PIN);
+  43              		.loc 1 21 0
+  44 0012 4FF44060 		mov	r0, #3072
+  45 0016 C4F20100 		movt	r0, 16385
+  46 001a 4FF00101 		mov	r1, #1
+  47 001e 4FF00002 		mov	r2, #0
+  48 0022 4FF00803 		mov	r3, #8
+  49 0026 FFF7FEFF 		bl	gpio_set_mode
+  22:../aeat9000.c **** 	gpio_set_mode(ENCRST_PORT, GPIO_MODE_OUTPUT_10_MHZ, GPIO_CNF_OUTPUT_PUSHPULL, ENCRST_PIN);
+  50              		.loc 1 22 0
+  51 002a 4FF40060 		mov	r0, #2048
+  52 002e C4F20100 		movt	r0, 16385
+  53 0032 4FF00101 		mov	r1, #1
+  54 0036 4FF00002 		mov	r2, #0
+  55 003a 4FF40063 		mov	r3, #2048
+  56 003e FFF7FEFF 		bl	gpio_set_mode
+  23:../aeat9000.c **** 	gpio_set_mode(MSBINV_PORT, GPIO_MODE_OUTPUT_10_MHZ, GPIO_CNF_OUTPUT_PUSHPULL, MSBINV_PIN);
+  57              		.loc 1 23 0
+  58 0042 4FF44060 		mov	r0, #3072
+  59 0046 C4F20100 		movt	r0, 16385
+  60 004a 4FF00101 		mov	r1, #1
+  61 004e 4FF00002 		mov	r2, #0
+  62 0052 4FF01003 		mov	r3, #16
+  63 0056 FFF7FEFF 		bl	gpio_set_mode
+  24:../aeat9000.c **** 	gpio_set_mode(ENCERR_PORT, GPIO_MODE_INPUT, GPIO_CNF_INPUT_FLOAT, ENCERR_PIN);
+  64              		.loc 1 24 0
+  65 005a 4FF40060 		mov	r0, #2048
+  66 005e C4F20100 		movt	r0, 16385
+  67 0062 4FF00001 		mov	r1, #0
+  68 0066 4FF00102 		mov	r2, #1
+  69 006a 4FF40043 		mov	r3, #32768
+  70 006e FFF7FEFF 		bl	gpio_set_mode
+  25:../aeat9000.c **** 	gpio_set_mode(TILTOUT_PORT, GPIO_MODE_INPUT, GPIO_CNF_INPUT_FLOAT, TILTOUT_PIN);
+  71              		.loc 1 25 0
+  72 0072 4FF44060 		mov	r0, #3072
+  73 0076 C4F20100 		movt	r0, 16385
+  74 007a 4FF00001 		mov	r1, #0
+  75 007e 4FF00102 		mov	r2, #1
+  76 0082 4FF00203 		mov	r3, #2
+  77 0086 FFF7FEFF 		bl	gpio_set_mode
+  26:../aeat9000.c **** 	gpio_set_mode(LOCTEST_PORT, GPIO_MODE_INPUT, GPIO_CNF_INPUT_ANALOG, LOCTEST_PIN);
+  78              		.loc 1 26 0
+  79 008a 4FF44060 		mov	r0, #3072
+  80 008e C4F20100 		movt	r0, 16385
+  81 0092 4FF00001 		mov	r1, #0
+  82 0096 4FF00002 		mov	r2, #0
+  83 009a 4FF00103 		mov	r3, #1
+  84 009e FFF7FEFF 		bl	gpio_set_mode
+  27:../aeat9000.c **** 	gpio_clear(MSBINV_PORT, MSBINV_PIN);
+  85              		.loc 1 27 0
+  86 00a2 4FF44060 		mov	r0, #3072
+  87 00a6 C4F20100 		movt	r0, 16385
+  88 00aa 4FF01001 		mov	r1, #16
+  89 00ae FFF7FEFF 		bl	gpio_clear
+  28:../aeat9000.c **** 	ssi_initialize(0); // SSI Interface Initialization
+  90              		.loc 1 28 0
+  91 00b2 4FF00000 		mov	r0, #0
+  92 00b6 FFF7FEFF 		bl	ssi_initialize
+  29:../aeat9000.c **** }
+  93              		.loc 1 29 0
+  94 00ba 80BD     		pop	{r7, pc}
+  95              		.cfi_endproc
+  96              	.LFE0:
+  98              		.align	2
+  99              		.global	aeat9k_read_blocking
+ 100              		.thumb
+ 101              		.thumb_func
+ 103              	aeat9k_read_blocking:
+ 104              	.LFB1:
+  30:../aeat9000.c **** 
+  31:../aeat9000.c **** /**
+  32:../aeat9000.c ****  *
+  33:../aeat9000.c ****  */
+  34:../aeat9000.c **** u32 aeat9k_read_blocking(void)
+  35:../aeat9000.c **** {
+ 105              		.loc 1 35 0
+ 106              		.cfi_startproc
+ 107              		@ args = 0, pretend = 0, frame = 0
+ 108              		@ frame_needed = 1, uses_anonymous_args = 0
+ 109 00bc 80B5     		push	{r7, lr}
+ 110              	.LCFI2:
+ 111              		.cfi_def_cfa_offset 8
+ 112              		.cfi_offset 14, -4
+ 113              		.cfi_offset 7, -8
+ 114 00be 00AF     		add	r7, sp, #0
+ 115              	.LCFI3:
+ 116              		.cfi_def_cfa_register 7
+  36:../aeat9000.c **** 	ssi_start_read(17); // Read 17 bits for AEAT-9000
+ 117              		.loc 1 36 0
+ 118 00c0 4FF01100 		mov	r0, #17
+ 119 00c4 FFF7FEFF 		bl	ssi_start_read
+  37:../aeat9000.c **** 	while(!ssi_data_ready())
+ 120              		.loc 1 37 0
+ 121 00c8 00E0     		b	.L3
+ 122              	.L4:
+  38:../aeat9000.c **** 	{
+  39:../aeat9000.c **** 		__asm__("NOP");
+ 123              		.loc 1 39 0
+ 124              	@ 39 "../aeat9000.c" 1
+ 125 00ca 00BF     		NOP
+ 126              	@ 0 "" 2
+ 127              		.thumb
+ 128              	.L3:
+  37:../aeat9000.c **** 	while(!ssi_data_ready())
+ 129              		.loc 1 37 0 discriminator 1
+ 130 00cc FFF7FEFF 		bl	ssi_data_ready
+ 131 00d0 0346     		mov	r3, r0
+ 132 00d2 83F00103 		eor	r3, r3, #1
+ 133 00d6 DBB2     		uxtb	r3, r3
+ 134 00d8 002B     		cmp	r3, #0
+ 135 00da F6D1     		bne	.L4
+  40:../aeat9000.c **** 	}
+  41:../aeat9000.c **** 	return ssi_read_data_buffer();
+ 136              		.loc 1 41 0
+ 137 00dc FFF7FEFF 		bl	ssi_read_data_buffer
+ 138 00e0 0346     		mov	r3, r0
+  42:../aeat9000.c **** 
+  43:../aeat9000.c **** }
+ 139              		.loc 1 43 0
+ 140 00e2 1846     		mov	r0, r3
+ 141 00e4 80BD     		pop	{r7, pc}
+ 142              		.cfi_endproc
+ 143              	.LFE1:
+ 145 00e6 00BF     		.align	2
+ 146              		.global	aeat9k_read_buffer
+ 147              		.thumb
+ 148              		.thumb_func
+ 150              	aeat9k_read_buffer:
+ 151              	.LFB2:
+  44:../aeat9000.c **** 
+  45:../aeat9000.c **** /**
+  46:../aeat9000.c ****  *
+  47:../aeat9000.c ****  */
+  48:../aeat9000.c **** void aeat9k_read_buffer(encoder_value_t * buf)
+  49:../aeat9000.c **** {
+ 152              		.loc 1 49 0
+ 153              		.cfi_startproc
+ 154              		@ args = 0, pretend = 0, frame = 8
+ 155              		@ frame_needed = 1, uses_anonymous_args = 0
+ 156 00e8 80B5     		push	{r7, lr}
+ 157              	.LCFI4:
+ 158              		.cfi_def_cfa_offset 8
+ 159              		.cfi_offset 14, -4
+ 160              		.cfi_offset 7, -8
+ 161 00ea 82B0     		sub	sp, sp, #8
+ 162              	.LCFI5:
+ 163              		.cfi_def_cfa_offset 16
+ 164 00ec 00AF     		add	r7, sp, #0
+ 165              	.LCFI6:
+ 166              		.cfi_def_cfa_register 7
+ 167 00ee 7860     		str	r0, [r7, #4]
+  50:../aeat9000.c **** 	ssi_set_ext_buffer(buf);
+ 168              		.loc 1 50 0
+ 169 00f0 7868     		ldr	r0, [r7, #4]
+ 170 00f2 FFF7FEFF 		bl	ssi_set_ext_buffer
+  51:../aeat9000.c **** 	ssi_start_read(17);
+ 171              		.loc 1 51 0
+ 172 00f6 4FF01100 		mov	r0, #17
+ 173 00fa FFF7FEFF 		bl	ssi_start_read
+  52:../aeat9000.c **** }
+ 174              		.loc 1 52 0
+ 175 00fe 07F10807 		add	r7, r7, #8
+ 176 0102 BD46     		mov	sp, r7
+ 177 0104 80BD     		pop	{r7, pc}
+ 178              		.cfi_endproc
+ 179              	.LFE2:
+ 181 0106 00BF     		.align	2
+ 182              		.global	aeat9k_zero
+ 183              		.thumb
+ 184              		.thumb_func
+ 186              	aeat9k_zero:
+ 187              	.LFB3:
+  53:../aeat9000.c **** 
+  54:../aeat9000.c **** /**
+  55:../aeat9000.c ****  *
+  56:../aeat9000.c ****  */
+  57:../aeat9000.c **** void aeat9k_zero(void)
+  58:../aeat9000.c **** {
+ 188              		.loc 1 58 0
+ 189              		.cfi_startproc
+ 190              		@ args = 0, pretend = 0, frame = 8
+ 191              		@ frame_needed = 1, uses_anonymous_args = 0
+ 192 0108 80B5     		push	{r7, lr}
+ 193              	.LCFI7:
+ 194              		.cfi_def_cfa_offset 8
+ 195              		.cfi_offset 14, -4
+ 196              		.cfi_offset 7, -8
+ 197 010a 82B0     		sub	sp, sp, #8
+ 198              	.LCFI8:
+ 199              		.cfi_def_cfa_offset 16
+ 200 010c 00AF     		add	r7, sp, #0
+ 201              	.LCFI9:
+ 202              		.cfi_def_cfa_register 7
+  59:../aeat9000.c **** 	// Pulse Zero Reset Pin Low
+  60:../aeat9000.c **** 	gpio_clear(ZERORST_PORT, ZERORST_PIN);
+ 203              		.loc 1 60 0
+ 204 010e 4FF44060 		mov	r0, #3072
+ 205 0112 C4F20100 		movt	r0, 16385
+ 206 0116 4FF00801 		mov	r1, #8
+ 207 011a FFF7FEFF 		bl	gpio_clear
+  61:../aeat9000.c **** 	int i;
+  62:../aeat9000.c **** 	for(i = 0; i<8000; i++)
+ 208              		.loc 1 62 0
+ 209 011e 4FF00003 		mov	r3, #0
+ 210 0122 7B60     		str	r3, [r7, #4]
+ 211 0124 04E0     		b	.L7
+ 212              	.L8:
+  63:../aeat9000.c **** 	{
+  64:../aeat9000.c **** 		__asm__("NOP");
+ 213              		.loc 1 64 0 discriminator 2
+ 214              	@ 64 "../aeat9000.c" 1
+ 215 0126 00BF     		NOP
+ 216              	@ 0 "" 2
+  62:../aeat9000.c **** 	for(i = 0; i<8000; i++)
+ 217              		.loc 1 62 0 discriminator 2
+ 218              		.thumb
+ 219 0128 7B68     		ldr	r3, [r7, #4]
+ 220 012a 03F10103 		add	r3, r3, #1
+ 221 012e 7B60     		str	r3, [r7, #4]
+ 222              	.L7:
+  62:../aeat9000.c **** 	for(i = 0; i<8000; i++)
+ 223              		.loc 1 62 0 is_stmt 0 discriminator 1
+ 224 0130 7A68     		ldr	r2, [r7, #4]
+ 225 0132 41F63F73 		movw	r3, #7999
+ 226 0136 9A42     		cmp	r2, r3
+ 227 0138 F5DD     		ble	.L8
+  65:../aeat9000.c **** 	}
+  66:../aeat9000.c **** 	gpio_set(ZERORST_PORT, ZERORST_PIN);
+ 228              		.loc 1 66 0 is_stmt 1
+ 229 013a 4FF44060 		mov	r0, #3072
+ 230 013e C4F20100 		movt	r0, 16385
+ 231 0142 4FF00801 		mov	r1, #8
+ 232 0146 FFF7FEFF 		bl	gpio_set
+  67:../aeat9000.c **** }
+ 233              		.loc 1 67 0
+ 234 014a 07F10807 		add	r7, r7, #8
+ 235 014e BD46     		mov	sp, r7
+ 236 0150 80BD     		pop	{r7, pc}
+ 237              		.cfi_endproc
+ 238              	.LFE3:
+ 240 0152 00BF     		.align	2
+ 241              		.global	aeat9k_reset
+ 242              		.thumb
+ 243              		.thumb_func
+ 245              	aeat9k_reset:
+ 246              	.LFB4:
+  68:../aeat9000.c **** 
+  69:../aeat9000.c **** /**
+  70:../aeat9000.c ****  *
+  71:../aeat9000.c ****  */
+  72:../aeat9000.c **** void aeat9k_reset(void)
+  73:../aeat9000.c **** {
+ 247              		.loc 1 73 0
+ 248              		.cfi_startproc
+ 249              		@ args = 0, pretend = 0, frame = 8
+ 250              		@ frame_needed = 1, uses_anonymous_args = 0
+ 251 0154 80B5     		push	{r7, lr}
+ 252              	.LCFI10:
+ 253              		.cfi_def_cfa_offset 8
+ 254              		.cfi_offset 14, -4
+ 255              		.cfi_offset 7, -8
+ 256 0156 82B0     		sub	sp, sp, #8
+ 257              	.LCFI11:
+ 258              		.cfi_def_cfa_offset 16
+ 259 0158 00AF     		add	r7, sp, #0
+ 260              	.LCFI12:
+ 261              		.cfi_def_cfa_register 7
+  74:../aeat9000.c **** 	// Pulse Encoder Reset Pin Low
+  75:../aeat9000.c **** 	gpio_clear(ENCRST_PORT, ENCRST_PIN);
+ 262              		.loc 1 75 0
+ 263 015a 4FF40060 		mov	r0, #2048
+ 264 015e C4F20100 		movt	r0, 16385
+ 265 0162 4FF40061 		mov	r1, #2048
+ 266 0166 FFF7FEFF 		bl	gpio_clear
+  76:../aeat9000.c **** 	int i;
+  77:../aeat9000.c **** 	for(i = 0; i<8000; i++)
+ 267              		.loc 1 77 0
+ 268 016a 4FF00003 		mov	r3, #0
+ 269 016e 7B60     		str	r3, [r7, #4]
+ 270 0170 04E0     		b	.L10
+ 271              	.L11:
+  78:../aeat9000.c **** 	{
+  79:../aeat9000.c **** 		__asm__("NOP");
+ 272              		.loc 1 79 0 discriminator 2
+ 273              	@ 79 "../aeat9000.c" 1
+ 274 0172 00BF     		NOP
+ 275              	@ 0 "" 2
+  77:../aeat9000.c **** 	for(i = 0; i<8000; i++)
+ 276              		.loc 1 77 0 discriminator 2
+ 277              		.thumb
+ 278 0174 7B68     		ldr	r3, [r7, #4]
+ 279 0176 03F10103 		add	r3, r3, #1
+ 280 017a 7B60     		str	r3, [r7, #4]
+ 281              	.L10:
+  77:../aeat9000.c **** 	for(i = 0; i<8000; i++)
+ 282              		.loc 1 77 0 is_stmt 0 discriminator 1
+ 283 017c 7A68     		ldr	r2, [r7, #4]
+ 284 017e 41F63F73 		movw	r3, #7999
+ 285 0182 9A42     		cmp	r2, r3
+ 286 0184 F5DD     		ble	.L11
+  80:../aeat9000.c **** 	}
+  81:../aeat9000.c **** 	gpio_set(ENCRST_PORT, ENCRST_PIN);
+ 287              		.loc 1 81 0 is_stmt 1
+ 288 0186 4FF40060 		mov	r0, #2048
+ 289 018a C4F20100 		movt	r0, 16385
+ 290 018e 4FF40061 		mov	r1, #2048
+ 291 0192 FFF7FEFF 		bl	gpio_set
+  82:../aeat9000.c **** 
+  83:../aeat9000.c **** }
+ 292              		.loc 1 83 0
+ 293 0196 07F10807 		add	r7, r7, #8
+ 294 019a BD46     		mov	sp, r7
+ 295 019c 80BD     		pop	{r7, pc}
+ 296              		.cfi_endproc
+ 297              	.LFE4:
+ 299 019e 00BF     		.align	2
+ 300              		.global	aeat9k_get_msb_inv
+ 301              		.thumb
+ 302              		.thumb_func
+ 304              	aeat9k_get_msb_inv:
+ 305              	.LFB5:
+  84:../aeat9000.c **** 
+  85:../aeat9000.c **** /**
+  86:../aeat9000.c ****  *
+  87:../aeat9000.c ****  */
+  88:../aeat9000.c **** bool aeat9k_get_msb_inv()
+  89:../aeat9000.c **** {
+ 306              		.loc 1 89 0
+ 307              		.cfi_startproc
+ 308              		@ args = 0, pretend = 0, frame = 0
+ 309              		@ frame_needed = 1, uses_anonymous_args = 0
+ 310              		@ link register save eliminated.
+ 311 01a0 80B4     		push	{r7}
+ 312              	.LCFI13:
+ 313              		.cfi_def_cfa_offset 4
+ 314              		.cfi_offset 7, -4
+ 315 01a2 00AF     		add	r7, sp, #0
+ 316              	.LCFI14:
+ 317              		.cfi_def_cfa_register 7
+  90:../aeat9000.c **** 	return msb_inv_flag;
+ 318              		.loc 1 90 0
+ 319 01a4 40F20003 		movw	r3, #:lower16:msb_inv_flag
+ 320 01a8 C0F20003 		movt	r3, #:upper16:msb_inv_flag
+ 321 01ac 1B78     		ldrb	r3, [r3, #0]
+ 322 01ae DBB2     		uxtb	r3, r3
+  91:../aeat9000.c **** }
+ 323              		.loc 1 91 0
+ 324 01b0 1846     		mov	r0, r3
+ 325 01b2 BD46     		mov	sp, r7
+ 326 01b4 80BC     		pop	{r7}
+ 327 01b6 7047     		bx	lr
+ 328              		.cfi_endproc
+ 329              	.LFE5:
+ 331              		.align	2
+ 332              		.global	aeat9k_set_msb_inv
+ 333              		.thumb
+ 334              		.thumb_func
+ 336              	aeat9k_set_msb_inv:
+ 337              	.LFB6:
+  92:../aeat9000.c **** 
+  93:../aeat9000.c **** /**
+  94:../aeat9000.c ****  *
+  95:../aeat9000.c ****  */
+  96:../aeat9000.c **** void aeat9k_set_msb_inv(bool inv_state)
+  97:../aeat9000.c **** {
+ 338              		.loc 1 97 0
+ 339              		.cfi_startproc
+ 340              		@ args = 0, pretend = 0, frame = 8
+ 341              		@ frame_needed = 1, uses_anonymous_args = 0
+ 342 01b8 80B5     		push	{r7, lr}
+ 343              	.LCFI15:
+ 344              		.cfi_def_cfa_offset 8
+ 345              		.cfi_offset 14, -4
+ 346              		.cfi_offset 7, -8
+ 347 01ba 82B0     		sub	sp, sp, #8
+ 348              	.LCFI16:
+ 349              		.cfi_def_cfa_offset 16
+ 350 01bc 00AF     		add	r7, sp, #0
+ 351              	.LCFI17:
+ 352              		.cfi_def_cfa_register 7
+ 353 01be 0346     		mov	r3, r0
+ 354 01c0 FB71     		strb	r3, [r7, #7]
+  98:../aeat9000.c **** 	msb_inv_flag = inv_state;
+ 355              		.loc 1 98 0
+ 356 01c2 40F20003 		movw	r3, #:lower16:msb_inv_flag
+ 357 01c6 C0F20003 		movt	r3, #:upper16:msb_inv_flag
+ 358 01ca FA79     		ldrb	r2, [r7, #7]
+ 359 01cc 1A70     		strb	r2, [r3, #0]
+  99:../aeat9000.c **** 	if(inv_state)
+ 360              		.loc 1 99 0
+ 361 01ce FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 362 01d0 002B     		cmp	r3, #0
+ 363 01d2 08D0     		beq	.L14
+ 100:../aeat9000.c **** 		gpio_set(MSBINV_PORT, MSBINV_PIN);
+ 364              		.loc 1 100 0
+ 365 01d4 4FF44060 		mov	r0, #3072
+ 366 01d8 C4F20100 		movt	r0, 16385
+ 367 01dc 4FF01001 		mov	r1, #16
+ 368 01e0 FFF7FEFF 		bl	gpio_set
+ 369 01e4 07E0     		b	.L13
+ 370              	.L14:
+ 101:../aeat9000.c **** 	else
+ 102:../aeat9000.c **** 		gpio_clear(MSBINV_PORT, MSBINV_PIN);
+ 371              		.loc 1 102 0
+ 372 01e6 4FF44060 		mov	r0, #3072
+ 373 01ea C4F20100 		movt	r0, 16385
+ 374 01ee 4FF01001 		mov	r1, #16
+ 375 01f2 FFF7FEFF 		bl	gpio_clear
+ 376              	.L13:
+ 103:../aeat9000.c **** }
+ 377              		.loc 1 103 0
+ 378 01f6 07F10807 		add	r7, r7, #8
+ 379 01fa BD46     		mov	sp, r7
+ 380 01fc 80BD     		pop	{r7, pc}
+ 381              		.cfi_endproc
+ 382              	.LFE6:
+ 384 01fe 00BF     		.align	2
+ 385              		.global	aeat9k_error
+ 386              		.thumb
+ 387              		.thumb_func
+ 389              	aeat9k_error:
+ 390              	.LFB7:
+ 104:../aeat9000.c **** 
+ 105:../aeat9000.c **** /**
+ 106:../aeat9000.c ****  *
+ 107:../aeat9000.c ****  */
+ 108:../aeat9000.c **** u8 aeat9k_error(void)
+ 109:../aeat9000.c **** {
+ 391              		.loc 1 109 0
+ 392              		.cfi_startproc
+ 393              		@ args = 0, pretend = 0, frame = 0
+ 394              		@ frame_needed = 1, uses_anonymous_args = 0
+ 395              		@ link register save eliminated.
+ 396 0200 80B4     		push	{r7}
+ 397              	.LCFI18:
+ 398              		.cfi_def_cfa_offset 4
+ 399              		.cfi_offset 7, -4
+ 400 0202 00AF     		add	r7, sp, #0
+ 401              	.LCFI19:
+ 402              		.cfi_def_cfa_register 7
+ 110:../aeat9000.c **** 	if(GPIO_IDR(ENCERR_PORT) & ENCERR_PIN)
+ 403              		.loc 1 110 0
+ 404 0204 40F60803 		movw	r3, #2056
+ 405 0208 C4F20103 		movt	r3, 16385
+ 406 020c 1B68     		ldr	r3, [r3, #0]
+ 407 020e 03F40043 		and	r3, r3, #32768
+ 408 0212 002B     		cmp	r3, #0
+ 409 0214 02D0     		beq	.L17
+ 111:../aeat9000.c **** 		return 1;
+ 410              		.loc 1 111 0
+ 411 0216 4FF00103 		mov	r3, #1
+ 412 021a 01E0     		b	.L18
+ 413              	.L17:
+ 112:../aeat9000.c **** 	else
+ 113:../aeat9000.c **** 		return 0;
+ 414              		.loc 1 113 0
+ 415 021c 4FF00003 		mov	r3, #0
+ 416              	.L18:
+ 114:../aeat9000.c **** }
+ 417              		.loc 1 114 0
+ 418 0220 1846     		mov	r0, r3
+ 419 0222 BD46     		mov	sp, r7
+ 420 0224 80BC     		pop	{r7}
+ 421 0226 7047     		bx	lr
+ 422              		.cfi_endproc
+ 423              	.LFE7:
+ 425              	.Letext0:
+ 426              		.file 2 "/opt/ARM/arm-linaro-eabi-4.6/lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/includ
+ 427              		.file 3 "/opt/libopencm3/arm-none-eabi/include/libopencm3/cm3/common.h"
+ 428              		.file 4 "../ssi.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 aeat9000.c
+                            *COM*:0000000000000001 msb_inv_flag
+     /tmp/ccTnk92p.s:18     .text:0000000000000000 $t
+     /tmp/ccTnk92p.s:23     .text:0000000000000000 aeat9k_initialize
+     /tmp/ccTnk92p.s:103    .text:00000000000000bc aeat9k_read_blocking
+     /tmp/ccTnk92p.s:150    .text:00000000000000e8 aeat9k_read_buffer
+     /tmp/ccTnk92p.s:186    .text:0000000000000108 aeat9k_zero
+     /tmp/ccTnk92p.s:245    .text:0000000000000154 aeat9k_reset
+     /tmp/ccTnk92p.s:304    .text:00000000000001a0 aeat9k_get_msb_inv
+     /tmp/ccTnk92p.s:336    .text:00000000000001b8 aeat9k_set_msb_inv
+     /tmp/ccTnk92p.s:389    .text:0000000000000200 aeat9k_error
+                     .debug_frame:0000000000000010 $d
+
+UNDEFINED SYMBOLS
+gpio_set_mode
+gpio_clear
+ssi_initialize
+ssi_start_read
+ssi_data_ready
+ssi_read_data_buffer
+ssi_set_ext_buffer
+gpio_set

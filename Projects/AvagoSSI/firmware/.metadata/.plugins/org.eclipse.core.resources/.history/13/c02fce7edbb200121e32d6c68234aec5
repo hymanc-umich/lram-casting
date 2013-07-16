@@ -1,0 +1,24 @@
+/*
+ * avagossi.c
+ *
+ *  Created on: May 1, 2013
+ *      Author: cody
+ */
+
+
+#include "avagossi.h"
+
+extern system_clkf;
+
+
+
+int main(void)
+{
+	rcc_clock_setup_in_hsi_out_24mhz();
+	aeat9k_initialize();
+	while(1)
+	{
+
+	}
+	return 0;
+}

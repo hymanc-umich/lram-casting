@@ -1,0 +1,324 @@
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 18, 4
+  12              		.thumb
+  13              		.file	"serial_link.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.align	2
+  18              		.global	serial_initialize
+  19              		.thumb
+  20              		.thumb_func
+  22              	serial_initialize:
+  23              	.LFB0:
+  24              		.file 1 "../serial_link.c"
+   1:../serial_link.c **** /*
+   2:../serial_link.c ****  * serial_link.c
+   3:../serial_link.c ****  *
+   4:../serial_link.c ****  *  Created on: May 1, 2013
+   5:../serial_link.c ****  *      Author: cody
+   6:../serial_link.c ****  */
+   7:../serial_link.c **** 
+   8:../serial_link.c **** 
+   9:../serial_link.c **** #include "serial_link.h"
+  10:../serial_link.c **** 
+  11:../serial_link.c **** /*
+  12:../serial_link.c **** volatile char * output_buffer[10]; // Buffer Storage
+  13:../serial_link.c **** volatile u8 output_string_index;	// Outer Index
+  14:../serial_link.c **** volatile u8 output_char_index;		// Inner index
+  15:../serial_link.c **** 
+  16:../serial_link.c **** volatile char * input_buffer[10]; 	// Buffer Storage
+  17:../serial_link.c **** volatile u8 input_string_index;		// Outer Index
+  18:../serial_link.c **** volatile u8 input_char_index;		// Inner Index
+  19:../serial_link.c **** */
+  20:../serial_link.c **** 
+  21:../serial_link.c **** /**
+  22:../serial_link.c ****  *
+  23:../serial_link.c ****  */
+  24:../serial_link.c **** void serial_initialize(u32 baud)
+  25:../serial_link.c **** {
+  25              		.loc 1 25 0
+  26              		.cfi_startproc
+  27              		@ args = 0, pretend = 0, frame = 8
+  28              		@ frame_needed = 1, uses_anonymous_args = 0
+  29 0000 80B5     		push	{r7, lr}
+  30              	.LCFI0:
+  31              		.cfi_def_cfa_offset 8
+  32              		.cfi_offset 14, -4
+  33              		.cfi_offset 7, -8
+  34 0002 82B0     		sub	sp, sp, #8
+  35              	.LCFI1:
+  36              		.cfi_def_cfa_offset 16
+  37 0004 00AF     		add	r7, sp, #0
+  38              	.LCFI2:
+  39              		.cfi_def_cfa_register 7
+  40 0006 7860     		str	r0, [r7, #4]
+  26:../serial_link.c **** 	usart_set_baudrate(USART, baud);
+  41              		.loc 1 26 0
+  42 0008 4FF48840 		mov	r0, #17408
+  43 000c C4F20000 		movt	r0, 16384
+  44 0010 7968     		ldr	r1, [r7, #4]
+  45 0012 FFF7FEFF 		bl	usart_set_baudrate
+  27:../serial_link.c **** 	usart_set_databits(USART, 8);
+  46              		.loc 1 27 0
+  47 0016 4FF48840 		mov	r0, #17408
+  48 001a C4F20000 		movt	r0, 16384
+  49 001e 4FF00801 		mov	r1, #8
+  50 0022 FFF7FEFF 		bl	usart_set_databits
+  28:../serial_link.c **** 	usart_set_stopbits(USART, USART_STOPBITS_1);
+  51              		.loc 1 28 0
+  52 0026 4FF48840 		mov	r0, #17408
+  53 002a C4F20000 		movt	r0, 16384
+  54 002e 4FF00001 		mov	r1, #0
+  55 0032 FFF7FEFF 		bl	usart_set_stopbits
+  29:../serial_link.c **** 	usart_set_parity(USART, USART_PARITY_NONE);
+  56              		.loc 1 29 0
+  57 0036 4FF48840 		mov	r0, #17408
+  58 003a C4F20000 		movt	r0, 16384
+  59 003e 4FF00001 		mov	r1, #0
+  60 0042 FFF7FEFF 		bl	usart_set_parity
+  30:../serial_link.c **** 	usart_set_flow_control(USART, USART_FLOWCONTROL_NONE);
+  61              		.loc 1 30 0
+  62 0046 4FF48840 		mov	r0, #17408
+  63 004a C4F20000 		movt	r0, 16384
+  64 004e 4FF00001 		mov	r1, #0
+  65 0052 FFF7FEFF 		bl	usart_set_flow_control
+  31:../serial_link.c **** 	usart_enable(USART);
+  66              		.loc 1 31 0
+  67 0056 4FF48840 		mov	r0, #17408
+  68 005a C4F20000 		movt	r0, 16384
+  69 005e FFF7FEFF 		bl	usart_enable
+  32:../serial_link.c **** 	usart_enable_rx_interrupt(USART);
+  70              		.loc 1 32 0
+  71 0062 4FF48840 		mov	r0, #17408
+  72 0066 C4F20000 		movt	r0, 16384
+  73 006a FFF7FEFF 		bl	usart_enable_rx_interrupt
+  33:../serial_link.c **** 	usart_enable_tx_interrupt(USART);
+  74              		.loc 1 33 0
+  75 006e 4FF48840 		mov	r0, #17408
+  76 0072 C4F20000 		movt	r0, 16384
+  77 0076 FFF7FEFF 		bl	usart_enable_tx_interrupt
+  34:../serial_link.c **** }
+  78              		.loc 1 34 0
+  79 007a 07F10807 		add	r7, r7, #8
+  80 007e BD46     		mov	sp, r7
+  81 0080 80BD     		pop	{r7, pc}
+  82              		.cfi_endproc
+  83              	.LFE0:
+  85 0082 00BF     		.align	2
+  86              		.global	send_string_blocking
+  87              		.thumb
+  88              		.thumb_func
+  90              	send_string_blocking:
+  91              	.LFB1:
+  35:../serial_link.c **** 
+  36:../serial_link.c **** /**
+  37:../serial_link.c ****  *
+  38:../serial_link.c ****  */
+  39:../serial_link.c **** /*
+  40:../serial_link.c **** void flush_tx_buffer(void)
+  41:../serial_link.c **** {
+  42:../serial_link.c **** 
+  43:../serial_link.c **** }*/
+  44:../serial_link.c **** 
+  45:../serial_link.c **** /**
+  46:../serial_link.c ****  *
+  47:../serial_link.c ****  */
+  48:../serial_link.c **** /*
+  49:../serial_link.c **** void send_string (char * string)
+  50:../serial_link.c **** {
+  51:../serial_link.c **** 
+  52:../serial_link.c **** }*/
+  53:../serial_link.c **** 
+  54:../serial_link.c **** /**
+  55:../serial_link.c ****  *
+  56:../serial_link.c ****  */
+  57:../serial_link.c **** void send_string_blocking(char * string)
+  58:../serial_link.c **** {
+  92              		.loc 1 58 0
+  93              		.cfi_startproc
+  94              		@ args = 0, pretend = 0, frame = 16
+  95              		@ frame_needed = 1, uses_anonymous_args = 0
+  96 0084 80B5     		push	{r7, lr}
+  97              	.LCFI3:
+  98              		.cfi_def_cfa_offset 8
+  99              		.cfi_offset 14, -4
+ 100              		.cfi_offset 7, -8
+ 101 0086 84B0     		sub	sp, sp, #16
+ 102              	.LCFI4:
+ 103              		.cfi_def_cfa_offset 24
+ 104 0088 00AF     		add	r7, sp, #0
+ 105              	.LCFI5:
+ 106              		.cfi_def_cfa_register 7
+ 107 008a 7860     		str	r0, [r7, #4]
+  59:../serial_link.c **** 	u16 len = strlen(string);
+ 108              		.loc 1 59 0
+ 109 008c 7868     		ldr	r0, [r7, #4]
+ 110 008e FFF7FEFF 		bl	strlen
+ 111 0092 0346     		mov	r3, r0
+ 112 0094 BB81     		strh	r3, [r7, #12]	@ movhi
+  60:../serial_link.c **** 	u16 i;
+  61:../serial_link.c **** 	for(i = 0; i < len; i++)
+ 113              		.loc 1 61 0
+ 114 0096 4FF00003 		mov	r3, #0
+ 115 009a FB81     		strh	r3, [r7, #14]	@ movhi
+ 116 009c 0EE0     		b	.L3
+ 117              	.L4:
+  62:../serial_link.c **** 	{
+  63:../serial_link.c **** 		usart_send_blocking(USART, string[i]);
+ 118              		.loc 1 63 0 discriminator 2
+ 119 009e FB89     		ldrh	r3, [r7, #14]
+ 120 00a0 7A68     		ldr	r2, [r7, #4]
+ 121 00a2 D318     		adds	r3, r2, r3
+ 122 00a4 1B78     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 123 00a6 4FF48840 		mov	r0, #17408
+ 124 00aa C4F20000 		movt	r0, 16384
+ 125 00ae 1946     		mov	r1, r3
+ 126 00b0 FFF7FEFF 		bl	usart_send_blocking
+  61:../serial_link.c **** 	for(i = 0; i < len; i++)
+ 127              		.loc 1 61 0 discriminator 2
+ 128 00b4 FB89     		ldrh	r3, [r7, #14]	@ movhi
+ 129 00b6 03F10103 		add	r3, r3, #1
+ 130 00ba FB81     		strh	r3, [r7, #14]	@ movhi
+ 131              	.L3:
+  61:../serial_link.c **** 	for(i = 0; i < len; i++)
+ 132              		.loc 1 61 0 is_stmt 0 discriminator 1
+ 133 00bc FA89     		ldrh	r2, [r7, #14]
+ 134 00be BB89     		ldrh	r3, [r7, #12]
+ 135 00c0 9A42     		cmp	r2, r3
+ 136 00c2 ECD3     		bcc	.L4
+  64:../serial_link.c **** 	}
+  65:../serial_link.c **** }
+ 137              		.loc 1 65 0 is_stmt 1
+ 138 00c4 07F11007 		add	r7, r7, #16
+ 139 00c8 BD46     		mov	sp, r7
+ 140 00ca 80BD     		pop	{r7, pc}
+ 141              		.cfi_endproc
+ 142              	.LFE1:
+ 144              		.align	2
+ 145              		.global	send_byte
+ 146              		.thumb
+ 147              		.thumb_func
+ 149              	send_byte:
+ 150              	.LFB2:
+  66:../serial_link.c **** 
+  67:../serial_link.c **** /**
+  68:../serial_link.c ****  *
+  69:../serial_link.c ****  */
+  70:../serial_link.c **** bool send_byte(u8 byte)
+  71:../serial_link.c **** {
+ 151              		.loc 1 71 0
+ 152              		.cfi_startproc
+ 153              		@ args = 0, pretend = 0, frame = 8
+ 154              		@ frame_needed = 1, uses_anonymous_args = 0
+ 155              		@ link register save eliminated.
+ 156 00cc 80B4     		push	{r7}
+ 157              	.LCFI6:
+ 158              		.cfi_def_cfa_offset 4
+ 159              		.cfi_offset 7, -4
+ 160 00ce 83B0     		sub	sp, sp, #12
+ 161              	.LCFI7:
+ 162              		.cfi_def_cfa_offset 16
+ 163 00d0 00AF     		add	r7, sp, #0
+ 164              	.LCFI8:
+ 165              		.cfi_def_cfa_register 7
+ 166 00d2 0346     		mov	r3, r0
+ 167 00d4 FB71     		strb	r3, [r7, #7]
+  72:../serial_link.c **** 	if(USART_SR(USART) & USART_SR_TXE)
+ 168              		.loc 1 72 0
+ 169 00d6 4FF48843 		mov	r3, #17408
+ 170 00da C4F20003 		movt	r3, 16384
+ 171 00de 1B68     		ldr	r3, [r3, #0]
+ 172 00e0 03F08003 		and	r3, r3, #128
+ 173 00e4 002B     		cmp	r3, #0
+ 174 00e6 08D0     		beq	.L6
+  73:../serial_link.c **** 	{
+  74:../serial_link.c **** 		USART_DR(USART) =  byte;
+ 175              		.loc 1 74 0
+ 176 00e8 44F20443 		movw	r3, #17412
+ 177 00ec C4F20003 		movt	r3, 16384
+ 178 00f0 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 179 00f2 1A60     		str	r2, [r3, #0]
+  75:../serial_link.c **** 		return true;
+ 180              		.loc 1 75 0
+ 181 00f4 4FF00103 		mov	r3, #1
+ 182 00f8 01E0     		b	.L7
+ 183              	.L6:
+  76:../serial_link.c **** 	}
+  77:../serial_link.c **** 	return false;
+ 184              		.loc 1 77 0
+ 185 00fa 4FF00003 		mov	r3, #0
+ 186              	.L7:
+  78:../serial_link.c **** }
+ 187              		.loc 1 78 0
+ 188 00fe 1846     		mov	r0, r3
+ 189 0100 07F10C07 		add	r7, r7, #12
+ 190 0104 BD46     		mov	sp, r7
+ 191 0106 80BC     		pop	{r7}
+ 192 0108 7047     		bx	lr
+ 193              		.cfi_endproc
+ 194              	.LFE2:
+ 196 010a 00BF     		.align	2
+ 197              		.global	isr_usart2
+ 198              		.thumb
+ 199              		.thumb_func
+ 201              	isr_usart2:
+ 202              	.LFB3:
+  79:../serial_link.c **** 
+  80:../serial_link.c **** /**
+  81:../serial_link.c ****  *
+  82:../serial_link.c ****  */
+  83:../serial_link.c **** void isr_usart2(void)
+  84:../serial_link.c **** {
+ 203              		.loc 1 84 0
+ 204              		.cfi_startproc
+ 205              		@ args = 0, pretend = 0, frame = 0
+ 206              		@ frame_needed = 1, uses_anonymous_args = 0
+ 207              		@ link register save eliminated.
+ 208 010c 80B4     		push	{r7}
+ 209              	.LCFI9:
+ 210              		.cfi_def_cfa_offset 4
+ 211              		.cfi_offset 7, -4
+ 212 010e 00AF     		add	r7, sp, #0
+ 213              	.LCFI10:
+ 214              		.cfi_def_cfa_register 7
+  85:../serial_link.c **** 	// Check and clear flag
+  86:../serial_link.c **** }
+ 215              		.loc 1 86 0
+ 216 0110 BD46     		mov	sp, r7
+ 217 0112 80BC     		pop	{r7}
+ 218 0114 7047     		bx	lr
+ 219              		.cfi_endproc
+ 220              	.LFE3:
+ 222              	.Letext0:
+ 223              		.file 2 "/opt/ARM/arm-linaro-eabi-4.6/lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/includ
+ 224              		.file 3 "/opt/libopencm3/arm-none-eabi/include/libopencm3/cm3/common.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 serial_link.c
+     /tmp/ccCQH4Fi.s:17     .text:0000000000000000 $t
+     /tmp/ccCQH4Fi.s:22     .text:0000000000000000 serial_initialize
+     /tmp/ccCQH4Fi.s:90     .text:0000000000000084 send_string_blocking
+     /tmp/ccCQH4Fi.s:149    .text:00000000000000cc send_byte
+     /tmp/ccCQH4Fi.s:201    .text:000000000000010c isr_usart2
+                     .debug_frame:0000000000000010 $d
+
+UNDEFINED SYMBOLS
+usart_set_baudrate
+usart_set_databits
+usart_set_stopbits
+usart_set_parity
+usart_set_flow_control
+usart_enable
+usart_enable_rx_interrupt
+usart_enable_tx_interrupt
+strlen
+usart_send_blocking

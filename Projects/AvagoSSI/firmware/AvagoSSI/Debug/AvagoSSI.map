@@ -1,0 +1,895 @@
+Archive member included because of file (symbol)
+
+/opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                              ./avagossi.o (rcc_peripheral_enable_clock)
+/opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio.o)
+                              ./aeat9000.o (gpio_set_mode)
+/opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+                              ./serial_link.o (usart_set_baudrate)
+/opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+                              /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o) (flash_set_ws)
+/opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio_common_all.o)
+                              ./aeat9000.o (gpio_set)
+/opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(nvic.o)
+                              ./ssi.o (nvic_enable_irq)
+/opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(assert.o)
+                              /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o) (cm3_assert_failed)
+/opt/ARM/arm-linaro-eabi-4.6/lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/lib/thumb/cortex-m3/libg.a(lib_a-strlen.o)
+                              ./serial_link.o (strlen)
+
+Allocating common symbols
+Common symbol       size              file
+
+ext_buffer          0x4               ./ssi.o
+ext_buffer_flag     0x1               ./ssi.o
+ssi_counter         0x1               ./ssi.o
+msb_inv_flag        0x1               ./aeat9000.o
+ssi_state           0x1               ./ssi.o
+ssi_data_ready_flag
+                    0x1               ./ssi.o
+ssi_buffer          0x4               ./ssi.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD ./aeat9000.o
+LOAD ./avagossi.o
+LOAD ./serial_link.o
+LOAD ./ssi.o
+LOAD /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a
+START GROUP
+LOAD /opt/ARM/arm-linaro-eabi-4.6/lib/gcc/arm-none-eabi/4.6.2/thumb/cortex-m3/libgcc.a
+LOAD /opt/ARM/arm-linaro-eabi-4.6/lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/lib/thumb/cortex-m3/libg.a
+LOAD /opt/ARM/arm-linaro-eabi-4.6/lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/lib/thumb/cortex-m3/libc.a
+END GROUP
+                0x0000000000008000                PROVIDE (__executable_start, 0x8000)
+                0x0000000000008000                . = 0x8000
+
+.interp
+ *(.interp)
+
+.note.gnu.build-id
+ *(.note.gnu.build-id)
+
+.hash
+ *(.hash)
+
+.gnu.hash
+ *(.gnu.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.dyn        0x0000000000008000        0x0
+ *(.rel.init)
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+ *(.rel.fini)
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+ *(.rel.data.rel.ro* .rel.gnu.linkonce.d.rel.ro.*)
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+ *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
+ *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
+ *(.rel.ctors)
+ *(.rel.dtors)
+ *(.rel.got)
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+                0x0000000000008000                PROVIDE (__rel_iplt_start, .)
+ *(.rel.iplt)
+                0x0000000000008000                PROVIDE (__rel_iplt_end, .)
+                0x0000000000008000                PROVIDE (__rela_iplt_start, .)
+                0x0000000000008000                PROVIDE (__rela_iplt_end, .)
+
+.rela.dyn       0x0000000000008000        0x0
+ *(.rela.init)
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+ *(.rela.fini)
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+ *(.rela.ctors)
+ *(.rela.dtors)
+ *(.rela.got)
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+                0x0000000000008000                PROVIDE (__rel_iplt_start, .)
+                0x0000000000008000                PROVIDE (__rel_iplt_end, .)
+                0x0000000000008000                PROVIDE (__rela_iplt_start, .)
+ *(.rela.iplt)
+                0x0000000000008000                PROVIDE (__rela_iplt_end, .)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.init
+ *(.init)
+
+.plt
+ *(.plt)
+
+.iplt
+ *(.iplt)
+
+.text           0x0000000000008000     0x13c8
+ *(.text.unlikely .text.*_unlikely)
+ *(.text.exit .text.exit.*)
+ *(.text.startup .text.startup.*)
+ *(.text.hot .text.hot.*)
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x0000000000008000      0x228 ./aeat9000.o
+                0x0000000000008000                aeat9k_initialize
+                0x00000000000080bc                aeat9k_read_blocking
+                0x00000000000080e8                aeat9k_read_buffer
+                0x0000000000008108                aeat9k_zero
+                0x0000000000008154                aeat9k_reset
+                0x00000000000081a0                aeat9k_get_msb_inv
+                0x00000000000081b8                aeat9k_set_msb_inv
+                0x0000000000008200                aeat9k_error
+ .text          0x0000000000008228       0x7c ./avagossi.o
+                0x0000000000008228                main
+ .text          0x00000000000082a4      0x118 ./serial_link.o
+                0x00000000000082a4                serial_initialize
+                0x0000000000008328                send_string_blocking
+                0x0000000000008370                send_byte
+                0x00000000000083b0                isr_usart2
+ .text          0x00000000000083bc      0x374 ./ssi.o
+                0x00000000000083bc                ssi_initialize
+                0x0000000000008480                ssi_start_read
+                0x00000000000084ec                tim2_isr
+                0x00000000000085f0                ssi_bit_handler
+                0x00000000000086bc                ssi_data_ready
+                0x00000000000086d4                ssi_read_data_buffer
+                0x0000000000008704                ssi_set_ext_buffer
+ .text          0x0000000000008730        0x0 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+ .text.rcc_osc_ready_int_clear
+                0x0000000000008730       0x48 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x0000000000008730                rcc_osc_ready_int_clear
+ .text.rcc_osc_ready_int_enable
+                0x0000000000008778       0x48 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x0000000000008778                rcc_osc_ready_int_enable
+ .text.rcc_osc_ready_int_disable
+                0x00000000000087c0       0x48 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x00000000000087c0                rcc_osc_ready_int_disable
+ .text.rcc_osc_ready_int_flag
+                0x0000000000008808       0x44 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x0000000000008808                rcc_osc_ready_int_flag
+ .text.rcc_css_int_clear
+                0x000000000000884c       0x10 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x000000000000884c                rcc_css_int_clear
+ .text.rcc_css_int_flag
+                0x000000000000885c       0x10 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x000000000000885c                rcc_css_int_flag
+ .text.rcc_wait_for_osc_ready
+                0x000000000000886c       0x4c /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x000000000000886c                rcc_wait_for_osc_ready
+ .text.rcc_osc_on
+                0x00000000000088b8       0x4c /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x00000000000088b8                rcc_osc_on
+ .text.rcc_osc_off
+                0x0000000000008904       0x4c /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x0000000000008904                rcc_osc_off
+ .text.rcc_css_enable
+                0x0000000000008950       0x10 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x0000000000008950                rcc_css_enable
+ .text.rcc_css_disable
+                0x0000000000008960       0x10 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x0000000000008960                rcc_css_disable
+ .text.rcc_osc_bypass_enable
+                0x0000000000008970       0x2c /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x0000000000008970                rcc_osc_bypass_enable
+ .text.rcc_osc_bypass_disable
+                0x000000000000899c       0x2c /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x000000000000899c                rcc_osc_bypass_disable
+ .text.rcc_peripheral_enable_clock
+                0x00000000000089c8        0x8 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x00000000000089c8                rcc_peripheral_enable_clock
+ .text.rcc_peripheral_disable_clock
+                0x00000000000089d0        0xa /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x00000000000089d0                rcc_peripheral_disable_clock
+ .text.rcc_peripheral_reset
+                0x00000000000089da        0x8 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x00000000000089da                rcc_peripheral_reset
+ .text.rcc_peripheral_clear_reset
+                0x00000000000089e2        0xa /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x00000000000089e2                rcc_peripheral_clear_reset
+ .text.rcc_set_sysclk_source
+                0x00000000000089ec       0x14 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x00000000000089ec                rcc_set_sysclk_source
+ .text.rcc_set_pll_multiplication_factor
+                0x0000000000008a00       0x14 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x0000000000008a00                rcc_set_pll_multiplication_factor
+ .text.rcc_set_pll_source
+                0x0000000000008a14       0x14 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x0000000000008a14                rcc_set_pll_source
+ .text.rcc_set_pllxtpre
+                0x0000000000008a28       0x14 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x0000000000008a28                rcc_set_pllxtpre
+ .text.rcc_set_adcpre
+                0x0000000000008a3c       0x14 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x0000000000008a3c                rcc_set_adcpre
+ .text.rcc_set_ppre2
+                0x0000000000008a50       0x14 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x0000000000008a50                rcc_set_ppre2
+ .text.rcc_set_ppre1
+                0x0000000000008a64       0x14 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x0000000000008a64                rcc_set_ppre1
+ .text.rcc_set_hpre
+                0x0000000000008a78       0x14 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x0000000000008a78                rcc_set_hpre
+ .text.rcc_set_usbpre
+                0x0000000000008a8c       0x14 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x0000000000008a8c                rcc_set_usbpre
+ .text.rcc_system_clock_source
+                0x0000000000008aa0       0x10 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x0000000000008aa0                rcc_system_clock_source
+ .text.rcc_clock_setup_in_hsi_out_64mhz
+                0x0000000000008ab0       0x70 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x0000000000008ab0                rcc_clock_setup_in_hsi_out_64mhz
+ .text.rcc_clock_setup_in_hsi_out_48mhz
+                0x0000000000008b20       0x74 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x0000000000008b20                rcc_clock_setup_in_hsi_out_48mhz
+ .text.rcc_clock_setup_in_hsi_out_24mhz
+                0x0000000000008b94       0x68 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x0000000000008b94                rcc_clock_setup_in_hsi_out_24mhz
+ .text.rcc_clock_setup_in_hse_8mhz_out_24mhz
+                0x0000000000008bfc       0x80 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x0000000000008bfc                rcc_clock_setup_in_hse_8mhz_out_24mhz
+ .text.rcc_clock_setup_in_hse_8mhz_out_72mhz
+                0x0000000000008c7c       0x88 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x0000000000008c7c                rcc_clock_setup_in_hse_8mhz_out_72mhz
+ .text.rcc_clock_setup_in_hse_12mhz_out_72mhz
+                0x0000000000008d04       0x88 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x0000000000008d04                rcc_clock_setup_in_hse_12mhz_out_72mhz
+ .text.rcc_clock_setup_in_hse_16mhz_out_72mhz
+                0x0000000000008d8c       0x88 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x0000000000008d8c                rcc_clock_setup_in_hse_16mhz_out_72mhz
+ .text.rcc_backupdomain_reset
+                0x0000000000008e14       0x18 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x0000000000008e14                rcc_backupdomain_reset
+ .text          0x0000000000008e2c        0x0 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio.o)
+ .text.gpio_set_mode
+                0x0000000000008e2c       0x6e /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio.o)
+                0x0000000000008e2c                gpio_set_mode
+ *fill*         0x0000000000008e9a        0x2 00000000
+ .text.gpio_set_eventout
+                0x0000000000008e9c       0x10 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio.o)
+                0x0000000000008e9c                gpio_set_eventout
+ .text.gpio_primary_remap
+                0x0000000000008eac       0x14 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio.o)
+                0x0000000000008eac                gpio_primary_remap
+ .text.gpio_secondary_remap
+                0x0000000000008ec0        0xc /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio.o)
+                0x0000000000008ec0                gpio_secondary_remap
+ .text          0x0000000000008ecc        0x0 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+ .text.usart_set_baudrate
+                0x0000000000008ecc       0x28 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+                0x0000000000008ecc                usart_set_baudrate
+ .text.usart_set_databits
+                0x0000000000008ef4       0x12 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+                0x0000000000008ef4                usart_set_databits
+ .text.usart_set_stopbits
+                0x0000000000008f06        0xc /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+                0x0000000000008f06                usart_set_stopbits
+ .text.usart_set_parity
+                0x0000000000008f12        0xc /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+                0x0000000000008f12                usart_set_parity
+ .text.usart_set_mode
+                0x0000000000008f1e        0xc /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+                0x0000000000008f1e                usart_set_mode
+ .text.usart_set_flow_control
+                0x0000000000008f2a        0xc /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+                0x0000000000008f2a                usart_set_flow_control
+ .text.usart_enable
+                0x0000000000008f36        0xa /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+                0x0000000000008f36                usart_enable
+ .text.usart_disable
+                0x0000000000008f40        0xa /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+                0x0000000000008f40                usart_disable
+ .text.usart_send
+                0x0000000000008f4a        0x8 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+                0x0000000000008f4a                usart_send
+ .text.usart_recv
+                0x0000000000008f52        0x8 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+                0x0000000000008f52                usart_recv
+ .text.usart_wait_send_ready
+                0x0000000000008f5a        0x8 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+                0x0000000000008f5a                usart_wait_send_ready
+ .text.usart_wait_recv_ready
+                0x0000000000008f62        0x8 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+                0x0000000000008f62                usart_wait_recv_ready
+ .text.usart_send_blocking
+                0x0000000000008f6a       0x12 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+                0x0000000000008f6a                usart_send_blocking
+ .text.usart_recv_blocking
+                0x0000000000008f7c       0x10 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+                0x0000000000008f7c                usart_recv_blocking
+ .text.usart_enable_rx_dma
+                0x0000000000008f8c        0xa /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+                0x0000000000008f8c                usart_enable_rx_dma
+ .text.usart_disable_rx_dma
+                0x0000000000008f96        0xa /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+                0x0000000000008f96                usart_disable_rx_dma
+ .text.usart_enable_tx_dma
+                0x0000000000008fa0        0xa /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+                0x0000000000008fa0                usart_enable_tx_dma
+ .text.usart_disable_tx_dma
+                0x0000000000008faa        0xa /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+                0x0000000000008faa                usart_disable_tx_dma
+ .text.usart_enable_rx_interrupt
+                0x0000000000008fb4        0xa /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+                0x0000000000008fb4                usart_enable_rx_interrupt
+ .text.usart_disable_rx_interrupt
+                0x0000000000008fbe        0xa /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+                0x0000000000008fbe                usart_disable_rx_interrupt
+ .text.usart_enable_tx_interrupt
+                0x0000000000008fc8        0xa /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+                0x0000000000008fc8                usart_enable_tx_interrupt
+ .text.usart_disable_tx_interrupt
+                0x0000000000008fd2        0xa /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+                0x0000000000008fd2                usart_disable_tx_interrupt
+ .text.usart_get_flag
+                0x0000000000008fdc        0xc /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+                0x0000000000008fdc                usart_get_flag
+ .text.usart_get_interrupt_source
+                0x0000000000008fe8       0x2e /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+                0x0000000000008fe8                usart_get_interrupt_source
+ .text          0x0000000000009016        0x0 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+ *fill*         0x0000000000009016        0x2 00000000
+ .text.flash_prefetch_buffer_enable
+                0x0000000000009018       0x10 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+                0x0000000000009018                flash_prefetch_buffer_enable
+ .text.flash_prefetch_buffer_disable
+                0x0000000000009028       0x10 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+                0x0000000000009028                flash_prefetch_buffer_disable
+ .text.flash_halfcycle_enable
+                0x0000000000009038       0x10 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+                0x0000000000009038                flash_halfcycle_enable
+ .text.flash_halfcycle_disable
+                0x0000000000009048       0x10 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+                0x0000000000009048                flash_halfcycle_disable
+ .text.flash_set_ws
+                0x0000000000009058       0x14 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+                0x0000000000009058                flash_set_ws
+ .text.flash_unlock
+                0x000000000000906c       0x18 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+                0x000000000000906c                flash_unlock
+ .text.flash_lock
+                0x0000000000009084       0x10 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+                0x0000000000009084                flash_lock
+ .text.flash_clear_pgerr_flag
+                0x0000000000009094       0x10 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+                0x0000000000009094                flash_clear_pgerr_flag
+ .text.flash_clear_eop_flag
+                0x00000000000090a4       0x10 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+                0x00000000000090a4                flash_clear_eop_flag
+ .text.flash_clear_wrprterr_flag
+                0x00000000000090b4       0x10 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+                0x00000000000090b4                flash_clear_wrprterr_flag
+ .text.flash_clear_bsy_flag
+                0x00000000000090c4       0x10 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+                0x00000000000090c4                flash_clear_bsy_flag
+ .text.flash_clear_status_flags
+                0x00000000000090d4       0x16 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+                0x00000000000090d4                flash_clear_status_flags
+ *fill*         0x00000000000090ea        0x2 00000000
+ .text.flash_unlock_option_bytes
+                0x00000000000090ec       0x18 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+                0x00000000000090ec                flash_unlock_option_bytes
+ .text.flash_wait_for_last_operation
+                0x0000000000009104       0x10 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+                0x0000000000009104                flash_wait_for_last_operation
+ .text.flash_program_word
+                0x0000000000009114       0x34 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+                0x0000000000009114                flash_program_word
+ .text.flash_program_half_word
+                0x0000000000009148       0x28 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+                0x0000000000009148                flash_program_half_word
+ .text.flash_erase_page
+                0x0000000000009170       0x34 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+                0x0000000000009170                flash_erase_page
+ .text.flash_erase_all_pages
+                0x00000000000091a4       0x2c /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+                0x00000000000091a4                flash_erase_all_pages
+ .text.flash_erase_option_bytes
+                0x00000000000091d0       0x34 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+                0x00000000000091d0                flash_erase_option_bytes
+ .text.flash_program_option_bytes
+                0x0000000000009204       0x34 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+                0x0000000000009204                flash_program_option_bytes
+ .text          0x0000000000009238        0x0 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio_common_all.o)
+ .text.gpio_set
+                0x0000000000009238        0x4 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio_common_all.o)
+                0x0000000000009238                gpio_set
+ .text.gpio_clear
+                0x000000000000923c        0x6 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio_common_all.o)
+                0x000000000000923c                gpio_clear
+ .text.gpio_get
+                0x0000000000009242        0x6 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio_common_all.o)
+                0x0000000000009242                gpio_get
+ .text.gpio_toggle
+                0x0000000000009248        0x8 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio_common_all.o)
+                0x0000000000009248                gpio_toggle
+ .text.gpio_port_read
+                0x0000000000009250        0x6 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio_common_all.o)
+                0x0000000000009250                gpio_port_read
+ .text.gpio_port_write
+                0x0000000000009256        0x4 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio_common_all.o)
+                0x0000000000009256                gpio_port_write
+ .text.gpio_port_config_lock
+                0x000000000000925a       0x10 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio_common_all.o)
+                0x000000000000925a                gpio_port_config_lock
+ .text          0x000000000000926a        0x0 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(nvic.o)
+ .text.nvic_enable_irq
+                0x000000000000926a       0x18 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(nvic.o)
+                0x000000000000926a                nvic_enable_irq
+ .text.nvic_disable_irq
+                0x0000000000009282       0x18 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(nvic.o)
+                0x0000000000009282                nvic_disable_irq
+ .text.nvic_get_pending_irq
+                0x000000000000929a       0x20 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(nvic.o)
+                0x000000000000929a                nvic_get_pending_irq
+ .text.nvic_set_pending_irq
+                0x00000000000092ba       0x18 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(nvic.o)
+                0x00000000000092ba                nvic_set_pending_irq
+ .text.nvic_clear_pending_irq
+                0x00000000000092d2       0x18 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(nvic.o)
+                0x00000000000092d2                nvic_clear_pending_irq
+ .text.nvic_get_active_irq
+                0x00000000000092ea       0x20 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(nvic.o)
+                0x00000000000092ea                nvic_get_active_irq
+ .text.nvic_get_irq_enabled
+                0x000000000000930a       0x20 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(nvic.o)
+                0x000000000000930a                nvic_get_irq_enabled
+ *fill*         0x000000000000932a        0x2 00000000
+ .text.nvic_set_priority
+                0x000000000000932c       0x20 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(nvic.o)
+                0x000000000000932c                nvic_set_priority
+ .text.nvic_generate_software_interrupt
+                0x000000000000934c       0x14 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(nvic.o)
+                0x000000000000934c                nvic_generate_software_interrupt
+ .text          0x0000000000009360        0x0 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(assert.o)
+ .text.cm3_assert_failed
+                0x0000000000009360        0x2 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(assert.o)
+                0x0000000000009360                cm3_assert_failed
+ .text.cm3_assert_failed_verbose
+                0x0000000000009362        0x6 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(assert.o)
+                0x0000000000009362                cm3_assert_failed_verbose
+ .text          0x0000000000009368       0x60 /opt/ARM/arm-linaro-eabi-4.6/lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/lib/thumb/cortex-m3/libg.a(lib_a-strlen.o)
+                0x0000000000009368                strlen
+ *(.gnu.warning)
+ *(.glue_7t)
+ .glue_7t       0x0000000000000000        0x0 linker stubs
+ *(.glue_7)
+ .glue_7        0x0000000000000000        0x0 linker stubs
+ *(.vfp11_veneer)
+ .vfp11_veneer  0x0000000000000000        0x0 linker stubs
+ *(.v4_bx)
+ .v4_bx         0x0000000000000000        0x0 linker stubs
+
+.fini
+ *(.fini)
+                0x00000000000093c8                PROVIDE (__etext, .)
+                0x00000000000093c8                PROVIDE (_etext, .)
+                0x00000000000093c8                PROVIDE (etext, .)
+
+.rodata
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+
+.rodata1
+ *(.rodata1)
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+                0x00000000000093c8                PROVIDE (__exidx_start, .)
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x00000000000093c8                PROVIDE (__exidx_end, .)
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+
+.eh_frame
+ *(.eh_frame)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+                0x00000000000113c8                . = (ALIGN (0x8000) + (. & 0x7fff))
+
+.eh_frame
+ *(.eh_frame)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.tdata
+ *(.tdata .tdata.* .gnu.linkonce.td.*)
+
+.tbss
+ *(.tbss .tbss.* .gnu.linkonce.tb.*)
+ *(.tcommon)
+
+.preinit_array  0x00000000000113c8        0x0
+                0x00000000000113c8                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array)
+                0x00000000000113c8                PROVIDE (__preinit_array_end, .)
+
+.init_array     0x00000000000113c8        0x0
+                0x00000000000113c8                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ *(.init_array)
+                0x00000000000113c8                PROVIDE (__init_array_end, .)
+
+.fini_array     0x00000000000113c8        0x0
+                0x00000000000113c8                PROVIDE (__fini_array_start, .)
+ *(SORT(.fini_array.*))
+ *(.fini_array)
+                0x00000000000113c8                PROVIDE (__fini_array_end, .)
+
+.ctors
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+
+.dtors
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+
+.jcr
+ *(.jcr)
+
+.data.rel.ro
+ *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
+ *(.data.rel.ro* .gnu.linkonce.d.rel.ro.*)
+
+.dynamic
+ *(.dynamic)
+
+.got
+ *(.got.plt)
+ *(.igot.plt)
+ *(.got)
+ *(.igot)
+
+.data           0x00000000000113c8        0x8
+                0x00000000000113c8                __data_start = .
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x00000000000113c8        0x0 ./aeat9000.o
+ .data          0x00000000000113c8        0x0 ./avagossi.o
+ .data          0x00000000000113c8        0x0 ./serial_link.o
+ .data          0x00000000000113c8        0x0 ./ssi.o
+ .data          0x00000000000113c8        0x0 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+ .data.rcc_ppre1_frequency
+                0x00000000000113c8        0x4 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x00000000000113c8                rcc_ppre1_frequency
+ .data.rcc_ppre2_frequency
+                0x00000000000113cc        0x4 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                0x00000000000113cc                rcc_ppre2_frequency
+ .data          0x00000000000113d0        0x0 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio.o)
+ .data          0x00000000000113d0        0x0 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+ .data          0x00000000000113d0        0x0 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+ .data          0x00000000000113d0        0x0 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio_common_all.o)
+ .data          0x00000000000113d0        0x0 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(nvic.o)
+ .data          0x00000000000113d0        0x0 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(assert.o)
+ .data          0x00000000000113d0        0x0 /opt/ARM/arm-linaro-eabi-4.6/lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/lib/thumb/cortex-m3/libg.a(lib_a-strlen.o)
+
+.data1
+ *(.data1)
+                0x00000000000113d0                _edata = .
+                0x00000000000113d0                PROVIDE (edata, .)
+                0x00000000000113d0                __bss_start = .
+                0x00000000000113d0                __bss_start__ = .
+
+.bss            0x00000000000113d0       0x10
+ *(.dynbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x00000000000113d0        0x0 ./aeat9000.o
+ .bss           0x00000000000113d0        0x0 ./avagossi.o
+ .bss           0x00000000000113d0        0x0 ./serial_link.o
+ .bss           0x00000000000113d0        0x0 ./ssi.o
+ .bss           0x00000000000113d0        0x0 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+ .bss           0x00000000000113d0        0x0 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio.o)
+ .bss           0x00000000000113d0        0x0 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+ .bss           0x00000000000113d0        0x0 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+ .bss           0x00000000000113d0        0x0 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio_common_all.o)
+ .bss           0x00000000000113d0        0x0 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(nvic.o)
+ .bss           0x00000000000113d0        0x0 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(assert.o)
+ .bss           0x00000000000113d0        0x0 /opt/ARM/arm-linaro-eabi-4.6/lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/lib/thumb/cortex-m3/libg.a(lib_a-strlen.o)
+ *(COMMON)
+ COMMON         0x00000000000113d0        0x1 ./aeat9000.o
+                0x00000000000113d0                msb_inv_flag
+ *fill*         0x00000000000113d1        0x3 00
+ COMMON         0x00000000000113d4        0xc ./ssi.o
+                0x00000000000113d4                ext_buffer
+                0x00000000000113d8                ext_buffer_flag
+                0x00000000000113d9                ssi_counter
+                0x00000000000113da                ssi_state
+                0x00000000000113db                ssi_data_ready_flag
+                0x00000000000113dc                ssi_buffer
+                0x00000000000113e0                . = ALIGN ((. != 0x0)?0x4:0x1)
+                0x00000000000113e0                _bss_end__ = .
+                0x00000000000113e0                __bss_end__ = .
+                0x00000000000113e0                . = ALIGN (0x4)
+                0x00000000000113e0                . = ALIGN (0x4)
+                0x00000000000113e0                __end__ = .
+                0x00000000000113e0                _end = .
+                0x00000000000113e0                PROVIDE (end, .)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x3a
+ *(.comment)
+ .comment       0x0000000000000000       0x3a ./aeat9000.o
+                                         0x3b (size before relaxing)
+ .comment       0x0000000000000000       0x3b ./avagossi.o
+ .comment       0x0000000000000000       0x3b ./serial_link.o
+ .comment       0x0000000000000000       0x3b ./ssi.o
+ .comment       0x0000000000000000       0x3b /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+ .comment       0x0000000000000000       0x3b /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio.o)
+ .comment       0x0000000000000000       0x3b /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+ .comment       0x0000000000000000       0x3b /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+ .comment       0x0000000000000000       0x3b /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio_common_all.o)
+ .comment       0x0000000000000000       0x3b /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(nvic.o)
+ .comment       0x0000000000000000       0x3b /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(assert.o)
+ .comment       0x0000000000000000       0x3b /opt/ARM/arm-linaro-eabi-4.6/lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/lib/thumb/cortex-m3/libg.a(lib_a-strlen.o)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x0000000000000000      0x470
+ *(.debug_aranges)
+ .debug_aranges
+                0x0000000000000000       0x20 ./aeat9000.o
+ .debug_aranges
+                0x0000000000000020       0x20 ./avagossi.o
+ .debug_aranges
+                0x0000000000000040       0x20 ./serial_link.o
+ .debug_aranges
+                0x0000000000000060       0x20 ./ssi.o
+ .debug_aranges
+                0x0000000000000080      0x130 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+ .debug_aranges
+                0x00000000000001b0       0x38 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio.o)
+ .debug_aranges
+                0x00000000000001e8       0xd8 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+ .debug_aranges
+                0x00000000000002c0       0xb8 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+ .debug_aranges
+                0x0000000000000378       0x50 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio_common_all.o)
+ .debug_aranges
+                0x00000000000003c8       0x60 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(nvic.o)
+ .debug_aranges
+                0x0000000000000428       0x28 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(assert.o)
+ .debug_aranges
+                0x0000000000000450       0x20 /opt/ARM/arm-linaro-eabi-4.6/lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/lib/thumb/cortex-m3/libg.a(lib_a-strlen.o)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x0000000000000000     0x1e1f
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x0000000000000000      0x1fc ./aeat9000.o
+ .debug_info    0x00000000000001fc       0xba ./avagossi.o
+ .debug_info    0x00000000000002b6      0x170 ./serial_link.o
+ .debug_info    0x0000000000000426      0x2c9 ./ssi.o
+ .debug_info    0x00000000000006ef      0x6b4 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+ .debug_info    0x0000000000000da3      0x1d4 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio.o)
+ .debug_info    0x0000000000000f77      0x5e1 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+ .debug_info    0x0000000000001558      0x2ca /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+ .debug_info    0x0000000000001822      0x232 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio_common_all.o)
+ .debug_info    0x0000000000001a54      0x22e /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(nvic.o)
+ .debug_info    0x0000000000001c82       0xec /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(assert.o)
+ .debug_info    0x0000000000001d6e       0xb1 /opt/ARM/arm-linaro-eabi-4.6/lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/lib/thumb/cortex-m3/libg.a(lib_a-strlen.o)
+
+.debug_abbrev   0x0000000000000000      0xb10
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000      0x106 ./aeat9000.o
+ .debug_abbrev  0x0000000000000106       0x6c ./avagossi.o
+ .debug_abbrev  0x0000000000000172       0xb2 ./serial_link.o
+ .debug_abbrev  0x0000000000000224      0x10f ./ssi.o
+ .debug_abbrev  0x0000000000000333      0x1fa /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+ .debug_abbrev  0x000000000000052d       0xd4 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio.o)
+ .debug_abbrev  0x0000000000000601      0x1a3 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+ .debug_abbrev  0x00000000000007a4       0xe0 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+ .debug_abbrev  0x0000000000000884       0xff /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio_common_all.o)
+ .debug_abbrev  0x0000000000000983       0xa9 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(nvic.o)
+ .debug_abbrev  0x0000000000000a2c       0x77 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(assert.o)
+ .debug_abbrev  0x0000000000000aa3       0x6d /opt/ARM/arm-linaro-eabi-4.6/lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/lib/thumb/cortex-m3/libg.a(lib_a-strlen.o)
+
+.debug_line     0x0000000000000000     0x1d73
+ *(.debug_line)
+ .debug_line    0x0000000000000000      0x310 ./aeat9000.o
+ .debug_line    0x0000000000000310      0x479 ./avagossi.o
+ .debug_line    0x0000000000000789      0x446 ./serial_link.o
+ .debug_line    0x0000000000000bcf      0x2f3 ./ssi.o
+ .debug_line    0x0000000000000ec2      0x419 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+ .debug_line    0x00000000000012db      0x131 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio.o)
+ .debug_line    0x000000000000140c      0x2e6 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+ .debug_line    0x00000000000016f2      0x255 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+ .debug_line    0x0000000000001947      0x153 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio_common_all.o)
+ .debug_line    0x0000000000001a9a      0x166 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(nvic.o)
+ .debug_line    0x0000000000001c00       0x53 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(assert.o)
+ .debug_line    0x0000000000001c53      0x120 /opt/ARM/arm-linaro-eabi-4.6/lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/lib/thumb/cortex-m3/libg.a(lib_a-strlen.o)
+
+.debug_frame    0x0000000000000000      0xa30
+ *(.debug_frame)
+ .debug_frame   0x0000000000000000      0x100 ./aeat9000.o
+ .debug_frame   0x0000000000000100       0x30 ./avagossi.o
+ .debug_frame   0x0000000000000130       0x88 ./serial_link.o
+ .debug_frame   0x00000000000001b8       0xdc ./ssi.o
+ .debug_frame   0x0000000000000294      0x280 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+ .debug_frame   0x0000000000000514       0x68 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio.o)
+ .debug_frame   0x000000000000057c      0x1a4 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+ .debug_frame   0x0000000000000720      0x198 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+ .debug_frame   0x00000000000008b8       0x80 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio_common_all.o)
+ .debug_frame   0x0000000000000938       0xa0 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(nvic.o)
+ .debug_frame   0x00000000000009d8       0x38 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(assert.o)
+ .debug_frame   0x0000000000000a10       0x20 /opt/ARM/arm-linaro-eabi-4.6/lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/lib/thumb/cortex-m3/libg.a(lib_a-strlen.o)
+
+.debug_str      0x0000000000000000      0xd5b
+ *(.debug_str)
+ .debug_str     0x0000000000000000      0x1a1 ./aeat9000.o
+                                        0x1e6 (size before relaxing)
+ .debug_str     0x00000000000001a1       0x13 ./avagossi.o
+                                        0x11c (size before relaxing)
+ .debug_str     0x00000000000001b4       0x62 ./serial_link.o
+                                        0x178 (size before relaxing)
+ .debug_str     0x0000000000000216       0xd6 ./ssi.o
+                                        0x225 (size before relaxing)
+ .debug_str     0x00000000000002ec      0x39f /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+                                        0x488 (size before relaxing)
+ .debug_str     0x000000000000068b       0x8e /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio.o)
+                                        0x17a (size before relaxing)
+ .debug_str     0x0000000000000719      0x206 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+                                        0x343 (size before relaxing)
+ .debug_str     0x000000000000091f      0x1d6 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+                                        0x2c8 (size before relaxing)
+ .debug_str     0x0000000000000af5       0x7a /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio_common_all.o)
+                                        0x173 (size before relaxing)
+ .debug_str     0x0000000000000b6f       0xd4 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(nvic.o)
+                                        0x1c4 (size before relaxing)
+ .debug_str     0x0000000000000c43       0x5a /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(assert.o)
+                                        0x12c (size before relaxing)
+ .debug_str     0x0000000000000c9d       0xbe /opt/ARM/arm-linaro-eabi-4.6/lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/lib/thumb/cortex-m3/libg.a(lib_a-strlen.o)
+                                        0x169 (size before relaxing)
+
+.debug_loc      0x0000000000000000      0xc56
+ *(.debug_loc)
+ .debug_loc     0x0000000000000000      0x190 ./aeat9000.o
+ .debug_loc     0x0000000000000190       0x38 ./avagossi.o
+ .debug_loc     0x00000000000001c8       0xd4 ./serial_link.o
+ .debug_loc     0x000000000000029c      0x170 ./ssi.o
+ .debug_loc     0x000000000000040c      0x2b2 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+ .debug_loc     0x00000000000006be       0xe1 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio.o)
+ .debug_loc     0x000000000000079f      0x1ad /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+ .debug_loc     0x000000000000094c      0x19c /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+ .debug_loc     0x0000000000000ae8       0x39 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio_common_all.o)
+ .debug_loc     0x0000000000000b21       0xb6 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(nvic.o)
+ .debug_loc     0x0000000000000bd7       0x6c /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(assert.o)
+ .debug_loc     0x0000000000000c43       0x13 /opt/ARM/arm-linaro-eabi-4.6/lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/lib/thumb/cortex-m3/libg.a(lib_a-strlen.o)
+
+.debug_macinfo  0x0000000000000000    0x36492
+ *(.debug_macinfo)
+ .debug_macinfo
+                0x0000000000000000     0xd028 ./aeat9000.o
+ .debug_macinfo
+                0x000000000000d028    0x10318 ./avagossi.o
+ .debug_macinfo
+                0x000000000001d340     0xc22f ./serial_link.o
+ .debug_macinfo
+                0x000000000002956f     0xcf23 ./ssi.o
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges   0x0000000000000000      0x380
+ *(.debug_ranges)
+ .debug_ranges  0x0000000000000000      0x120 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+ .debug_ranges  0x0000000000000120       0x28 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio.o)
+ .debug_ranges  0x0000000000000148       0xe8 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+ .debug_ranges  0x0000000000000230       0xa8 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+ .debug_ranges  0x00000000000002d8       0x40 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio_common_all.o)
+ .debug_ranges  0x0000000000000318       0x50 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(nvic.o)
+ .debug_ranges  0x0000000000000368       0x18 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(assert.o)
+
+.stack          0x0000000000080000        0x0
+                0x0000000000080000                _stack = .
+ *(.stack)
+
+.ARM.attributes
+                0x0000000000000000       0x31
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x0000000000000000       0x31 ./aeat9000.o
+ .ARM.attributes
+                0x0000000000000031       0x31 ./avagossi.o
+ .ARM.attributes
+                0x0000000000000062       0x31 ./serial_link.o
+ .ARM.attributes
+                0x0000000000000093       0x31 ./ssi.o
+ .ARM.attributes
+                0x00000000000000c4       0x31 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(rcc.o)
+ .ARM.attributes
+                0x00000000000000f5       0x31 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio.o)
+ .ARM.attributes
+                0x0000000000000126       0x31 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(usart.o)
+ .ARM.attributes
+                0x0000000000000157       0x31 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(flash.o)
+ .ARM.attributes
+                0x0000000000000188       0x31 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(gpio_common_all.o)
+ .ARM.attributes
+                0x00000000000001b9       0x31 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(nvic.o)
+ .ARM.attributes
+                0x00000000000001ea       0x31 /opt/libopencm3/arm-none-eabi/lib/libopencm3_stm32f1.a(assert.o)
+ .ARM.attributes
+                0x000000000000021b       0x31 /opt/ARM/arm-linaro-eabi-4.6/lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/lib/thumb/cortex-m3/libg.a(lib_a-strlen.o)
+ *(.gnu.attributes)
+
+.note.gnu.arm.ident
+ *(.note.gnu.arm.ident)
+
+/DISCARD/
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+ *(.gnu.lto_*)
+OUTPUT(AvagoSSI.elf elf32-littlearm)

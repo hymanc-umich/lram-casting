@@ -1,0 +1,18 @@
+/*
+ * ssi.h
+ *
+ *  Created on: May 1, 2013
+ *      Author: cody
+ */
+
+#ifndef SSI_H_
+#define SSI_H_
+
+#include <libopencm3/stm32/f1/gpio.h>
+#include <libopencm3/stm32/timer.h>
+
+void ssi_initialize(unsigned short clock_freq);
+void ssi_start_read();
+void ssi_bit_handler(u8 bit);
+
+#endif /* SSI_H_ */

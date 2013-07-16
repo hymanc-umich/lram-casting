@@ -1,0 +1,19 @@
+/*
+ * ssi.c
+ *
+ *  Created on: May 1, 2013
+ *      Author: cody
+ */
+
+
+#include "ssi.h"
+
+void ssi_initialize(u16 clk_speed)
+{
+	// Initialize clock timer
+}
+
+void ssi_start_read(u8 nbits)
+{
+
+}

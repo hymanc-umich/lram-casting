@@ -1,0 +1,137 @@
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 18, 4
+  12              		.thumb
+  13              		.file	"avagossi.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.align	2
+  18              		.global	main
+  19              		.thumb
+  20              		.thumb_func
+  22              	main:
+  23              	.LFB0:
+  24              		.file 1 "../avagossi.c"
+   1:../avagossi.c **** /*
+   2:../avagossi.c ****  * avagossi.c
+   3:../avagossi.c ****  *
+   4:../avagossi.c ****  *  Created on: May 1, 2013
+   5:../avagossi.c ****  *      Author: cody
+   6:../avagossi.c ****  */
+   7:../avagossi.c **** 
+   8:../avagossi.c **** 
+   9:../avagossi.c **** #include "avagossi.h"
+  10:../avagossi.c **** 
+  11:../avagossi.c **** int main(void)
+  12:../avagossi.c **** {
+  25              		.loc 1 12 0
+  26              		.cfi_startproc
+  27              		@ args = 0, pretend = 0, frame = 8
+  28              		@ frame_needed = 1, uses_anonymous_args = 0
+  29 0000 80B5     		push	{r7, lr}
+  30              	.LCFI0:
+  31              		.cfi_def_cfa_offset 8
+  32              		.cfi_offset 14, -4
+  33              		.cfi_offset 7, -8
+  34 0002 82B0     		sub	sp, sp, #8
+  35              	.LCFI1:
+  36              		.cfi_def_cfa_offset 16
+  37 0004 00AF     		add	r7, sp, #0
+  38              	.LCFI2:
+  39              		.cfi_def_cfa_register 7
+  13:../avagossi.c **** 	rcc_clock_setup_in_hsi_out_24mhz(); // Initialize system clock
+  40              		.loc 1 13 0
+  41 0006 FFF7FEFF 		bl	rcc_clock_setup_in_hsi_out_24mhz
+  14:../avagossi.c **** 	rcc_peripheral_enable_clock(&RCC_APB2ENR, RCC_APB2ENR_IOPAEN);
+  42              		.loc 1 14 0
+  43 000a 41F21800 		movw	r0, #4120
+  44 000e C4F20200 		movt	r0, 16386
+  45 0012 4FF00401 		mov	r1, #4
+  46 0016 FFF7FEFF 		bl	rcc_peripheral_enable_clock
+  15:../avagossi.c **** 	rcc_peripheral_enable_clock(&RCC_APB2ENR, RCC_APB2ENR_IOPBEN);
+  47              		.loc 1 15 0
+  48 001a 41F21800 		movw	r0, #4120
+  49 001e C4F20200 		movt	r0, 16386
+  50 0022 4FF00801 		mov	r1, #8
+  51 0026 FFF7FEFF 		bl	rcc_peripheral_enable_clock
+  16:../avagossi.c **** 	led_initialize();
+  52              		.loc 1 16 0
+  53 002a 4FF44060 		mov	r0, #3072
+  54 002e C4F20100 		movt	r0, 16385
+  55 0032 4FF00201 		mov	r1, #2
+  56 0036 4FF00002 		mov	r2, #0
+  57 003a 4FF40043 		mov	r3, #32768
+  58 003e FFF7FEFF 		bl	gpio_set_mode
+  17:../avagossi.c **** 	aeat9k_initialize();
+  59              		.loc 1 17 0
+  60 0042 FFF7FEFF 		bl	aeat9k_initialize
+  18:../avagossi.c **** 	aeat9k_read_blocking();
+  61              		.loc 1 18 0
+  62 0046 FFF7FEFF 		bl	aeat9k_read_blocking
+  63              	.L4:
+  19:../avagossi.c **** 	int i;
+  20:../avagossi.c **** 	while(1)
+  21:../avagossi.c **** 	{
+  22:../avagossi.c **** 		led_toggle();
+  64              		.loc 1 22 0
+  65 004a 4FF44060 		mov	r0, #3072
+  66 004e C4F20100 		movt	r0, 16385
+  67 0052 4FF40041 		mov	r1, #32768
+  68 0056 FFF7FEFF 		bl	gpio_toggle
+  23:../avagossi.c **** 		for(i = 0; i<80000; i++)
+  69              		.loc 1 23 0
+  70 005a 4FF00003 		mov	r3, #0
+  71 005e 7B60     		str	r3, [r7, #4]
+  72 0060 04E0     		b	.L2
+  73              	.L3:
+  24:../avagossi.c **** 		{
+  25:../avagossi.c **** 			__asm__("NOP");
+  74              		.loc 1 25 0 discriminator 2
+  75              	@ 25 "../avagossi.c" 1
+  76 0062 00BF     		NOP
+  77              	@ 0 "" 2
+  23:../avagossi.c **** 		for(i = 0; i<80000; i++)
+  78              		.loc 1 23 0 discriminator 2
+  79              		.thumb
+  80 0064 7B68     		ldr	r3, [r7, #4]
+  81 0066 03F10103 		add	r3, r3, #1
+  82 006a 7B60     		str	r3, [r7, #4]
+  83              	.L2:
+  23:../avagossi.c **** 		for(i = 0; i<80000; i++)
+  84              		.loc 1 23 0 is_stmt 0 discriminator 1
+  85 006c 7A68     		ldr	r2, [r7, #4]
+  86 006e 43F67F03 		movw	r3, #14463
+  87 0072 C0F20103 		movt	r3, 1
+  88 0076 9A42     		cmp	r2, r3
+  89 0078 F3DD     		ble	.L3
+  26:../avagossi.c **** 		}
+  27:../avagossi.c **** 	}
+  90              		.loc 1 27 0 is_stmt 1
+  91 007a E6E7     		b	.L4
+  92              		.cfi_endproc
+  93              	.LFE0:
+  95              	.Letext0:
+  96              		.file 2 "/opt/ARM/arm-linaro-eabi-4.6/lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/includ
+  97              		.file 3 "/opt/libopencm3/arm-none-eabi/include/libopencm3/cm3/common.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 avagossi.c
+     /tmp/cc6ytovp.s:17     .text:0000000000000000 $t
+     /tmp/cc6ytovp.s:22     .text:0000000000000000 main
+                     .debug_frame:0000000000000010 $d
+
+UNDEFINED SYMBOLS
+rcc_clock_setup_in_hsi_out_24mhz
+rcc_peripheral_enable_clock
+gpio_set_mode
+aeat9k_initialize
+aeat9k_read_blocking
+gpio_toggle

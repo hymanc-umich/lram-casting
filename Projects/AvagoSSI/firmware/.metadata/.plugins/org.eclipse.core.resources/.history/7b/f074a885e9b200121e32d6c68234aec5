@@ -1,0 +1,36 @@
+/*
+ * serial_link.c
+ *
+ *  Created on: May 1, 2013
+ *      Author: cody
+ */
+
+
+#include "serial_link.h"
+
+void serial_initialize(u16 baud)
+{
+
+}
+
+void flush_tx_buffer(void)
+{
+
+}
+
+void send_string (char * string)
+{
+
+}
+
+bool send_byte(u8 byte)
+{
+	// Check for byte send complete
+	USART_DR(USART) =  byte;
+}
+
+void isr_usart2(void)
+{
+	// Check and clear flag
+}
+}
