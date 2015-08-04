@@ -1,0 +1,1 @@
+This project contains the software, firmware, and electronics hardware used by the Oregon State University Lab for Robotics and Applied Mechanics Casting Robot.
